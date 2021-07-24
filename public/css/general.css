@@ -1,0 +1,186 @@
+/* quicksand-regular - latin-ext_latin_vietnamese */
+
+@font-face {
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../res/font/Quicksand/quicksand-v15-latin-ext_latin_vietnamese-regular.eot");
+    /* IE9 Compat Modes */
+    src: local(""), url("../res/font/Quicksand/quicksand-v15-latin-ext_latin_vietnamese-regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../res/font/Quicksand/quicksand-v15-latin-ext_latin_vietnamese-regular.woff2") format("woff2"), /* Super Modern Browsers */
+    url("../res/font/Quicksand/quicksand-v15-latin-ext_latin_vietnamese-regular.woff") format("woff"), /* Modern Browsers */
+    url("../res/font/Quicksand/quicksand-v15-latin-ext_latin_vietnamese-regular.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../res/font/Quicksand/quicksand-v15-latin-ext_latin_vietnamese-regular.svg#Quicksand") format("svg");
+    /* Legacy iOS */
+}
+
+
+/* quicksand-700 - latin-ext_latin_vietnamese */
+
+@font-face {
+    font-family: "Quicksand";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../res/font/Quicksand/quicksand-v15-latin-ext_latin_vietnamese-700.eot");
+    /* IE9 Compat Modes */
+    src: local(""), url("../res/font/Quicksand/quicksand-v15-latin-ext_latin_vietnamese-700.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../res/font/Quicksand/quicksand-v15-latin-ext_latin_vietnamese-700.woff2") format("woff2"), /* Super Modern Browsers */
+    url("../res/font/Quicksand/quicksand-v15-latin-ext_latin_vietnamese-700.woff") format("woff"), /* Modern Browsers */
+    url("../res/font/Quicksand/quicksand-v15-latin-ext_latin_vietnamese-700.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("../res/font/Quicksand/quicksand-v15-latin-ext_latin_vietnamese-700.svg#Quicksand") format("svg");
+    /* Legacy iOS */
+}
+
+:root {
+    --color-neutral: #6F8BA4;
+    --color-bright: white;
+    --color-dark: #121212;
+    --space-standard: 16px;
+    /* Mobile */
+    --loading-initial-image-landscape-display: none;
+    --loading-initial-image-portrait-display: block;
+    /* Light mode */
+    --color-bg-1: var(--color-bright);
+    --logo-darkest: #3850FF;
+    --logo-lightest: #24CDFF;
+    --loading_initial_disclaimer: url(../res/img/loading_initial_disclaimer_light.png);
+    --home-banner-overlay-color: linear-gradient(90deg, #384EFFD8 0%, #24CDFFD8 100%);
+}
+
+
+/* Mobile Dark mode */
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --color-bg-1: var(--color-dark);
+        --logo-darkest: #FB4B3A;
+        --logo-lightest: #FBE41D;
+        --loading_initial_disclaimer: url(../res/img/loading_initial_disclaimer_dark.png);
+        --home-banner-overlay-color: linear-gradient(90deg, #FB7D2FD8 0%, #FBE11CD8 100%);
+    }
+}
+
+
+/* Desktop */
+
+@media only screen and (min-width: 600px) {
+     :root {
+        --loading-initial-image-landscape-display: block;
+        --loading-initial-image-portrait-display: none;
+    }
+    /* Light mode */
+    @media (prefers-color-scheme: light) {
+         :root {
+            --temp: white;
+        }
+    }
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+         :root {
+            --temp: white;
+        }
+    }
+}
+
+html {
+    height: 100vh;
+    touch-action: manipulation;
+    outline: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-family: "Quicksand", sans-serif;
+}
+
+html,
+body {
+    height: 100vh;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    color: var(--color-grey-blue);
+    background-color: var(--color-bg-1);
+    font-family: "Quicksand", sans-serif;
+}
+
+p {
+    margin: 0px;
+}
+
+div.loading-initial {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg, var(--logo-darkest) 0%, var(--logo-lightest) 100%);
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 50px;
+}
+
+div.loading-initial-image {
+    justify-self: center;
+    align-self: center;
+    width: 100px;
+    height: 100px;
+}
+
+.loading-initial-image.landscape {
+    display: var(--loading-initial-image-landscape-display);
+}
+
+.loading-initial-image.portrait {
+    display: var(--loading-initial-image-portrait-display);
+}
+
+.loading-initial-image>svg {
+    width: 100%;
+    height: 100%;
+}
+
+div.loading-initial-disclaimer {
+    width: 100%;
+    height: 100%;
+    background-image: var(--loading_initial_disclaimer);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+div.home-banner {
+    width: 100%;
+    height: 637px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: url(../res/img/home_banner.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div.home-banner-color-overlay {
+    width: 100%;
+    height: 100%;
+    background-image: var(--home-banner-overlay-color);
+}
+
+svg.home-banner-image-overlay {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0px;
+    /* -1px to cover up the last line of the bg image */
+    bottom: -1px;
+}
