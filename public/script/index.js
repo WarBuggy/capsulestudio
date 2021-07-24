@@ -1,22 +1,18 @@
 window.onload = async function() {
     window.rootStyle = getComputedStyle(document.body);
-    await showLoadindInitial();
-    this.createDivHomeBanner();
+    let loadingInitial = new LoadingInitial();
+    document.body.appendChild(loadingInitial.div);
+    let imagePreloadList = [
+        'res/img/home_banner.jpg',
+        'res/img/home_banner_image_overlay.svg',
+    ];
+    Common.preloadImages(imagePreloadList, 3000, function() {
+        document.body.removeChild(loadingInitial.div);
+        createDivHomeBanner();
+    });
     // new MenuTop();
 };
 
-async function showLoadindInitial(waitTime) {
-    let minWaitTime = 2000;
-    let defaultWaitTime = 3000;
-    if (waitTime == null || !Common.isNumeric(waitTime) ||
-        waitTime < minWaitTime) {
-        waitTime = defaultWaitTime;
-    }
-    let loadingInitial = new LoadingInitial();
-    document.body.appendChild(loadingInitial.div);
-    await Common.sleep(waitTime);
-    document.body.removeChild(loadingInitial.div);
-};
 
 function createDivHomeBanner() {
     let div = document.createElement('div');
