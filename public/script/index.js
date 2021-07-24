@@ -2,7 +2,7 @@ window.onload = async function() {
     window.rootStyle = getComputedStyle(document.body);
     let loadingInitial = new LoadingInitial();
     document.body.appendChild(loadingInitial.div);
-    let imagePreloadCategoryList = ['common', 'home', ];
+    let imagePreloadCategoryList = ['home', ];
     Common.preloadImageFromVersion(imagePreloadCategoryList, 3000, function() {
         document.body.removeChild(loadingInitial.div);
         createDivHomeBanner();
@@ -20,9 +20,9 @@ function createDivHomeBanner() {
     divOverlay.classList.add('home-banner-color-overlay');
     div.appendChild(divOverlay);
 
-    Common.loadSVGAsXML(div, window.version.image.home['home_banner_image_overlay'], function() {
-        document.body.appendChild(div);
-    });
+    div.innerHTML = div.innerHTML.concat(window.imagePreload['home_banner_image_overlay']);
+
+    document.body.appendChild(div);
 };
 
 function createText() {

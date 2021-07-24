@@ -7,14 +7,14 @@ class LoadingInitial {
         divImageLandscape.classList.add('loading-initial-image');
         divImageLandscape.classList.add('landscape');
         Common.loadSVGAsXML(divImageLandscape,
-            window.version.image.home['loading_initial_landscape']);
+            window.version.image.common['loading_initial_landscape']);
         this.div.appendChild(divImageLandscape);
 
         let divImagePortrait = document.createElement('div');
         divImagePortrait.classList.add('loading-initial-image');
         divImagePortrait.classList.add('portrait');
         Common.loadSVGAsXML(divImagePortrait,
-            window.version.image.home['loading_initial_portrait']);
+            window.version.image.common['loading_initial_portrait']);
         this.div.appendChild(divImagePortrait);
 
         let divDisclaimerLight = document.createElement('div');
