@@ -14,12 +14,13 @@ window.onload = async function() {
 function createDivHomeBanner() {
     let div = document.createElement('div');
     div.classList.add('home-banner');
+    div.style.backgroundImage = window.version.image.home['home_banner'];
 
     let divOverlay = document.createElement('div');
     divOverlay.classList.add('home-banner-color-overlay');
     div.appendChild(divOverlay);
 
-    Common.loadSVGAsXML(div, 'res/img/home_banner_image_overlay.svg', function() {
+    Common.loadSVGAsXML(div, window.version.image.home['home_banner_image_overlay'], function() {
         document.body.appendChild(div);
     });
 };

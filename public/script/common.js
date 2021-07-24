@@ -34,7 +34,7 @@ class Common {
         let images = [];
         let loaded = 0;
         let startTime = (new Date()).getTime();
-        let onLoaded = function() {
+        let onResponse = function() {
             loaded = loaded + 1;
             if (loaded < imageLinkList.length) {
                 return;
@@ -52,12 +52,8 @@ class Common {
         };
         for (let i = 0; i < imageLinkList.length; i++) {
             images[i] = new Image();
-            images[i].onload = function() {
-                onLoaded();
-            };
-            images[i].onerror = function() {
-                onLoaded();
-            };
+            images[i].onload = onResponse;
+            images[i].onerror = onResponse;
             images[i].src = imageLinkList[i];
         }
     };
@@ -71,5 +67,4 @@ class Common {
         }
         Common.preloadImage(imageList, minWaitTime, callback);
     };
-
 };

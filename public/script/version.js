@@ -7,6 +7,8 @@ window.version = {
         home: {
             'loading_initial_landscape': 'res/img/loading_initial_landscape.svg?1.0',
             'loading_initial_portrait': 'res/img/loading_initial_portrait.svg?1.0',
+            'home-banner': 'res/img/home_banner.jpg?1.0',
+            'home_banner_image_overlay': 'res/img/home_banner_image_overlay.svg?1.0',
         },
     },
 };
