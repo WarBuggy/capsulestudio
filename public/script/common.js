@@ -43,6 +43,7 @@ class Common {
                 return;
             }
             let endTime = (new Date()).getTime();
+            console.log(endTime);
             let loadingTime = endTime - startTime;
             let timeLeft = Math.max(minWaitTime - loadingTime, 0);
             window.setTimeout(function() {
