@@ -14,7 +14,7 @@ window.onload = async function() {
 function createDivHomeBanner() {
     let div = document.createElement('div');
     div.classList.add('home-banner');
-    div.style.backgroundImage = window.version.image.home['home_banner'];
+    div.style.backgroundImage = `url(${window.version.image.home['home_banner']})`;
 
     let divOverlay = document.createElement('div');
     divOverlay.classList.add('home-banner-color-overlay');
