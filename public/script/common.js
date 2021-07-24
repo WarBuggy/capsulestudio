@@ -31,7 +31,7 @@ class Common {
         if (minWaitTime == null || minWaitTime < 0) {
             minWaitTime = 0;
         }
-        let images = [];
+        window.images = [];
         let loaded = 0;
         let startTime = (new Date()).getTime();
         let onResponse = function() {
@@ -51,10 +51,10 @@ class Common {
             }, timeLeft);
         };
         for (let i = 0; i < imageLinkList.length; i++) {
-            images[i] = new Image();
-            images[i].onload = onResponse;
-            images[i].onerror = onResponse;
-            images[i].src = imageLinkList[i];
+            window.images[i] = new Image();
+            window.images[i].onload = onResponse;
+            window.images[i].onerror = onResponse;
+            window.images[i].src = imageLinkList[i];
         }
     };
 
