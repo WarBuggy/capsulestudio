@@ -43,8 +43,8 @@ class Common {
                 return;
             }
             let endTime = (new Date()).getTime();
-            console.log('Time for preloading ' + imageLinkList.length + ' image(s): ' + endTime + 'ms.');
             let loadingTime = endTime - startTime;
+            console.log('Time for preloading ' + imageLinkList.length + ' image(s): ' + loadingTime + 'ms.');
             let timeLeft = Math.max(minWaitTime - loadingTime, 0);
             window.setTimeout(function() {
                 callback();
