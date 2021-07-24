@@ -27,7 +27,7 @@ class Common {
         }
     };
 
-    static preloadImages(imageLinkList, minWaitTime, callback) {
+    static preloadImage(imageLinkList, minWaitTime, callback) {
         if (minWaitTime == null || minWaitTime < 0) {
             minWaitTime = 0;
         }
@@ -60,5 +60,16 @@ class Common {
             };
             images[i].src = imageLinkList[i];
         }
-    }
+    };
+
+    static preloadImageFromVersion(categoryList, minWaitTime, callback) {
+        let imageList = [];
+        for (let i = 0; i < categoryList.length; i++) {
+            let aCategory = categoryList[i];
+            let values = Object.values(window.version.image[aCategory]);
+            imageList = imageList.concat(values);
+        }
+        Common.preloadImage(imageList, minWaitTime, callback);
+    };
+
 };

@@ -43,7 +43,8 @@
     --color-bg-1: var(--color-bright);
     --logo-darkest: #3850FF;
     --logo-lightest: #24CDFF;
-    --loading_initial_disclaimer: url(../res/img/loading_initial_disclaimer_light.png);
+    --loading-initial-disclaimer-light-display: block;
+    --loading-initial-disclaimer-dark-display: none;
     --home-banner-overlay-color: linear-gradient(90deg, #384EFFD8 0%, #24CDFFD8 100%);
 }
 
@@ -55,7 +56,8 @@
         --color-bg-1: var(--color-dark);
         --logo-darkest: #FB4B3A;
         --logo-lightest: #FBE41D;
-        --loading_initial_disclaimer: url(../res/img/loading_initial_disclaimer_dark.png);
+        --loading-initial-disclaimer-light-display: none;
+        --loading-initial-disclaimer-dark-display: block;
         --home-banner-overlay-color: linear-gradient(90deg, #FB7D2FD8 0%, #FBE11CD8 100%);
     }
 }
@@ -151,11 +153,18 @@ div.loading-initial-image {
 div.loading-initial-disclaimer {
     width: 100%;
     height: 100%;
-    background-image: var(--loading_initial_disclaimer);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
+}
+
+.loading-initial-disclaimer.light {
+    display: var(--loading-initial-disclaimer-light-display);
+}
+
+.loading-initial-disclaimer.dark {
+    display: var(--loading-initial-disclaimer-dark-display);
 }
 
 div.home-banner {

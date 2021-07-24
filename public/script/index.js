@@ -2,11 +2,8 @@ window.onload = async function() {
     window.rootStyle = getComputedStyle(document.body);
     let loadingInitial = new LoadingInitial();
     document.body.appendChild(loadingInitial.div);
-    let imagePreloadList = [
-        'res/img/home_banner.jpg',
-        'res/img/home_banner_image_overlay.svg',
-    ];
-    Common.preloadImages(imagePreloadList, 3000, function() {
+    let imagePreloadCategoryList = ['common', 'home', ];
+    Common.preloadImageFromVersion(imagePreloadCategoryList, 3000, function() {
         document.body.removeChild(loadingInitial.div);
         createDivHomeBanner();
     });
