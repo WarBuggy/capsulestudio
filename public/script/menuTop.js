@@ -12,9 +12,18 @@ class MenuTop {
     };
 
     createGroupLogo() {
+        let divGrid = document.createElement('div');
+        divGrid.classList.add('menu-top-grid');
+        this.div.appendChild(divGrid);
+
+        let divItemFillerBefore = document.createElement('div');
+        divItemFillerBefore.classList.add('menu-top-item-filler');
+        divItemFillerBefore.classList.add('first-row');
+        divGrid.appendChild(divItemFillerBefore);
+
         let divLogoOuter = document.createElement('div');
         divLogoOuter.classList.add('menu-top-logo-outer');
-        this.div.appendChild(divLogoOuter);
+        divGrid.appendChild(divLogoOuter);
 
         let divLogo = document.createElement('div');
         divLogo.classList.add('menu-top-logo-logo');
@@ -33,12 +42,16 @@ class MenuTop {
 
         this.createSVGMobileButtonToggle(divLogoOuter);
 
+        let divItemFillerAfter = document.createElement('div');
+        divItemFillerAfter.classList.add('menu-top-item-filler');
+        divItemFillerAfter.classList.add('first-row');
+        divGrid.appendChild(divItemFillerAfter);
     };
 
     createSVGMobileButtonToggle(divParent) {
+        let parent = this;
         let clickableAttr = 'clickable';
         let closeAttr = 'close';
-        let animationTime = this.toggleTime;
         divParent.innerHTML =
             divParent.innerHTML.concat(window.imagePreload['home_logo_button_toggle']);
 
@@ -57,18 +70,26 @@ class MenuTop {
             if (close == 'false') {
                 groupName = 'animMenuTopMobileButtonHide';
                 endClose = 'true';
+                // heightDelta = -300;
+                // heightInitial = 380;
+                parent.div.classList.remove('show');
+                parent.div.classList.add('hide');
+                window.setTimeout(function() {
+                    parent.div.classList.remove('hide');
+                }, parseInt(parent.toggleTime));
+            } else {
+                parent.div.classList.add('show');
             }
             let group = document.getElementById(groupName);
             for (let i = 0; i < group.children.length; i++) {
-                group.children[i].setAttribute('dur', animationTime);
+                group.children[i].setAttribute('dur', parent.toggleTime);
                 group.children[i].beginElement();
             }
             this.setAttribute(closeAttr, endClose);
             window.setTimeout(function() {
                 svg.setAttribute(clickableAttr, 'true');
-            }, parseInt(animationTime));
+            }, parseInt(parent.toggleTime));
         };
-        return svg;
     };
 
     createItem() {
@@ -81,6 +102,14 @@ class MenuTop {
     };
 
     createAnItem(objectData) {
+        let divGrid = document.createElement('div');
+        divGrid.classList.add('menu-top-grid');
+        this.div.appendChild(divGrid);
+
+        let divItemFillerBefore = document.createElement('div');
+        divItemFillerBefore.classList.add('menu-top-item-filler');
+        divGrid.appendChild(divItemFillerBefore);
+
         let div = document.createElement('div');
         div.classList.add('menu-top-item');
         if (objectData.extraCss != null) {
@@ -89,9 +118,30 @@ class MenuTop {
             }
         }
         div.innerText = objectData[window.langCur];
-        this.div.appendChild(div);
+        divGrid.appendChild(div);
+
+        let divItemFillerAfter = document.createElement('div');
+        divItemFillerAfter.classList.add('menu-top-item-filler');
+        divGrid.appendChild(divItemFillerAfter);
+
         div.onclick = function() {
             window.location = objectData.link;
         };
+    };
+
+    toggleMenuTop(data) {
+        let timeCurrent = (new Date()).getTime();
+        let timeDiff = timeCurrent - data.timeStart;
+        if (timeDiff >= data.timeTotal) {
+            data.div.style.height = (data.heightDelta + data.heightInitial) + 'px';
+            return;
+        }
+        let progress = window.res.common.easing[data.easing](timeDiff / data.timeTotal);
+        let height = (data.heightDelta * progress) + data.heightInitial;
+        data.div.style.height = height + 'px';
+        let parent = this;
+        window.requestAnimationFrame(function() {
+            parent.toggleMenuTop(data);
+        });
     };
 }

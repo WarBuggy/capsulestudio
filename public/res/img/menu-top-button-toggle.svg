@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg id='menuTopButtonToggle' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
     class='menu-top-mobile-button-toggle' width="40px" height="40px" viewBox="0 0 40 40" preserveAspectRatio="xMidYMid">
-    <line id="menuTopMobileButtonClose1" x1="5" y1="10" x2="35" y2="10"
-        style="stroke:var(--menu-top-color);stroke-width:2" />
-    <line id="menuTopMobileButtonClose2" x1="5" y1="20" x2="30" y2="20"
-        style="stroke:var(--menu-top-color);stroke-width:2" />
-    <line id="menuTopMobileButtonClose3" x1="5" y1="30" x2="25" y2="30"
-        style="stroke:var(--menu-top-color);stroke-width:2" />
+    <line id="menuTopMobileButtonClose1" x1="5" y1="10" x2="35" y2="10" stroke="var(--menu-top-color)"
+        stroke-width="2" />
+    <line id="menuTopMobileButtonClose2" x1="5" y1="20" x2="30" y2="20" stroke="var(--menu-top-color)"
+        stroke-width="2" />
+    <line id="menuTopMobileButtonClose3" x1="5" y1="30" x2="25" y2="30" stroke="var(--menu-top-color)"
+        stroke-width="2" />
     <g id='animMenuTopMobileButtonShow'>
         <animate href="#menuTopMobileButtonClose1" attributeName="y1" from="10" to="5" fill="freeze"
             begin="indefinite" />
         <animate href="#menuTopMobileButtonClose1" attributeName="y2" from="10" to="35" fill="freeze"
             begin="indefinite" />
-        <animate href="#menuTopMobileButtonClose2" attributeName="opacity" from="1" to="0" fill="freeze"
+        <animate href="#menuTopMobileButtonClose2" attributeName="stroke-width" from="2" to="0" fill="freeze"
             begin="indefinite" />
         <animate href="#menuTopMobileButtonClose3" attributeName="y1" from="30" to="35" fill="freeze"
             begin="indefinite" />
@@ -26,7 +26,7 @@
             begin="indefinite" />
         <animate href="#menuTopMobileButtonClose1" attributeName="y2" from="35" to="10" fill="freeze"
             begin="indefinite" />
-        <animate href="#menuTopMobileButtonClose2" attributeName="opacity" from="0" to="1" fill="freeze"
+        <animate href="#menuTopMobileButtonClose2" attributeName="stroke-width" from="0" to="2" fill="freeze"
             begin="indefinite" />
         <animate href="#menuTopMobileButtonClose3" attributeName="y1" from="35" to="30" fill="freeze"
             begin="indefinite" />

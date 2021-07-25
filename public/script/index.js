@@ -6,6 +6,7 @@ window.onload = async function() {
     Common.preloadImageFromVersion(imagePreloadCategoryList, 0, function() {
         //document.body.removeChild(loadingInitial.div);
         createDivHomeBanner();
+        new ContentHome();
         new MenuTop();
     });
 };
@@ -25,6 +26,17 @@ function createDivHomeBanner() {
     document.body.appendChild(div);
 };
 
+class ContentHome {
+    constructor() {
+        let div = document.createElement('div');
+        div.style.width = '100%';
+        div.style.height = '2000px';
+        div.style.backgroundColor = '#FF0000AB';
+        document.body.appendChild(div);
+    };
+};
+
+
 function createText() {
     let text = 'The spinner "Ball" is provided by loading.io.';
     let width = 1500;
@@ -40,4 +52,27 @@ function createText() {
     ctx.textBaseline = "middle";
     ctx.fillStyle = '#121212';
     ctx.fillText(text, (width / 2), (height / 2));
+};
+
+function testMove() {
+    let div = document.getElementById('divMove');
+    let easeInOutQuad = function(t) { return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t };
+    let delta = 1000;
+    let initX = -50;
+    let totalTime = 400;
+    let startTime = (new Date()).getTime();
+
+    let work = function() {
+        let currentTime = (new Date()).getTime();
+        let timeDiff = currentTime - startTime;
+        let time = timeDiff / totalTime;
+        console.log(time);
+        let variant = easeInOutQuad(time);
+        if (time < 1) {
+            let x = delta * variant + initX;
+            div.style.left = x + 'px';
+            window.requestAnimationFrame(work);
+        }
+    };
+    window.requestAnimationFrame(work);
 };
