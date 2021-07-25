@@ -1,13 +1,13 @@
 window.onload = async function() {
     window.rootStyle = getComputedStyle(document.body);
-    let loadingInitial = new LoadingInitial();
-    document.body.appendChild(loadingInitial.div);
+    // let loadingInitial = new LoadingInitial();
+    // document.body.appendChild(loadingInitial.div);
     let imagePreloadCategoryList = ['home', ];
-    Common.preloadImageFromVersion(imagePreloadCategoryList, 3000, function() {
-        document.body.removeChild(loadingInitial.div);
+    Common.preloadImageFromVersion(imagePreloadCategoryList, 0, function() {
+        //document.body.removeChild(loadingInitial.div);
         createDivHomeBanner();
+        new MenuTop();
     });
-    // new MenuTop();
 };
 
 

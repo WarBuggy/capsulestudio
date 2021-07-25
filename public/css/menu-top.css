@@ -1,76 +1,49 @@
 :root {
+    /* Common */
+    --menu-top-animation-toggle-time: 400ms;
     /* Mobile */
-    /* Light mode */
-    --temp: white;
+    --menu-top-outer-grid-template-columns: 1fr;
+    --menu-top-outer-grid-template-rows: 80px 50px 50px 50px 50px 50px 50px;
+    --menu-top-outer-bg-color: var(--color-bg-1);
+    --menu-top-color: var(--color-neutral);
+    --menu-top-button-toggle-display: block;
+    --menu-top-outer-left: 0px;
+    --menu-top-outer-transform: '';
+    /* Mobile Light mode */
+    --menu-top-logo: url(../res/img/logo_light.png);
+    --home-banner-overlay-color: linear-gradient(90deg, #384EFFD8 0%, #24CDFFD8 100%);
 }
-
-
-/* Mobile Dark mode */
 
 @media (prefers-color-scheme: dark) {
      :root {
-        --temp: white;
+        /* Mobile Dark mode */
+        --menu-top-logo: url(../res/img/logo_dark.png);
+        --menu-top-color: var(--color-bright-dark-mode);
+        --home-banner-overlay-color: linear-gradient(90deg, #FB7D2FD8 0%, #FBE11CD8 100%);
     }
 }
-
-
-/* Desktop */
 
 @media only screen and (min-width: 600px) {
      :root {
-        --temp: white;
-    }
-    /* Light mode */
-    @media (prefers-color-scheme: light) {
-         :root {
-            --temp: white;
-        }
-    }
-    /* Dark mode */
-    @media (prefers-color-scheme: dark) {
-         :root {
-            --temp: white;
-        }
-    }
-}
-
-:root {
-    /* Mobile */
-    --menu-top-mobile-button-close-display: block;
-    --menu-top-outer-grid-template-columns: 1fr;
-    --menu-top-outer-grid-template-rows: 80px 50px 50px 50px 50px 50px 50px;
-    --menu-top-item-color: var(--text-color);
-    --menu-top-outer-left: 0px;
-    --menu-top-outer-transform: '';
-    /* Light mode */
-    --menu-top-outer-bg-color: white;
-    --menu-top-logo: url(../res/img/logo_light.png);
-    --menu-top-logo-name-color: var(--text-color-alt);
-}
-
-
-/* Desktop */
-
-@media only screen and (min-width: 600px) {
-     :root {
-        --menu-top-mobile-button-close-display: none;
-        --menu-top-outer-bg-color: transparent;
+        /* Desktop */
         --menu-top-outer-grid-template-columns: 40% auto auto auto auto auto auto;
         --menu-top-outer-grid-template-rows: 1fr;
-        --menu-top-item-color: var(--text-color-alt);
+        --menu-top-outer-bg-color: transparent;
+        --menu-top-button-toggle-display: none;
         --menu-top-outer-left: 50%;
         --menu-top-outer-transform: translateX(-50%);
     }
-}
-
-
-/* Dark mode */
-
-@media (prefers-color-scheme: dark) {
-     :root {
-        --menu-top-outer-bg-color: transparent;
-        --menu-top-logo: url(../res/img/logo_dark.png);
-        --menu-top-logo-name-color: var(--text-color);
+    @media (prefers-color-scheme: light) {
+         :root {
+            /* DesktopLight mode */
+            --menu-top-color: var(--color-bright);
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+         :root {
+            /* Desktop Dark mode */
+            --menu-top-color: var(--color-dark);
+        }
     }
 }
 
@@ -78,6 +51,7 @@ div.menu-top-outer {
     max-width: 1140px;
     width: 100%;
     height: 80px;
+    color: var(--menu-top-color);
     background-color: var(--menu-top-outer-bg-color);
     display: grid;
     grid-template-columns: var(--menu-top-outer-grid-template-columns);
@@ -113,38 +87,38 @@ div.menu-top-logo-logo {
 }
 
 div.menu-top-logo-name {
+    min-width: 180px;
     box-sizing: border-box;
     justify-self: start;
     align-self: center;
     font-size: 24px;
     font-weight: 700;
-    color: var(--menu-top-logo-name-color);
     margin-left: var(--space-standard);
     cursor: pointer;
 }
 
-svg.menu-top-mobile-button-close {
+svg.menu-top-mobile-button-toggle {
     justify-self: end;
     align-self: center;
     cursor: pointer;
-    display: var(--menu-top-mobile-button-close-display);
+    display: var(--menu-top-button-toggle-display);
 }
 
-div.menu-top-item-static {
-    color: var(--menu-top-item-color);
+div.menu-top-item {
     font-size: 14px;
     font-weight: 700;
     align-self: center;
     justify-self: start;
+    text-align: center;
     cursor: pointer;
 }
 
-.menu-top-item-static.contact {
+.menu-top-item.contact {
     width: 140px;
     height: 36px;
     line-height: 36px;
     text-align: center;
-    border: 2px solid var(--text-color-alt);
+    border: 2px solid var(--menu-top-color);
     border-radius: 18px;
     justify-self: end;
 }

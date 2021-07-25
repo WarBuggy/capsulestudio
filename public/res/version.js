@@ -9,6 +9,9 @@ window.version = {
         home: {
             'home_banner': 'res/img/home_banner.jpg?1.0',
             'home_banner_image_overlay': 'res/img/home_banner_image_overlay.svg?1.0',
+            'home_logo_light': 'res/img/logo_light.png?1.0',
+            'home_logo_dark': 'res/img/logo_dark.png?1.0',
+            'home_logo_button_toggle': 'res/img/menu-top-button-toggle.svg?1.0',
         },
     },
 };

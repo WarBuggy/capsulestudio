@@ -1,6 +1,5 @@
-/* quicksand-regular - latin-ext_latin_vietnamese */
-
 @font-face {
+    /* quicksand-regular - latin-ext_latin_vietnamese */
     font-family: "Quicksand";
     font-style: normal;
     font-weight: 400;
@@ -14,10 +13,8 @@
     /* Legacy iOS */
 }
 
-
-/* quicksand-700 - latin-ext_latin_vietnamese */
-
 @font-face {
+    /* quicksand-700 - latin-ext_latin_vietnamese */
     font-family: "Quicksand";
     font-style: normal;
     font-weight: 700;
@@ -32,53 +29,49 @@
 }
 
 :root {
+    /* Common */
     --color-neutral: #6F8BA4;
-    --color-bright: white;
+    --color-bright: #FFFFFF;
     --color-dark: #121212;
+    --color-bright-dark-mode: #FFFFFFDD;
     --space-standard: 16px;
     /* Mobile */
     --loading-initial-image-landscape-display: none;
     --loading-initial-image-portrait-display: block;
-    /* Light mode */
+    /* Mobile Light mode */
     --color-bg-1: var(--color-bright);
     --logo-darkest: #3850FF;
     --logo-lightest: #24CDFF;
     --loading-initial-disclaimer-light-display: block;
     --loading-initial-disclaimer-dark-display: none;
-    --home-banner-overlay-color: linear-gradient(90deg, #384EFFD8 0%, #24CDFFD8 100%);
 }
-
-
-/* Mobile Dark mode */
 
 @media (prefers-color-scheme: dark) {
      :root {
+        /* Mobile Dark mode */
         --color-bg-1: var(--color-dark);
         --logo-darkest: #FB4B3A;
         --logo-lightest: #FBE41D;
         --loading-initial-disclaimer-light-display: none;
         --loading-initial-disclaimer-dark-display: block;
-        --home-banner-overlay-color: linear-gradient(90deg, #FB7D2FD8 0%, #FBE11CD8 100%);
     }
 }
 
-
-/* Desktop */
-
 @media only screen and (min-width: 600px) {
      :root {
+        /* Desktop */
         --loading-initial-image-landscape-display: block;
         --loading-initial-image-portrait-display: none;
     }
-    /* Light mode */
     @media (prefers-color-scheme: light) {
          :root {
+            /* Desktop Light mode */
             --temp: white;
         }
     }
-    /* Dark mode */
     @media (prefers-color-scheme: dark) {
          :root {
+            /* Desktop Dark mode */
             --temp: white;
         }
     }
@@ -112,7 +105,7 @@ body {
     -ms-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    color: var(--color-grey-blue);
+    color: var(--color-bright-dark-mode);
     background-color: var(--color-bg-1);
     font-family: "Quicksand", sans-serif;
 }
