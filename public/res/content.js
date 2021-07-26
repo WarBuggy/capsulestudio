@@ -11,6 +11,7 @@ window.res = {
                 en: 'HOME',
                 vi: 'TRANG ĐẦU',
                 link: 'index.html',
+                extraCss: ['item-first'],
             },
             'work': {
                 en: 'OUR WORKS',

@@ -202,7 +202,7 @@ div.menu-top-item {
     background: var(--menu-top-item-bg-color);
     box-sizing: border-box;
     padding-left: calc(2 * var(--menu-top-item-padding));
-    border-bottom: 1px solid var(--menu-top-item-border);
+    border-top: 1px solid var(--menu-top-item-border);
     align-self: center;
 }
 
@@ -222,4 +222,8 @@ div.menu-top-item-filler {
     cursor: default;
     text-decoration: underline;
     text-underline-offset: 4px;
+}
+
+.menu-top-item.item-first {
+    border: none;
 }
