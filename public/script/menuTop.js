@@ -12,6 +12,8 @@ class MenuTop {
     };
 
     createGroupLogo() {
+        let className = 'menu-top-click-home-page';
+
         let divGrid = document.createElement('div');
         divGrid.classList.add('menu-top-grid');
         this.div.appendChild(divGrid);
@@ -27,18 +29,14 @@ class MenuTop {
 
         let divLogo = document.createElement('div');
         divLogo.classList.add('menu-top-logo-logo');
+        divLogo.classList.add(className);
         divLogoOuter.appendChild(divLogo);
-        divLogo.onclick = function() {
-            window.location = window.webURL + 'index.html';
-        };
 
         let divName = document.createElement('div');
         divName.classList.add('menu-top-logo-name');
+        divName.classList.add(className);
         divName.innerText = window.res.common.companyName[window.langCur];
         divLogoOuter.appendChild(divName);
-        divName.onclick = function() {
-            window.location = window.webURL + 'index.html';
-        };
 
         this.createSVGMobileButtonToggle(divLogoOuter);
 
@@ -46,6 +44,13 @@ class MenuTop {
         divItemFillerAfter.classList.add('menu-top-item-filler');
         divItemFillerAfter.classList.add('first-row');
         divGrid.appendChild(divItemFillerAfter);
+
+        let divClickForHome = document.getElementsByClassName(className);
+        for (let i = 0; i < divClickForHome.length; i++) {
+            divClickForHome[i].onclick = function() {
+                window.location = window.res.common.menuItem['home'].link;
+            };
+        }
     };
 
     createSVGMobileButtonToggle(divParent) {
@@ -70,8 +75,6 @@ class MenuTop {
             if (close == 'false') {
                 groupName = 'animMenuTopMobileButtonHide';
                 endClose = 'true';
-                // heightDelta = -300;
-                // heightInitial = 380;
                 parent.div.classList.remove('show');
                 parent.div.classList.add('hide');
                 window.setTimeout(function() {

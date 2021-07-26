@@ -14,12 +14,19 @@
     --menu-top-button-toggle-display: block;
     --menu-top-item-filler-display: block;
     --menu-top-inner-grid-template-columns: auto 80% auto;
-    --menu-top-item-padding: calc(2 * var(--space-standard));
+    --menu-top-item-padding: var(--space-standard);
     /* Mobile Light mode */
     --menu-top-logo: url(../res/img/logo_light.png);
     --home-banner-overlay-color: linear-gradient(90deg, #384EFFD8 0%, #24CDFFD8 100%);
     --menu-top-item-bg-color: var(--color-bg-1);
     --menu-top-item-border: var(--color-light-grey);
+}
+
+@media only screen and (max-width: 450px) {
+     :root {
+        /* Mobile small screen */
+        --menu-top-inner-grid-template-columns: var(--space-standard) 1fr var(--space-standard);
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,21 +51,20 @@
         --menu-top-grid-bg-color: transparent;
         --menu-top-button-toggle-display: none;
         --menu-top-item-filler-display: none;
-        --menu-top-item-span: auto / span 2;
-        --menu-top-item-height: auto;
+        --menu-top-item-height: 36px;
         --menu-top-item-bg-color: transparent;
         --menu-top-inner-grid-template-columns: auto 1fr auto;
         --menu-top-item-padding: 0px;
         --menu-top-item-border: none;
+        --menu-top-outer-padding: calc(2 * var(--space-standard));
     }
     .menu-top-item.contact {
         width: 140px;
-        height: 36px;
-        line-height: 36px;
         border: 2px solid var(--menu-top-color);
         border-radius: 18px;
-        align-self: center;
         justify-content: center;
+        text-align: center;
+        box-sizing: content-box;
     }
     @media (prefers-color-scheme: light) {
          :root {
@@ -90,6 +96,9 @@ div.menu-top-outer {
     overflow: hidden;
     box-sizing: border-box;
     transition: none;
+    padding-left: var(--menu-top-outer-padding);
+    padding-right: var(--menu-top-outer-padding);
+    justify-content: space-between;
 }
 
 .menu-top-outer.show {
@@ -116,8 +125,8 @@ div.menu-top-logo-outer {
     display: grid;
     grid-template-columns: auto 1fr 40px;
     background-color: var(--menu-top-grid-bg-color);
-    padding-left: calc(2 * var(--space-standard));
-    padding-right: var(--space-standard);
+    padding-left: var(--menu-top-item-padding);
+    padding-right: var(--menu-top-item-padding);
 }
 
 div.menu-top-logo-logo {
@@ -153,16 +162,19 @@ svg.menu-top-mobile-button-toggle {
 div.menu-top-item {
     width: 100%;
     height: var(--menu-top-item-height);
+    line-height: var(--menu-top-item-height);
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
-    grid-column: var(--menu-top-item-span);
-    display: flex;
-    align-items: center;
     background: var(--menu-top-item-bg-color);
     box-sizing: border-box;
     padding-left: var(--menu-top-item-padding);
     border-bottom: 1px solid var(--menu-top-item-border);
+    align-self: center;
+}
+
+.menu-top-item:hover {
+    background-color: var(--menu-top-item-border);
 }
 
 div.menu-top-item-filler {
