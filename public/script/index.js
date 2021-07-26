@@ -29,11 +29,11 @@ function createDivHomeBanner() {
 class ContentHome {
     constructor() {
         let divOuter = document.createElement('div');
-        divOuter.classList.add('home-outer');
+        divOuter.classList.add('general-content-outer');
         document.body.appendChild(divOuter);
 
         let divGrid = document.createElement('div');
-        divGrid.classList.add('home-grid');
+        divGrid.classList.add('general-content-grid');
         divOuter.appendChild(divGrid);
 
         let divOne = document.createElement('div');

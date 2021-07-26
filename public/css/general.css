@@ -43,6 +43,8 @@
     /* Mobile */
     --loading-initial-image-landscape-display: none;
     --loading-initial-image-portrait-display: block;
+    --content-grid-max-width: 80%;
+    --content-grid-padding: 0px;
     /* Mobile Light mode */
     --color-bg-1: var(--color-bright);
     --logo-darkest: var(--color-blue);
@@ -62,11 +64,19 @@
     }
 }
 
+@media only screen and (max-width: 450px) {
+     :root {
+        /* Mobile small screen */
+        --content-grid-max-width: 100%;
+        --content-grid-padding: var(--space-standard);
+    }
+}
+
 @media only screen and (min-width: 900px) {
      :root {
         /* Desktop */
-        --loading-initial-image-landscape-display: block;
-        --loading-initial-image-portrait-display: none;
+        --content-grid-max-width: var(--content-max-width);
+        --content-grid-padding: calc(2 * var(--space-standard));
     }
     @media (prefers-color-scheme: light) {
          :root {
@@ -163,4 +173,18 @@ div.loading-initial-disclaimer {
 
 .loading-initial-disclaimer.dark {
     display: var(--loading-initial-disclaimer-dark-display);
+}
+
+div.general-content-outer {
+    width: 100%;
+    position: absolute;
+}
+
+div.general-content-grid {
+    max-width: var(--content-grid-max-width);
+    height: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--content-grid-padding);
+    padding-right: var(--content-grid-padding);
 }

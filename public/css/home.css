@@ -3,15 +3,12 @@
     /* Mobile */
     /* Mobile Light mode */
     --home-banner-overlay-color: linear-gradient(90deg, #384EFFD8 0%, #24CDFFD8 100%);
-    --home-grid-max-width: 80%;
-    --home-grid-padding: 0px;
 }
 
 @media only screen and (max-width: 450px) {
      :root {
         /* Mobile small screen */
-        --home-grid-max-width: 100%;
-        --home-grid-padding: var(--space-standard);
+        --temp: white;
     }
 }
 
@@ -25,8 +22,7 @@
 @media only screen and (min-width: 900px) {
      :root {
         /* Desktop */
-        --home-grid-max-width: var(--content-max-width);
-        --home-grid-padding: calc(2 * var(--space-standard));
+        --temp: white;
     }
     @media (prefers-color-scheme: light) {
          :root {
@@ -66,19 +62,4 @@ svg.home-banner-image-overlay {
     left: 0px;
     /* -1px to cover up the last line of the bg image */
     bottom: -1px;
-}
-
-div.home-outer {
-    width: 100%;
-    position: absolute;
-    padding-top: 500px;
-}
-
-div.home-grid {
-    max-width: var(--home-grid-max-width);
-    height: 2000px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: var(--home-grid-padding);
-    padding-right: var(--home-grid-padding);
 }
