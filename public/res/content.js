@@ -1,4 +1,4 @@
-window.langDef = 'en';
+window.langDef = 'vi';
 window.langCur = window.langDef;
 window.res = {
     common: {
@@ -9,26 +9,32 @@ window.res = {
         menuItem: {
             'home': {
                 en: 'HOME',
+                vi: 'TRANG ĐẦU',
                 link: 'index.html',
             },
             'work': {
                 en: 'OUR WORKS',
+                vi: 'THÀNH QUẢ',
                 link: 'works.html',
             },
             'service': {
                 en: 'SERVICES',
+                vi: 'DỊCH VỤ',
                 link: 'services.html',
             },
             'blog': {
                 en: 'BLOG',
+                vi: 'BLOG',
                 link: 'blog.html',
             },
             'aboutUs': {
                 en: 'ABOUT US',
+                vi: 'GIỚI THIỆU',
                 link: 'aboutus.html',
             },
             'contact': {
                 en: 'CONTACT',
+                vi: 'LIÊN LẠC',
                 link: 'contact.html',
                 extraCss: ['contact'],
                 id: 'menuTopButtonContact',
