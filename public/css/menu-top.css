@@ -66,6 +66,10 @@
         text-align: center;
         box-sizing: content-box;
     }
+    .contact:hover {
+        color: var(--color-blue);
+        background-color: var(--menu-top-color) !important;
+    }
     @media (prefers-color-scheme: light) {
          :root {
             /* DesktopLight mode */
@@ -76,6 +80,9 @@
          :root {
             /* Desktop Dark mode */
             --menu-top-color: var(--color-dark);
+        }
+        .contact:hover {
+            color: var(--color-bright-dark-mode);
         }
     }
 }
@@ -89,7 +96,7 @@ div.menu-top-outer {
     grid-template-rows: var(--menu-top-outer-grid-template-rows);
     color: var(--menu-top-color);
     background-color: transparent;
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: var(--menu-top-outer-left);
     transform: var(--menu-top-outer-transform);
@@ -183,4 +190,10 @@ div.menu-top-item-filler {
 
 .menu-top-item-filler.first-row {
     background-color: var(--menu-top-item-bg-color);
+}
+
+.menu-top-item.inactive {
+    cursor: default;
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }

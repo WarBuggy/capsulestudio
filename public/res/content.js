@@ -13,23 +13,23 @@ window.res = {
             },
             'work': {
                 en: 'OUR WORKS',
-                link: 'index.html',
+                link: 'works.html',
             },
             'service': {
                 en: 'SERVICES',
-                link: 'index.html',
+                link: 'services.html',
             },
             'blog': {
                 en: 'BLOG',
-                link: 'index.html',
+                link: 'blog.html',
             },
             'aboutUs': {
                 en: 'ABOUT US',
-                link: 'index.html',
+                link: 'aboutus.html',
             },
             'contact': {
                 en: 'CONTACT',
-                link: 'index.html',
+                link: 'contact.html',
                 extraCss: ['contact'],
             },
         },

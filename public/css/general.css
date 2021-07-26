@@ -30,6 +30,7 @@
 
 :root {
     /* Common */
+    --color-blue: #4886FF;
     --color-neutral: #6F8BA4;
     --color-bright: #FFFFFF;
     --color-dark: #121212;

@@ -127,9 +127,13 @@ class MenuTop {
         divItemFillerAfter.classList.add('menu-top-item-filler');
         divGrid.appendChild(divItemFillerAfter);
 
-        div.onclick = function() {
-            window.location = objectData.link;
-        };
+        if (!window.location.toString().includes(objectData.link)) {
+            div.onclick = function() {
+                window.location = objectData.link;
+            };
+        } else {
+            div.classList.add('inactive');
+        }
     };
 
     toggleMenuTop(data) {
