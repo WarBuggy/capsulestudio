@@ -31,6 +31,7 @@ window.res = {
                 en: 'CONTACT',
                 link: 'contact.html',
                 extraCss: ['contact'],
+                id: 'menuTopButtonContact',
             },
         },
         easing: {

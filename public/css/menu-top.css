@@ -7,8 +7,6 @@
     --menu-top-outer-grid-template-rows: 80px repeat(6, var(--menu-top-item-height));
     --menu-top-outer-height: 80px;
     --menu-top-outer-height-show: 380px;
-    --menu-top-outer-left: 0px;
-    --menu-top-outer-transform: none;
     --menu-top-grid-bg-color: var(--color-bg-1);
     --menu-top-color: var(--color-neutral);
     --menu-top-button-toggle-display: block;
@@ -19,7 +17,7 @@
     --menu-top-logo: url(../res/img/logo_light.png);
     --home-banner-overlay-color: linear-gradient(90deg, #384EFFD8 0%, #24CDFFD8 100%);
     --menu-top-item-bg-color: var(--color-bg-1);
-    --menu-top-item-border: var(--color-light-grey);
+    --menu-top-item-border: var(--color-grey-light);
 }
 
 @media only screen and (max-width: 450px) {
@@ -35,7 +33,7 @@
         --menu-top-logo: url(../res/img/logo_dark.png);
         --menu-top-color: var(--color-bright-dark-mode);
         --home-banner-overlay-color: linear-gradient(90deg, #FB7D2FD8 0%, #FBE11CD8 100%);
-        --menu-top-item-border: var(--color-dark-grey);
+        --menu-top-item-border: var(--color-grey-dark);
     }
 }
 
@@ -46,8 +44,6 @@
         --menu-top-outer-grid-template-rows: 1fr;
         --menu-top-outer-height: 100px;
         --menu-top-outer-height-show: 100px;
-        --menu-top-outer-left: 50%;
-        --menu-top-outer-transform: translateX(-50%);
         --menu-top-grid-bg-color: transparent;
         --menu-top-button-toggle-display: none;
         --menu-top-item-filler-display: none;
@@ -75,6 +71,18 @@
             /* DesktopLight mode */
             --menu-top-color: var(--color-bright);
         }
+        .menu-top-outer.desktop-scroll {
+            background-color: var(--color-bright);
+            color: var(--color-neutral);
+        }
+        .menu-top-item.contact.desktop-scroll {
+            color: var(--color-blue);
+            border: 1px solid var(--color-blue);
+        }
+        .menu-top-item.contact.desktop-scroll:hover {
+            background-color: var(--color-blue) !important;
+            color: var(--color-bright);
+        }
     }
     @media (prefers-color-scheme: dark) {
          :root {
@@ -84,28 +92,31 @@
         .contact:hover {
             color: var(--color-bright-dark-mode);
         }
+        .menu-top-outer.desktop-scroll {
+            background-color: var(--color-dark);
+            color: var(--color-bright-dark);
+        }
+        .menu-top-item.contact.desktop-scroll {
+            color: var(--color-yellow-dark);
+            border: 1px solid var(--color-yellow-dark);
+        }
+        .menu-top-item.contact.desktop-scroll:hover {
+            background-color: var(--color-yellow-dark) !important;
+            color: var(--color-bright-dark);
+        }
     }
 }
 
 div.menu-top-outer {
     width: 100%;
-    max-width: 1140px;
     height: var(--menu-top-outer-height);
-    display: grid;
-    grid-template-columns: var(--menu-top-outer-grid-template-columns);
-    grid-template-rows: var(--menu-top-outer-grid-template-rows);
     color: var(--menu-top-color);
     background-color: transparent;
     position: fixed;
     top: 0px;
-    left: var(--menu-top-outer-left);
-    transform: var(--menu-top-outer-transform);
     overflow: hidden;
     box-sizing: border-box;
     transition: none;
-    padding-left: var(--menu-top-outer-padding);
-    padding-right: var(--menu-top-outer-padding);
-    justify-content: space-between;
 }
 
 .menu-top-outer.show {
@@ -116,6 +127,19 @@ div.menu-top-outer {
 .menu-top-outer.hide {
     height: var(--menu-top-outer-height);
     transition: height 400ms ease-in-out;
+}
+
+div.menu-top-grid-outer {
+    height: 100%;
+    max-width: 1140px;
+    display: grid;
+    grid-template-columns: var(--menu-top-outer-grid-template-columns);
+    grid-template-rows: var(--menu-top-outer-grid-template-rows);
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--menu-top-outer-padding);
+    padding-right: var(--menu-top-outer-padding);
 }
 
 div.menu-top-grid {
@@ -132,7 +156,7 @@ div.menu-top-logo-outer {
     display: grid;
     grid-template-columns: auto 1fr 40px;
     background-color: var(--menu-top-grid-bg-color);
-    padding-left: var(--menu-top-item-padding);
+    padding-left: calc(2 * var(--menu-top-item-padding));
     padding-right: var(--menu-top-item-padding);
 }
 
@@ -175,7 +199,7 @@ div.menu-top-item {
     cursor: pointer;
     background: var(--menu-top-item-bg-color);
     box-sizing: border-box;
-    padding-left: var(--menu-top-item-padding);
+    padding-left: calc(2 * var(--menu-top-item-padding));
     border-bottom: 1px solid var(--menu-top-item-border);
     align-self: center;
 }

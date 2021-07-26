@@ -7,16 +7,43 @@ class MenuTop {
         this.div.classList.add('menu-top-outer');
         document.body.appendChild(this.div);
 
-        this.createGroupLogo();
-        this.createItem();
+        let divGridOuter = document.createElement('div');
+        divGridOuter.classList.add('menu-top-grid-outer');
+        this.div.appendChild(divGridOuter);
+
+
+        this.createGroupLogo(divGridOuter);
+        this.createItem(divGridOuter);
+
+        let parent = this;
+        window.addEventListener('scroll', function(e) {
+            let scrollTarget = 100;
+            let divButtonContact = document.getElementById(window.res.common.menuItem['contact'].id);
+            let elementList = [parent.div, divButtonContact];
+            if (document.body.scrollTop > scrollTarget || document.documentElement.scrollTop > scrollTarget) {
+                for (let i = 0; i < elementList.length; i++) {
+                    let element = elementList[i];
+                    if (!element.classList.contains('desktop-scroll')) {
+                        element.classList.add('desktop-scroll');
+                    }
+                }
+            } else {
+                for (let i = 0; i < elementList.length; i++) {
+                    let element = elementList[i];
+                    if (element.classList.contains('desktop-scroll')) {
+                        element.classList.remove('desktop-scroll');
+                    }
+                }
+            }
+        });
     };
 
-    createGroupLogo() {
+    createGroupLogo(divParent) {
         let className = 'menu-top-click-home-page';
 
         let divGrid = document.createElement('div');
         divGrid.classList.add('menu-top-grid');
-        this.div.appendChild(divGrid);
+        divParent.appendChild(divGrid);
 
         let divItemFillerBefore = document.createElement('div');
         divItemFillerBefore.classList.add('menu-top-item-filler');
@@ -95,19 +122,19 @@ class MenuTop {
         };
     };
 
-    createItem() {
+    createItem(divParent) {
         let keyList = Object.keys(window.res.common.menuItem);
         for (let i = 0; i < keyList.length; i++) {
             let key = keyList[i];
             let objectData = window.res.common.menuItem[key];
-            this.createAnItem(objectData);
+            this.createAnItem(objectData, divParent);
         }
     };
 
-    createAnItem(objectData) {
+    createAnItem(objectData, divParent) {
         let divGrid = document.createElement('div');
         divGrid.classList.add('menu-top-grid');
-        this.div.appendChild(divGrid);
+        divParent.appendChild(divGrid);
 
         let divItemFillerBefore = document.createElement('div');
         divItemFillerBefore.classList.add('menu-top-item-filler');
@@ -119,6 +146,9 @@ class MenuTop {
             for (let i = 0; i < objectData.extraCss.length; i++) {
                 div.classList.add(objectData.extraCss[i]);
             }
+        }
+        if (objectData.id != null) {
+            div.id = objectData.id;
         }
         div.innerText = objectData[window.langCur];
         divGrid.appendChild(div);
