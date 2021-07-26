@@ -15,7 +15,6 @@
     --menu-top-item-padding: var(--space-standard);
     /* Mobile Light mode */
     --menu-top-logo: url(../res/img/logo_light.png);
-    --home-banner-overlay-color: linear-gradient(90deg, #384EFFD8 0%, #24CDFFD8 100%);
     --menu-top-item-bg-color: var(--color-bg-1);
     --menu-top-item-border: var(--color-grey-light);
 }
@@ -32,7 +31,6 @@
         /* Mobile Dark mode */
         --menu-top-logo: url(../res/img/logo_dark.png);
         --menu-top-color: var(--color-bright-dark-mode);
-        --home-banner-overlay-color: linear-gradient(90deg, #FB7D2FD8 0%, #FBE11CD8 100%);
         --menu-top-item-border: var(--color-grey-dark);
     }
 }
@@ -135,7 +133,7 @@ div.menu-top-outer {
 
 div.menu-top-grid-outer {
     height: 100%;
-    max-width: 1140px;
+    max-width: var(--content-max-width);
     display: grid;
     grid-template-columns: var(--menu-top-outer-grid-template-columns);
     grid-template-rows: var(--menu-top-outer-grid-template-rows);

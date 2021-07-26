@@ -28,11 +28,18 @@ function createDivHomeBanner() {
 
 class ContentHome {
     constructor() {
-        let div = document.createElement('div');
-        div.style.width = '100%';
-        div.style.height = '2000px';
-        div.style.backgroundColor = '#FF0000AB';
-        document.body.appendChild(div);
+        let divOuter = document.createElement('div');
+        divOuter.classList.add('home-outer');
+        document.body.appendChild(divOuter);
+
+        let divGrid = document.createElement('div');
+        divGrid.classList.add('home-grid');
+        divOuter.appendChild(divGrid);
+
+        let divOne = document.createElement('div');
+        divOne.innerText = 'HELLO WORLD';
+        divOne.style.fontSize = '14px';
+        divGrid.appendChild(divOne);
     };
 };
 

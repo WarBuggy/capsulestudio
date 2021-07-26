@@ -1,0 +1,84 @@
+:root {
+    /* Common */
+    /* Mobile */
+    /* Mobile Light mode */
+    --home-banner-overlay-color: linear-gradient(90deg, #384EFFD8 0%, #24CDFFD8 100%);
+    --home-grid-max-width: 80%;
+    --home-grid-padding: 0px;
+}
+
+@media only screen and (max-width: 450px) {
+     :root {
+        /* Mobile small screen */
+        --home-grid-max-width: 100%;
+        --home-grid-padding: var(--space-standard);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        /* Mobile Dark mode */
+        --home-banner-overlay-color: linear-gradient(90deg, #FB7D2FD8 0%, #FBE11CD8 100%);
+    }
+}
+
+@media only screen and (min-width: 900px) {
+     :root {
+        /* Desktop */
+        --home-grid-max-width: var(--content-max-width);
+        --home-grid-padding: calc(2 * var(--space-standard));
+    }
+    @media (prefers-color-scheme: light) {
+         :root {
+            /* DesktopLight mode */
+            --temp: white;
+        }
+    }
+    @media (prefers-color-scheme: dark) {
+         :root {
+            /* Desktop Dark mode */
+            --temp: white;
+        }
+    }
+}
+
+div.home-banner {
+    width: 100%;
+    height: 637px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+div.home-banner-color-overlay {
+    width: 100%;
+    height: 100%;
+    background-image: var(--home-banner-overlay-color);
+}
+
+svg.home-banner-image-overlay {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 0px;
+    /* -1px to cover up the last line of the bg image */
+    bottom: -1px;
+}
+
+div.home-outer {
+    width: 100%;
+    position: absolute;
+    padding-top: 500px;
+}
+
+div.home-grid {
+    max-width: var(--home-grid-max-width);
+    height: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--home-grid-padding);
+    padding-right: var(--home-grid-padding);
+}
