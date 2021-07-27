@@ -11,11 +11,10 @@ window.res = {
                 en: 'HOME',
                 vi: 'TRANG ĐẦU',
                 link: 'index.html',
-                extraCss: ['item-first'],
             },
             'work': {
                 en: 'OUR WORKS',
-                vi: 'THÀNH QUẢ',
+                vi: 'DỰ ÁN',
                 link: 'works.html',
             },
             'service': {
@@ -71,6 +70,49 @@ window.res = {
             // exponential decelerating
             exp: function(t) { return (1 - Math.exp(-t * 7)) },
             gompertz: function(t) { return Math.exp(-30 * Math.exp(-13 * t)); },
+        },
+    },
+    home: {
+        oneTitle: {
+            en: "Check out our mobile apps we're working on.",
+            vi: "Những dự án chúng tôi đã và đang phát triển.",
+        },
+        oneText: {
+            en: "We develop apps and websites that delight your users and grow your business. " +
+                "Enterprise-grade development combined with outstanding UI-centric design.",
+            vi: "Các chương trình và trang web chúng tôi phát triển giúp khách hàng đạt được mục đích " +
+                "và công việc kinh doanh của bạn phát triển. " +
+                "Quy trình phát triển chất lượng cao được kết hợp với thiết kế chú trọng trải nghiệm của khách hàng.",
+        },
+        oneButton: {
+            en: "ALL WORKS",
+            vi: "CÁC DỰ ÁN",
+        },
+    },
+    work: {
+        emos: {
+            icon: 'res/img/icon_emos.png',
+        },
+        vqmm: {
+            icon: 'res/img/icon_vqmm.png',
+        },
+        qdecor: {
+            icon: 'res/img/icon_q.png',
+        },
+        vcsc: {
+            icon: 'res/img/icon_vcsc.png',
+        },
+        hhdk: {
+            icon: 'res/img/icon_hhdk.png',
+        },
+        wbtv: {
+            icon: 'res/img/icon_wbtv.png',
+        },
+        kungfuball: {
+            icon: 'res/img/icon_kungfuball.png',
+        },
+        bts: {
+            icon: 'res/img/icon_bts.png',
         },
     },
 };

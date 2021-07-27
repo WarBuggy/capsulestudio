@@ -40,6 +40,8 @@
     --color-yellow-dark: #f58300;
     --space-standard: 16px;
     --content-max-width: 1140px;
+    --general-box-shadow-dark: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    --general-box-shadow-light: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
     /* Mobile */
     --loading-initial-image-landscape-display: none;
     --loading-initial-image-portrait-display: block;
@@ -47,6 +49,10 @@
     --content-grid-padding: 0px;
     /* Mobile Light mode */
     --color-bg-1: var(--color-bright);
+    --color-text-1: var(--color-neutral);
+    --color-text-2: var(--color-bright);
+    --color-button-1: var(--color-blue);
+    --color-button-2: var(--color-bright);
     --logo-darkest: var(--color-blue);
     --logo-lightest: #24CDFF;
     --loading-initial-disclaimer-light-display: block;
@@ -57,6 +63,10 @@
      :root {
         /* Mobile Dark mode */
         --color-bg-1: var(--color-dark);
+        --color-text-1: var(--color-bright-dark-mode);
+        --color-text-2: var(--color-dark);
+        --color-button-1: var(--color-yellow-dark);
+        --color-button-2: var(--color-dark);
         --logo-darkest: var(--color-yellow-dark);
         --logo-lightest: #FFD500;
         --loading-initial-disclaimer-light-display: none;
@@ -120,7 +130,7 @@ body {
     -ms-user-select: none;
     user-select: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    color: var(--color-bright-dark-mode);
+    color: var(--color-text-1);
     background-color: var(--color-bg-1);
     font-family: "Quicksand", sans-serif;
 }
@@ -187,4 +197,40 @@ div.general-content-grid {
     margin-right: auto;
     padding-left: var(--content-grid-padding);
     padding-right: var(--content-grid-padding);
+}
+
+div.general-button {
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.81px;
+    color: var(--color-button-1);
+    border: 2px solid;
+    border-color: var(--color-button-1);
+    border-radius: 100px;
+    text-align: center;
+    box-sizing: content-box;
+    padding-left: calc(2 * var(--space-standard));
+    padding-right: calc(2 * var(--space-standard));
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.general-button:hover {
+    background-color: var(--color-button-2);
+    border-color: var(--color-button-2);
+}
+
+.general-button.inverted {
+    color: var(--color-button-2);
+    border-color: var(--color-button-2);
+}
+
+.general-button.inverted:hover {
+    background-color: var(--color-button-1);
+    border-color: var(--color-button-1);
 }
