@@ -3,7 +3,7 @@ window.onload = async function() {
     let loadingInitial = new LoadingInitial();
     document.body.appendChild(loadingInitial.div);
     let imagePreloadCategoryList = ['home', ];
-    Common.preloadImageFromVersion(imagePreloadCategoryList, 0, function() {
+    Common.preloadImageFromVersion(imagePreloadCategoryList, 3000, function() {
         document.body.removeChild(loadingInitial.div);
         createDivHomeBanner();
         new ContentHome();
