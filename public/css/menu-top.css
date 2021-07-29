@@ -11,7 +11,7 @@
     --menu-top-color: var(--color-neutral-dark);
     --menu-top-button-toggle-display: block;
     --menu-top-item-filler-display: block;
-    --menu-top-inner-grid-template-columns: auto 80% auto;
+    --menu-top-inner-grid-template-columns: auto 90% auto;
     --menu-top-item-padding: var(--space-standard);
     /* Mobile Light mode */
     --menu-top-logo: url(../res/img/logo_light.png);
@@ -167,8 +167,6 @@ div.menu-top-logo-outer {
     display: grid;
     grid-template-columns: auto 1fr 40px;
     background-color: var(--menu-top-grid-bg-color);
-    padding-left: calc(2 * var(--menu-top-item-padding));
-    padding-right: var(--menu-top-item-padding);
 }
 
 div.menu-top-logo-logo {

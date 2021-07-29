@@ -11,6 +11,8 @@
     --home-two-item-height: 210px;
     --home-two-grid-outer-margin-top: 0px;
     --home-button-align-diff: auto;
+    --home-one-grid-outer-height: var(--home-banner-height);
+    --home-one-grid-outer-margin-botom: 0px;
     /* Mobile Light mode */
     --home-banner-overlay-color: linear-gradient(90deg, #384EFFD8 0%, #24CDFFD8 100%);
     --home-one-grid-inner-padding-top: 100px;
@@ -27,10 +29,18 @@
     --home-two-item-first-margin-top: var(--home-two-item-margin-top-default);
 }
 
+@media only screen and (max-width: 320px) {
+     :root {
+        /* Mobile small screen */
+        --home-one-grid-outer-height: auto;
+        --home-one-grid-outer-margin-botom: var(--home-one-grid-margin-bottom);
+    }
+}
+
 @media only screen and (max-width: 450px) {
      :root {
         /* Mobile small screen */
-        --home-one-grid-icon-size: 45px;
+        --home-one-grid-icon-size: 15vw;
         --home-two-grid-outer-template-columns: 1fr;
         --home-two-item-width: auto;
         --home-two-item-height: auto;
@@ -134,9 +144,10 @@ svg.home-banner-image-overlay {
 }
 
 div.one-grid-outer {
-    height: var(--home-banner-height);
+    height: var(--home-one-grid-outer-height);
     display: grid;
     grid-template-columns: 1fr;
+    margin-bottom: var(--home-one-grid-outer-margin-botom);
 }
 
 div.one-grid-inner {
