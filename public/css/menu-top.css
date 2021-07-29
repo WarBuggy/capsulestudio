@@ -8,7 +8,7 @@
     --menu-top-outer-height: 80px;
     --menu-top-outer-height-show: 380px;
     --menu-top-grid-bg-color: var(--color-bg-1);
-    --menu-top-color: var(--color-neutral);
+    --menu-top-color: var(--color-neutral-dark);
     --menu-top-button-toggle-display: block;
     --menu-top-item-filler-display: block;
     --menu-top-inner-grid-template-columns: auto 80% auto;
@@ -37,7 +37,7 @@
     }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1140px) {
      :root {
         /* Desktop */
         --menu-top-outer-grid-template-columns: 40% repeat(6, auto);
@@ -76,7 +76,7 @@
         .menu-top-outer.desktop-scroll {
             height: 80px !important;
             background-color: var(--color-bright);
-            color: var(--color-neutral);
+            color: var(--color-neutral-dark);
             box-shadow: var(--general-box-shadow-dark);
         }
         .menu-top-item.contact.desktop-scroll {

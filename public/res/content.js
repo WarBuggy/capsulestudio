@@ -88,6 +88,69 @@ window.res = {
             en: "ALL WORKS",
             vi: "CÁC DỰ ÁN",
         },
+        twoTitle: {
+            en: 'Complete in-house software developement agency.',
+            vi: 'Toàn bộ quá trình phát triển được thực hiện bởi chúng tôi.',
+        },
+        twoText: {
+            en: 'Not available.',
+            vi: 'Lập trình thực sự là niềm đam mê của tập thể công ty. ' +
+                'Việc được phát triển 1 dự án từ đầu đến cuối là niềm mong mỏi của từng cá nhân.\n\n' +
+                'Từ nắm rõ yêu cầu, tạo ra quy trình làm việc, phát triển hệ thống đền hướng dẫn vận hành và bảo trì, ' +
+                'chúng tôi luôn đồng hành cùng quý khách để tạo ra được những sản phẩm tốt nhất nhất cho từng như cầu cụ thể.',
+        },
+        twoColumn: {
+            first: [{
+                    serviceName: 'req_spe',
+                    title: {
+                        en: 'Requirements Specification',
+                        vi: 'Phân tích yêu cầu',
+                    },
+                    text: {
+                        en: 'Not available.',
+                        vi: 'Làm rõ yêu cầu, sau đó xem xét khả năng thực thi và làm tài liệu mô tả.',
+                    },
+                    extraCss: ['first', 'dummy', ],
+                },
+                {
+                    serviceName: 'sys_des',
+                    title: {
+                        en: 'System Design',
+                        vi: 'Thiết kế hệ thống',
+                    },
+                    text: {
+                        en: 'Not available.',
+                        vi: 'Tạo ra hay chỉnh sửa quy trình làm việc đề phù hợp với nhu cầu đặt ra.',
+                    },
+                    extraCss: ['dummy', ],
+                },
+            ],
+            second: [{
+                    serviceName: 'sof_dev',
+                    title: {
+                        en: 'Software development',
+                        vi: 'Phát triển phần mềm',
+                    },
+                    text: {
+                        en: 'Not available.',
+                        vi: 'Phát triển trên mọi nền tảng. Khép tín, nhanh chóng và chát lượng.',
+                    },
+                    extraCss: ['highlighted', ],
+                },
+                {
+                    serviceName: 'mai_mon',
+                    title: {
+                        en: 'Maintenance & Monitoring',
+                        vi: 'Bảo trì & Theo dõi.',
+                    },
+                    text: {
+                        en: '',
+                        vi: 'Theo dõi và xử lý các tình huống để bảo đảm như cầu vận hành.',
+                    },
+                    extraCss: ['dummy', ],
+                },
+            ],
+        },
     },
     work: {
         emos: {
@@ -113,6 +176,20 @@ window.res = {
         },
         bts: {
             icon: 'res/img/icon_bts.png',
+        },
+    },
+    service: {
+        req_spe: {
+            icon: 'hsc_doc',
+        },
+        sys_des: {
+            icon: 'hsc_gear',
+        },
+        sof_dev: {
+            icon: 'hsc_app',
+        },
+        mai_mon: {
+            icon: 'hsc_chart',
         },
     },
 };

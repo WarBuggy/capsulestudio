@@ -2,7 +2,7 @@ window.onload = async function() {
     window.rootStyle = getComputedStyle(document.body);
     let loadingInitial = new LoadingInitial();
     document.body.appendChild(loadingInitial.div);
-    let imagePreloadCategoryList = ['home', ];
+    let imagePreloadCategoryList = ['home', 'home_service_common', ];
     Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function() {
         document.body.removeChild(loadingInitial.div);
         createDivHomeBanner();
@@ -37,6 +37,7 @@ class ContentHome {
         divOuter.appendChild(divGrid);
 
         this.createDivOne(divGrid);
+        this.createDivTwo(divGrid);
     };
 
     createDivOne(divParent) {
@@ -62,13 +63,6 @@ class ContentHome {
         divOneText.classList.add('one-text');
         divOneText.innerText = window.res.home.oneText[window.langCur];
         divGridInner.appendChild(divOneText);
-
-        let divOneButton = document.createElement('div');
-        divOneButton.classList.add('general-button');
-        divOneButton.classList.add('inverted');
-        divOneButton.classList.add('home-one-button');
-        divOneButton.innerText = window.res.home.oneButton[window.langCur];
-        divGridInner.appendChild(divOneButton);
     };
 
     populateDivOneGridIcon(divParent) {
@@ -81,6 +75,74 @@ class ContentHome {
             div.style.backgroundImage = `url(${data.icon})`;
             divParent.appendChild(div);
         }
+    };
+
+    createDivTwo(divParent) {
+        let divGridOuter = document.createElement('div');
+        divGridOuter.classList.add('two-grid-outer');
+        divParent.appendChild(divGridOuter);
+
+        let divTextGridOuter = document.createElement('div');
+        divTextGridOuter.classList.add('two-text-grid-outer');
+        divGridOuter.appendChild(divTextGridOuter);
+
+        this.createDivTwoText(divTextGridOuter);
+
+        let divButton = document.createElement('div');
+        divButton.classList.add('general-button');
+        divButton.classList.add('align-diff');
+        divButton.innerText = window.res.common.menuItem.service[window.langDef];
+        divTextGridOuter.appendChild(divButton);
+
+        this.createDivTwoColumn(divGridOuter, 'first');
+        this.createDivTwoColumn(divGridOuter, 'second');
+    };
+
+    createDivTwoText(divParent) {
+        let divTitle = document.createElement('div');
+        divTitle.classList.add('home-two-title');
+        divTitle.innerText = window.res.home.twoTitle[window.langDef];
+        divParent.appendChild(divTitle);
+
+        let divText = document.createElement('div');
+        divText.classList.add('home-two-text');
+        divText.innerText = window.res.home.twoText[window.langDef];
+        divParent.appendChild(divText);
+    };
+
+    createDivTwoColumn(divParent, columnName) {
+        let divOuter = document.createElement('div');
+        divOuter.classList.add('home-two-column');
+        divParent.appendChild(divOuter);
+
+        let dataList = window.res.home.twoColumn[columnName];
+        for (let i = 0; i < dataList.length; i++) {
+            let data = dataList[i];
+            let divItemOuter = document.createElement('div');
+            divItemOuter.classList.add('home-two-item');
+            if (data.extraCss != null) {
+                for (let j = 0; j < data.extraCss.length; j++) {
+                    divItemOuter.classList.add(data.extraCss[j]);
+                }
+            }
+            divOuter.appendChild(divItemOuter);
+            this.populateDivTwoColumnItem(divItemOuter, data);
+        }
+    };
+
+    populateDivTwoColumnItem(divParent, data) {
+        let iconSVGName = window.res.service[data.serviceName].icon;
+        divParent.innerHTML = window.imagePreload[iconSVGName];
+
+        let divTitle = document.createElement('div');
+        divTitle.classList.add('home-two-item-title');
+        divTitle.innerText = data.title[window.langDef];
+        divParent.appendChild(divTitle);
+
+        let divText = document.createElement('div');
+        divText.classList.add('home-two-item-text');
+        divText.innerText = data.text[window.langDef];
+        divParent.appendChild(divText);
     };
 };
 
@@ -140,11 +202,6 @@ async function removeColor() {
     }
 
     ctx.putImageData(imageData, 0, 0);
-    // ctx.font = "60px Quicksand";
-    // ctx.textAlign = "center";
-    // ctx.textBaseline = "middle";
-    // ctx.fillStyle = '#121212';
-    // ctx.fillText(text, (width / 2), (height / 2));
 };
 
 function testMove() {
@@ -159,10 +216,9 @@ function testMove() {
         let currentTime = (new Date()).getTime();
         let timeDiff = currentTime - startTime;
         let time = timeDiff / totalTime;
-        console.log(time);
-        let variant = easeInOutQuad(time);
+        let rateChage = easeInOutQuad(time);
         if (time < 1) {
-            let x = delta * variant + initX;
+            let x = delta * rateChage + initX;
             div.style.left = x + 'px';
             window.requestAnimationFrame(work);
         }

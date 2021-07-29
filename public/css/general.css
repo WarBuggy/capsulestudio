@@ -32,6 +32,7 @@
     /* Common */
     --color-blue: #4886FF;
     --color-neutral: #6F8BA4;
+    --color-neutral-dark: #3B566E;
     --color-bright: #FFFFFF;
     --color-dark: #121212;
     --color-bright-dark-mode: #FFFFFFDD;
@@ -42,10 +43,12 @@
     --content-max-width: 1140px;
     --general-box-shadow-dark: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     --general-box-shadow-light: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+    --general-button-width: 225px;
+    --general-icon-service-size: 26px;
     /* Mobile */
     --loading-initial-image-landscape-display: none;
     --loading-initial-image-portrait-display: block;
-    --content-grid-max-width: 80%;
+    --content-grid-max-width: 90%;
     --content-grid-padding: 0px;
     /* Mobile Light mode */
     --color-bg-1: var(--color-bright);
@@ -82,7 +85,7 @@
     }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1140px) {
      :root {
         /* Desktop */
         --content-grid-max-width: var(--content-max-width);
@@ -192,7 +195,6 @@ div.general-content-outer {
 
 div.general-content-grid {
     max-width: var(--content-grid-max-width);
-    height: 2000px;
     margin-left: auto;
     margin-right: auto;
     padding-left: var(--content-grid-padding);
@@ -201,6 +203,7 @@ div.general-content-grid {
 
 div.general-button {
     display: block;
+    width: var(--general-button-width);
     height: 45px;
     line-height: 45px;
     font-weight: 700;
@@ -212,17 +215,14 @@ div.general-button {
     border-radius: 100px;
     text-align: center;
     box-sizing: content-box;
-    padding-left: calc(2 * var(--space-standard));
-    padding-right: calc(2 * var(--space-standard));
     transition: all 0.3s ease 0s;
     cursor: pointer;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .general-button:hover {
-    background-color: var(--color-button-2);
-    border-color: var(--color-button-2);
+    background-color: var(--color-button-1);
+    border-color: var(--color-button-1);
+    color: var(--color-button-2);
 }
 
 .general-button.inverted {
@@ -233,4 +233,12 @@ div.general-button {
 .general-button.inverted:hover {
     background-color: var(--color-button-1);
     border-color: var(--color-button-1);
+}
+
+stop.hsc-stop-1 {
+    stop-color: var(--logo-darkest);
+}
+
+stop.hsc-stop-2 {
+    stop-color: var(--logo-lightest);
 }

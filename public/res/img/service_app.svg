@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class='home-two-item-icon' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	version="1.1" width="210px" height="210px" viewBox="-0.5 -0.5 210 210">
+	<defs>
+		<linearGradient id='lgServiceApp' gradientUnits='userSpaceOnUse' x1='-5.92%' y1='7.86%' x2='105.92%'
+			y2='92.14%'>
+			<stop class='hsc-stop-1' />
+			<stop class='hsc-stop-2' offset='.91' />
+		</linearGradient>
+	</defs>
+	<g>
+		<rect x="5" y="5" width="200" height="200" rx="30" ry="30" stroke-width="10" stroke="url(#lgServiceApp)"
+			fill="none" />
+		<g transform="translate(-0.5 -0.5)">
+			<text x="105" y="141" font-family="Quicksand" font-size="90px" fill="url(#lgServiceApp)"
+				text-anchor="middle" font-weight="bold">APP</text>
+		</g>
+	</g>
+</svg>
