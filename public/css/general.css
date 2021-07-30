@@ -39,6 +39,8 @@
     --color-grey-light: #f5f5f5;
     --color-grey-dark: #333333;
     --color-yellow-dark: #f58300;
+    --color-dark-lighter: #2C2C2C;
+    --color-bright-darker: #F4F8FB;
     --space-standard: 16px;
     --content-max-width: 1140px;
     --general-box-shadow-dark: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;

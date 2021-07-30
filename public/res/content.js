@@ -151,6 +151,54 @@ window.res = {
                 },
             ],
         },
+        threeItem: [{
+                letter: 'S',
+                title: 'SPEED', // SỨC MẠNH TẬP THỂ'
+                text: {
+                    en: 'With proven process, well-honed skill and hardworking, we are able to deliver results at an extraordinary pace.',
+                    vi: 'Bằng quy trình chuẩn mực, kỹ năng tốt và chăm chỉ làm việc, ' +
+                        'chúng tôi luôn đáp ứng được mọi nhu cầu cấp bách được quý khách hàng tin tưởng giao cho.',
+                },
+            },
+            {
+                letter: 'P',
+                title: 'PASSION', // PHÂN TÍCH
+                text: {
+                    en: 'Problem-solving through software development is what keeps us up at night and gets us out of bed in the morning.',
+                    vi: 'Giải quyết các vấn đề của đời sống thực tế, qua các sản phẩm phần mềm đã, ' +
+                        'trở thành một phần trong cuộc sống của tập thể công ty.',
+
+                },
+            },
+            {
+                letter: 'A',
+                title: 'ANALYSIS', // AM HIỂU THỰC TẾ'
+                text: {
+                    en: 'Your problems are also ours. No stone left unturned until solutions are well-defined.',
+                    vi: 'Vấn đề của quý khách hàng là nỗi trăn trở của chúng tôi. ' +
+                        'Mọi khía cạnh sẽ được suy xét, phân tích, áp dụng cho đến khi vấn đề được giải quyết.',
+                },
+            },
+            {
+                letter: 'R',
+                title: 'RESPONSIBILITY', // tRÁCH NHIỆM???
+                text: {
+                    en: 'Late night research, genuine consultation, throughout support. ' +
+                        'We go at length to deliver all-round good products and experiences for you.',
+                    vi: 'Nhiệm vụ, công việc được giao là phải được hoàn thành. ' +
+                        'Chúng tôi sẽ không ngừng nghỉ cho đến khi hoàn thành trách nhiệm, của từng thành viên và cả tập thể',
+                },
+            },
+            {
+                letter: 'K',
+                title: 'KNOWLEDGE', // KINH NGHIỆM
+                text: {
+                    en: 'We never rest in the pursuit of elegant solutions and interesting opportunities.',
+                    vi: 'Khám phá và đóng góp cho cộng đồng công nghệ là niềm đam mê của mỗi cá nhân.' +
+                        'Ngọn lửa này luôn được nâng niu và vun đắp để tạo ra những sản phẩm hoàn chỉnh.',
+                },
+            },
+        ],
     },
     work: {
         emos: {

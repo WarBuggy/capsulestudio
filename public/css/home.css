@@ -27,6 +27,11 @@
     --home-two-item-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
     --home-two-text-grid-column: auto / span 2;
     --home-two-item-first-margin-top: var(--home-two-item-margin-top-default);
+    --home-three-grid-outer-template-columns: 1fr;
+    --home-three-image-width: 432px;
+    --home-three-image-grid-row: auto;
+    --home-three-color-background: var(--color-bright-darker);
+    --home-three-grid-item-margin-left: 0px;
 }
 
 @media only screen and (max-width: 320px) {
@@ -41,11 +46,9 @@
      :root {
         /* Mobile small screen */
         --home-one-grid-icon-size: 15vw;
-        --home-two-grid-outer-template-columns: 1fr;
-        --home-two-item-width: auto;
-        --home-two-item-height: auto;
-        --home-two-text-grid-column: auto;
-        --home-button-align-diff: auto;
+        --home-three-grid-outer-template-columns: 1fr;
+        --home-three-image-width: 100%;
+        --home-three-image-grid-row: auto;
     }
 }
 
@@ -56,7 +59,6 @@
         --home-two-item-width: auto;
         --home-two-item-height: auto;
         --home-two-text-grid-column: auto;
-        --home-button-align-diff: auto;
     }
 }
 
@@ -69,6 +71,10 @@
         --home-two-text-grid-column: auto;
         --home-two-item-first-margin-top: var(--home-two-item-margin-top-first);
         --home-button-align-diff: none;
+        --home-three-grid-outer-template-columns: auto 1fr;
+        --home-three-image-width: 340px;
+        --home-three-image-grid-row: auto / span 5;
+        --home-three-grid-item-margin-left: 30px;
     }
 }
 
@@ -80,6 +86,7 @@
         --home-color-text: var(--color-bright-dark-mode);
         --home-color-text-alt: var(--color-dark);
         --home-two-item-box-shadow: 0 2px 48px 0 rgba(122, 122, 122, 0.2);
+        --home-three-color-background: var(--color-dark-lighter);
     }
 }
 
@@ -97,6 +104,10 @@
         --home-two-text-grid-column: auto;
         --home-two-item-first-margin-top: var(--home-two-item-margin-top-first);
         --home-button-align-diff: none;
+        --home-three-grid-outer-template-columns: auto 1fr;
+        --home-three-image-width: 432px;
+        --home-three-image-grid-row: auto / span 5;
+        --home-three-grid-item-margin-left: 30px;
     }
     @media (prefers-color-scheme: light) {
          :root {
@@ -209,6 +220,7 @@ div.two-grid-outer {
     display: grid;
     grid-template-columns: var(--home-two-grid-outer-template-columns);
     margin-top: var(--home-two-grid-outer-margin-top);
+    margin-bottom: 70px;
 }
 
 div.two-text-grid-outer {
@@ -320,4 +332,90 @@ svg.home-two-item-icon {
 
 .home-two-item.dummy:hover .hsc-stop-2 {
     stop-color: var(--color-bg-1);
+}
+
+div.home-three {
+    background-color: var(--home-three-color-background);
+    position: relative;
+}
+
+svg.home-three-background-overlay {
+    width: 100%;
+    height: auto;
+    transform: scale(-1, -1);
+    position: absolute;
+    top: 0px;
+}
+
+.general-content-grid.home-three {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-color: transparent;
+}
+
+div.home-three-grid-outer {
+    display: grid;
+    grid-template-columns: var(--home-three-grid-outer-template-columns);
+}
+
+img.home-three-image {
+    width: var(--home-three-image-width);
+    grid-row: var(--home-three-image-grid-row);
+    justify-self: center;
+    align-self: center;
+}
+
+div.home-three-grid-item {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    margin-left: var(--home-three-grid-item-margin-left);
+    margin-bottom: var(--home-one-grid-margin-bottom);
+}
+
+div.home-three-item-letter {
+    width: 37px;
+    height: 37px;
+    line-height: 37px;
+    color: var(--color-button-1);
+    border: 1px solid;
+    border-color: var(--color-button-1);
+    border-radius: 50%;
+    justify-self: center;
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.home-three-item-letter:hover {
+    color: var(--color-button-2);
+    background-color: var(--color-button-1);
+}
+
+div.home-three-item-title {
+    line-height: 37px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 37px;
+    letter-spacing: 1px;
+    color: var(--home-color-title);
+    /* margin-top: 5px;
+    margin-bottom: 24px !important; */
+}
+
+svg.home-three-item-listing {
+    margin-top: 24px;
+    justify-self: center;
+}
+
+div.home-three-item-text {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--home-color-text);
+    letter-spacing: 1px;
+    line-height: 28px;
+    margin-top: 24px;
 }

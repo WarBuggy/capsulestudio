@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="5px"
+    height="89px" viewBox="0 0 5 89" class='home-three-item-listing'>
+    <defs>
+        <linearGradient id='lgThreeItemListing' gradientUnits='userSpaceOnUse' x1='-5.92%' y1='7.86%' x2='105.92%'
+            y2='92.14%'>
+            <stop stop-color="var(--logo-darkest)" />
+            <stop offset='.91' stop-color="var(--logo-lightest)" />
+        </linearGradient>
+        <clipPath id="cpThreeItemListing">
+            <circle cx="3" cy="3" r="2" />
+            <circle cx="3" cy="24" r="2" />
+            <circle cx="3" cy="45" r="2" />
+            <circle cx="3" cy="66" r="2" />
+            <circle cx="3" cy="87" r="2" />
+        </clipPath>
+    </defs>
+    <rect x='0' y='0' width='5' height='89' fill="url(#lgThreeItemListing)" clip-path="url(#cpThreeItemListing)" />
+</svg>

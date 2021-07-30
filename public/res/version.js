@@ -11,7 +11,9 @@ window.version = {
             'home_banner_image_overlay': 'res/img/home_banner_image_overlay.svg?1.0',
             'home_logo_light': 'res/img/logo_light.png?1.0',
             'home_logo_dark': 'res/img/logo_dark.png?1.0',
-            'home_logo_button_toggle': 'res/img/menu-top-button-toggle.svg?1.0',
+            'home_logo_button_toggle': 'res/img/menu_top_button_toggle.svg?1.0',
+            'home_three_image': 'res/img/phones.png?1.0',
+            'home_three_item_listing': 'res/img/home_three_listing.svg?1.0',
         },
         home_service_common: {
             'hsc_chart': 'res/img/service_chart.svg',

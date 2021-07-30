@@ -22,7 +22,8 @@ function createDivHomeBanner() {
     div.appendChild(divOverlay);
 
     div.innerHTML = div.innerHTML.concat(window.imagePreload['home_banner_image_overlay']);
-
+    let svg = div.children[div.children.length - 1];
+    svg.classList.add('home-banner-image-overlay')
     document.body.appendChild(div);
 };
 
@@ -38,6 +39,7 @@ class ContentHome {
 
         this.createDivOne(divGrid);
         this.createDivTwo(divGrid);
+        this.createDivThree(divOuter);
     };
 
     createDivOne(divParent) {
@@ -143,6 +145,59 @@ class ContentHome {
         divText.classList.add('home-two-item-text');
         divText.innerText = data.text[window.langDef];
         divParent.appendChild(divText);
+    };
+
+    createDivThree(divParent) {
+        let divOuter = document.createElement('div');
+        divOuter.classList.add('home-three');
+        divParent.appendChild(divOuter);
+
+        divOuter.innerHTML = window.imagePreload['home_banner_image_overlay'];
+        let svg = divOuter.children[0];
+        svg.classList.add('home-three-background-overlay');
+
+        let divGridContent = document.createElement('div');
+        divGridContent.classList.add('general-content-grid');
+        divGridContent.classList.add('home-three');
+        divOuter.appendChild(divGridContent);
+
+        let divGridOuter = document.createElement('div');
+        divGridOuter.classList.add('home-three-grid-outer');
+        divGridContent.appendChild(divGridOuter);
+
+        let img = document.createElement('img');
+        img.classList.add('home-three-image')
+        img.src = window.version.image.home['home_three_image'];
+        divGridOuter.appendChild(img);
+
+        for (let i = 0; i < window.res.home.threeItem.length; i++) {
+            let item = window.res.home.threeItem[i];
+            this.createThreeItem(divGridOuter, item);
+        }
+    };
+
+    createThreeItem(divParent, item) {
+        let divGrid = document.createElement('div');
+        divGrid.classList.add('home-three-grid-item');
+        divParent.appendChild(divGrid);
+
+        let divLetter = document.createElement('div');
+        divLetter.classList.add('home-three-item-letter');
+        divLetter.innerText = item.letter;
+        divGrid.appendChild(divLetter);
+
+        let divTitle = document.createElement('div');
+        divTitle.classList.add('home-three-item-title');
+        divTitle.innerText = item.title;
+        divGrid.appendChild(divTitle);
+
+        divGrid.innerHTML =
+            divGrid.innerHTML.concat(window.imagePreload['home_three_item_listing']);
+
+        let divText = document.createElement('div');
+        divText.classList.add('home-three-item-text');
+        divText.innerText = item.text[window.langDef];
+        divGrid.appendChild(divText);
     };
 };
 
