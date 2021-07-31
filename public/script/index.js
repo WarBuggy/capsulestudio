@@ -1,9 +1,9 @@
-window.onload = async function() {
+window.onload = async function () {
     window.rootStyle = getComputedStyle(document.body);
     let loadingInitial = new LoadingInitial();
     document.body.appendChild(loadingInitial.div);
-    let imagePreloadCategoryList = ['home', 'home_service_common', ];
-    Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function() {
+    let imagePreloadCategoryList = ['home', 'home_service_common',];
+    Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function () {
         document.body.removeChild(loadingInitial.div);
         createDivHomeBanner();
         new ContentHome();
@@ -40,6 +40,7 @@ class ContentHome {
         this.createDivOne(divGrid);
         this.createDivTwo(divGrid);
         this.createDivThree(divOuter);
+        this.createDivFour(divOuter);
     };
 
     createDivOne(divParent) {
@@ -93,7 +94,7 @@ class ContentHome {
         let divButton = document.createElement('div');
         divButton.classList.add('general-button');
         divButton.classList.add('align-diff');
-        divButton.innerText = window.res.common.menuItem.service[window.langDef];
+        divButton.innerText = window.res.common.menuItem.service[window.langCur];
         divTextGridOuter.appendChild(divButton);
 
         this.createDivTwoColumn(divGridOuter, 'first');
@@ -103,12 +104,12 @@ class ContentHome {
     createDivTwoText(divParent) {
         let divTitle = document.createElement('div');
         divTitle.classList.add('home-two-title');
-        divTitle.innerText = window.res.home.twoTitle[window.langDef];
+        divTitle.innerText = window.res.home.twoTitle[window.langCur];
         divParent.appendChild(divTitle);
 
         let divText = document.createElement('div');
         divText.classList.add('home-two-text');
-        divText.innerText = window.res.home.twoText[window.langDef];
+        divText.innerText = window.res.home.twoText[window.langCur];
         divParent.appendChild(divText);
     };
 
@@ -138,12 +139,12 @@ class ContentHome {
 
         let divTitle = document.createElement('div');
         divTitle.classList.add('home-two-item-title');
-        divTitle.innerText = data.title[window.langDef];
+        divTitle.innerText = data.title[window.langCur];
         divParent.appendChild(divTitle);
 
         let divText = document.createElement('div');
         divText.classList.add('home-two-item-text');
-        divText.innerText = data.text[window.langDef];
+        divText.innerText = data.text[window.langCur];
         divParent.appendChild(divText);
     };
 
@@ -196,7 +197,62 @@ class ContentHome {
 
         let divText = document.createElement('div');
         divText.classList.add('home-three-item-text');
-        divText.innerText = item.text[window.langDef];
+        divText.innerText = item.text[window.langCur];
+        divGrid.appendChild(divText);
+    };
+
+    createDivFour(divParent) {
+        let divGridContent = document.createElement('div');
+        divGridContent.classList.add('general-content-grid');
+        divParent.appendChild(divGridContent);
+
+        let divGrid = document.createElement('div');
+        divGrid.classList.add('home-four');
+        divGridContent.appendChild(divGrid);
+
+        let divTitle = document.createElement('div');
+        divTitle.classList.add('home-four-title');
+        divTitle.innerText = window.res.home.fourTitle[window.langCur];
+        divGrid.appendChild(divTitle);
+
+        let divText = document.createElement('div');
+        divText.classList.add('home-four-text');
+        divText.innerText = window.res.home.fourText[window.langCur];
+        divGrid.appendChild(divText);
+
+        for (let i = 0; i < window.res.home.fourItem.length; i++) {
+            let item = window.res.home.fourItem[i];
+            this.createFourItem(divGrid, item);
+        }
+    };
+
+    createFourItem(divParent, item) {
+        let divGrid = document.createElement('div');
+        divGrid.classList.add('home-four-grid-item');
+        divParent.appendChild(divGrid);
+
+        let divImg = document.createElement('div');
+        divImg.classList.add('home-four-grid-item-image');
+        divImg.style.backgroundImage = `url(${window.version.image.home[item.image]})`;
+        divGrid.appendChild(divImg);
+
+        let divIntro = document.createElement('div');
+        divIntro.classList.add('home-four-grid-item-intro');
+        divGrid.appendChild(divIntro);
+
+        let divName = document.createElement('div');
+        divName.classList.add('home-four-grid-item-name');
+        divName.innerText = item.name[window.langCur];
+        divIntro.appendChild(divName);
+
+        let divTitle = document.createElement('div');
+        divTitle.classList.add('home-four-grid-item-title');
+        divTitle.innerText = item.title[window.langCur];
+        divIntro.appendChild(divTitle);
+
+        let divText = document.createElement('div');
+        divText.classList.add('home-four-grid-item-text');
+        divText.innerText = item.text[window.langCur];
         divGrid.appendChild(divText);
     };
 };
@@ -222,7 +278,7 @@ function createText() {
 };
 
 async function removeColor() {
-    let imgPath = 'res/img/50.png';
+    let imgPath = 'res/img/team_ben.png';
     let img = document.createElement('img');
     img.src = imgPath;
     await Common.sleep(1000);
@@ -246,7 +302,7 @@ async function removeColor() {
         let r = imageData.data[indexR];
         let g = imageData.data[indexG];
         let b = imageData.data[indexB];
-        if (r > 10 && g > 10 && b > 10) {
+        if (r > 240 && g > 240 && b > 240) {
             imageData.data[indexA] = 0;
             continue;
         }
@@ -261,13 +317,13 @@ async function removeColor() {
 
 function testMove() {
     let div = document.getElementById('divMove');
-    let easeInOutQuad = function(t) { return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t };
+    let easeInOutQuad = function (t) { return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t };
     let delta = 1000;
     let initX = -50;
     let totalTime = 400;
     let startTime = (new Date()).getTime();
 
-    let work = function() {
+    let work = function () {
         let currentTime = (new Date()).getTime();
         let timeDiff = currentTime - startTime;
         let time = timeDiff / totalTime;

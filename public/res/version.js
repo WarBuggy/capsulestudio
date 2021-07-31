@@ -14,6 +14,10 @@ window.version = {
             'home_logo_button_toggle': 'res/img/menu_top_button_toggle.svg?1.0',
             'home_three_image': 'res/img/phones.png?1.0',
             'home_three_item_listing': 'res/img/home_three_listing.svg?1.0',
+            'home_team_andy': 'res/img/team_andy.png?1.0',
+            'home_team_ben': 'res/img/team_ben.png?1.0',
+            'home_team_mi': 'res/img/team_mi.png?1.0',
+            'home_team_kevin': 'res/img/team_kevin.png?1.0',
         },
         home_service_common: {
             'hsc_chart': 'res/img/service_chart.svg',

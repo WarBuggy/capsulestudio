@@ -32,13 +32,28 @@
     --home-three-image-grid-row: auto;
     --home-three-color-background: var(--color-bright-darker);
     --home-three-grid-item-margin-left: 0px;
+    --home-four-grid-template-columns: 1fr 1fr;
+    --home-four-text-grid-column: auto / span 2;
+    --home-four-grid-item-width: 330px;
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 860px) {
      :root {
         /* Mobile small screen */
-        --home-one-grid-outer-height: auto;
-        --home-one-grid-outer-margin-botom: var(--home-one-grid-margin-bottom);
+        --home-two-grid-outer-template-columns: 1fr;
+        --home-two-item-width: auto;
+        --home-two-item-height: auto;
+        --home-two-text-grid-column: auto;
+        --home-four-grid-item-width: 270px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+     :root {
+        /* Mobile small screen */
+        --home-four-grid-template-columns: 1fr;
+        --home-four-text-grid-column: auto;
+        --home-four-grid-item-width: 100%;
     }
 }
 
@@ -52,13 +67,11 @@
     }
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 320px) {
      :root {
         /* Mobile small screen */
-        --home-two-grid-outer-template-columns: 1fr;
-        --home-two-item-width: auto;
-        --home-two-item-height: auto;
-        --home-two-text-grid-column: auto;
+        --home-one-grid-outer-height: auto;
+        --home-one-grid-outer-margin-botom: var(--home-one-grid-margin-bottom);
     }
 }
 
@@ -75,6 +88,9 @@
         --home-three-image-width: 340px;
         --home-three-image-grid-row: auto / span 5;
         --home-three-grid-item-margin-left: 30px;
+        --home-four-grid-template-columns: 1fr 1fr 1fr 1fr;
+        --home-four-text-grid-column: auto / span 4;
+        --home-four-grid-item-width: 210px;
     }
 }
 
@@ -108,6 +124,9 @@
         --home-three-image-width: 432px;
         --home-three-image-grid-row: auto / span 5;
         --home-three-grid-item-margin-left: 30px;
+        --home-four-grid-template-columns: 1fr 1fr 1fr 1fr;
+        --home-four-text-grid-column: auto / span 4;
+        --home-four-grid-item-width: 225px;
     }
     @media (prefers-color-scheme: light) {
          :root {
@@ -402,8 +421,6 @@ div.home-three-item-title {
     line-height: 37px;
     letter-spacing: 1px;
     color: var(--home-color-title);
-    /* margin-top: 5px;
-    margin-bottom: 24px !important; */
 }
 
 svg.home-three-item-listing {
@@ -418,4 +435,106 @@ div.home-three-item-text {
     letter-spacing: 1px;
     line-height: 28px;
     margin-top: 24px;
+}
+
+div.home-four {
+    display: grid;
+    grid-template-columns: var(--home-four-grid-template-columns);
+    padding-top: 100px;
+    padding-bottom: 70px;
+}
+
+div.home-four-title {
+    font-weight: 400;
+    font-size: 30px;
+    color: var(--home-color-text);
+    letter-spacing: 1.30px;
+    line-height: 40px;
+    margin-bottom: 20px !important;
+    text-align: center;
+    justify-self: center;
+    grid-column: var(--home-four-text-grid-column);
+}
+
+div.home-four-text {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--home-color-text);
+    line-height: 28px;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    grid-column: var(--home-four-text-grid-column);
+    text-align: center;
+    justify-self: center;
+}
+
+div.home-four-grid-item {
+    width: var(--home-four-grid-item-width);
+    display: grid;
+    grid-template-columns: 85px auto;
+    grid-template-rows: auto auto;
+    justify-self: center;
+    background-image: linear-gradient(127deg, var(--color-bg-1) 0%, var(--color-bg-1) 91%);
+    box-shadow: var(--home-two-item-box-shadow);
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 40px;
+    border-bottom-right-radius: 4px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.home-four-grid-item:hover {
+    background-image: linear-gradient(127deg, var(--logo-darkest) 0%, var(--logo-lightest) 91%);
+    color: var(--color-bg-1);
+}
+
+.home-four-grid-item:hover .home-four-grid-item-name {
+    color: var(--color-bg-1);
+}
+
+div.home-four-grid-item-image {
+    width: 100%;
+    height: 78px;
+    grid-row: auto / span 2;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+div.home-four-grid-item-intro {
+    margin-left: 8px;
+}
+
+div.home-four-grid-item-name {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--home-color-title);
+    letter-spacing: 0.6px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+div.home-four-grid-item-title {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.52px;
+}
+
+div.home-four-grid-item-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0.6px;
+    grid-column: auto / span 2;
 }
