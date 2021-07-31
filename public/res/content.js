@@ -80,8 +80,8 @@ window.res = {
         oneText: {
             en: "We develop apps and websites that delight your users and grow your business. " +
                 "Enterprise-grade development combined with outstanding UI-centric design.",
-            vi: "Các chương trình và trang web chúng tôi phát triển giúp khách hàng đạt được mục đích " +
-                "và công việc kinh doanh của bạn phát triển. " +
+            vi: "Các chương trình và web app chúng tôi phát triển luôn làm hài lòng quý khách hàng " +
+                "và giúp công việc kinh doanh phát triển. " +
                 "Quy trình phát triển chất lượng cao được kết hợp với thiết kế chú trọng trải nghiệm của khách hàng.",
         },
         oneButton: {
@@ -293,7 +293,7 @@ window.res = {
                 valueEnd: 3,
                 name: {
                     en: 'Enterprise\ncustomer',
-                    vi: 'Enterprise\nthân thiết',
+                    vi: 'Doanh nghiệp\nTop 50',
                 },
                 easing: 'easeInQuad',
             },
