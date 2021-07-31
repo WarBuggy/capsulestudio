@@ -574,7 +574,6 @@ div.home-five-overlay {
 }
 
 div.home-five-grid {
-    width: 100%;
     display: grid;
     grid-template-columns: var(--home-five-grid-template-columns);
     grid-template-rows: var(--home-five-grid-template-rows);
