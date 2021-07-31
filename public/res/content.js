@@ -215,7 +215,7 @@ window.res = {
                 },
                 title: {
                     en: 'Requirement Engineer',
-                    vi: 'Xác định nhu cầu',
+                    vi: 'Phân tích yêu cầu',
                 },
                 text: {
                     en: 'Not available.',
@@ -245,7 +245,7 @@ window.res = {
                 },
                 title: {
                     en: 'Automation Engineer',
-                    vi: 'Quản lý chất lượng',
+                    vi: 'Kiểm soát chất lượng',
                 },
                 text: {
                     en: 'Not available.',
