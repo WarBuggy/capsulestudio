@@ -18,6 +18,7 @@ window.version = {
             'home_team_ben': 'res/img/team_ben.png?1.0',
             'home_team_mi': 'res/img/team_mi.png?1.0',
             'home_team_kevin': 'res/img/team_kevin.png?1.0',
+            'home_five': 'res/img/home_five.jpg?1.0',
         },
         home_service_common: {
             'hsc_chart': 'res/img/service_chart.svg',

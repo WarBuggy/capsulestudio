@@ -35,6 +35,11 @@
     --home-four-grid-template-columns: 1fr 1fr;
     --home-four-text-grid-column: auto / span 2;
     --home-four-grid-item-width: 330px;
+    --home-five-overlay: linear-gradient(127deg, #384EFFD8 0%, #24CDFFD8 91%);
+    --home-five-grid-template-columns: 1fr 1fr;
+    --home-five-grid-template-rows: 260px 260px;
+    --home-five-grid-item-template-rows: 40px auto 40px;
+    --home-five-grid-item-template-rows-last: 40px auto 40px;
 }
 
 @media only screen and (max-width: 860px) {
@@ -64,6 +69,10 @@
         --home-three-grid-outer-template-columns: 1fr;
         --home-three-image-width: 100%;
         --home-three-image-grid-row: auto;
+        --home-five-grid-template-columns: 1fr;
+        --home-five-grid-template-rows: 210px 210px 210px 240px;
+        --home-five-grid-item-template-rows: 30px auto 0px;
+        --home-five-grid-item-template-rows-last: 30px auto 30px;
     }
 }
 
@@ -72,6 +81,7 @@
         /* Mobile small screen */
         --home-one-grid-outer-height: auto;
         --home-one-grid-outer-margin-botom: var(--home-one-grid-margin-bottom);
+        --home-five-grid-item-template-rows-last: 30px auto 30px;
     }
 }
 
@@ -91,6 +101,10 @@
         --home-four-grid-template-columns: 1fr 1fr 1fr 1fr;
         --home-four-text-grid-column: auto / span 4;
         --home-four-grid-item-width: 210px;
+        --home-five-grid-template-columns: 1fr 1fr 1fr 1fr;
+        --home-five-grid-template-rows: 280px;
+        --home-five-grid-item-template-rows: 50px auto 50px;
+        --home-five-grid-item-template-rows-last: 50px auto 50px;
     }
 }
 
@@ -103,6 +117,7 @@
         --home-color-text-alt: var(--color-dark);
         --home-two-item-box-shadow: 0 2px 48px 0 rgba(122, 122, 122, 0.2);
         --home-three-color-background: var(--color-dark-lighter);
+        --home-five-overlay: linear-gradient(127deg, #FB7D2FD8 0%, #FBE11CD8 91%);
     }
 }
 
@@ -127,6 +142,10 @@
         --home-four-grid-template-columns: 1fr 1fr 1fr 1fr;
         --home-four-text-grid-column: auto / span 4;
         --home-four-grid-item-width: 225px;
+        --home-five-grid-template-columns: 1fr 1fr 1fr 1fr;
+        --home-five-grid-template-rows: 280px;
+        --home-five-grid-item-template-rows: 50px auto 50px;
+        --home-five-grid-item-template-rows-last: 50px auto 50px;
     }
     @media (prefers-color-scheme: light) {
          :root {
@@ -537,4 +556,73 @@ div.home-four-grid-item-text {
     line-height: 26px;
     letter-spacing: 0.6px;
     grid-column: auto / span 2;
+}
+
+div.home-five {
+    width: 100%;
+    background-position: 50% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--color-bg-1);
+}
+
+div.home-five-overlay {
+    width: 100%;
+    height: 100%;
+    background-image: var(--home-five-overlay);
+    margin-bottom: 100px;
+}
+
+div.home-five-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: var(--home-five-grid-template-columns);
+    grid-template-rows: var(--home-five-grid-template-rows);
+}
+
+div.home-five-grid-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: var(--home-five-grid-item-template-rows);
+}
+
+.home-five-grid-item.last {
+    grid-template-rows: var(--home-five-grid-item-template-rows-last);
+}
+
+div.home-five-grid-item-filler {
+    width: 100%;
+}
+
+.home-five-grid-item-filler.has-border {
+    border-right: 1px solid;
+    border-color: var(--color-bg-1);
+}
+
+div.home-five-grid-item-info {
+    grid-column: auto / span 2;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.home-five-grid-item-info:hover {
+    margin-bottom: 20px;
+}
+
+div.home-five-grid-item-value {
+    font-weight: 400;
+    font-size: 40px;
+    letter-spacing: 1.72px;
+    margin-bottom: 10px;
+}
+
+div.home-five-grid-item-name {
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.86px;
 }

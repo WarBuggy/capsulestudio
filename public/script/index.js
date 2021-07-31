@@ -1,9 +1,9 @@
-window.onload = async function () {
+window.onload = async function() {
     window.rootStyle = getComputedStyle(document.body);
     let loadingInitial = new LoadingInitial();
     document.body.appendChild(loadingInitial.div);
-    let imagePreloadCategoryList = ['home', 'home_service_common',];
-    Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function () {
+    let imagePreloadCategoryList = ['home', 'home_service_common', ];
+    Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function() {
         document.body.removeChild(loadingInitial.div);
         createDivHomeBanner();
         new ContentHome();
@@ -41,6 +41,7 @@ class ContentHome {
         this.createDivTwo(divGrid);
         this.createDivThree(divOuter);
         this.createDivFour(divOuter);
+        this.createDivFive(divOuter);
     };
 
     createDivOne(divParent) {
@@ -255,6 +256,157 @@ class ContentHome {
         divText.innerText = item.text[window.langCur];
         divGrid.appendChild(divText);
     };
+
+    createDivFive(divParent) {
+        let divOuter = document.createElement('div');
+        divOuter.classList.add('home-five');
+        divOuter.style.backgroundImage = `url(${window.version.image.home['home_five']})`;
+        divParent.appendChild(divOuter);
+
+        let divOuterOverlay = document.createElement('div');
+        divOuterOverlay.classList.add('home-five-overlay');
+        divOuter.appendChild(divOuterOverlay);
+
+        let divGrid = document.createElement('div');
+        divGrid.classList.add('general-content-grid');
+        divGrid.classList.add('home-five-grid');
+        divOuterOverlay.appendChild(divGrid);
+
+        for (let i = 0; i < window.res.home.fiveItem.length; i++) {
+            this.createFiveItem(divGrid, window.res.home.fiveItem[i], i);
+        }
+
+        let targetRatio = 0.6
+
+        this.animateDivFiveValueDone = false;
+        let parent = this;
+        let observerValue = new IntersectionObserver(function(entries) {
+            if (parent.animateDivFiveValueDone) {
+                return;
+            }
+            let intersectionRatio = parseFloat(entries[0]['intersectionRatio']);
+            if (intersectionRatio >= targetRatio) {
+                parent.animateDivFiveValue();
+                parent.animateDivFiveValueDone = true;
+            }
+        }, {
+            threshold: [targetRatio],
+        });
+        observerValue.observe(divGrid);
+
+        // let heightOuter = divOuter.getBoundingClientRect().height;
+        // let heightDiff = Math.max(0, window.innerHeight - heightOuter);
+        // this.intersectionRatioLast = 0;
+        // // let rootMarginTop = 
+
+
+        // let observer = new IntersectionObserver(function(entries) {
+        //     let intersectionRatio = parseFloat(entries[0]['intersectionRatio']);
+        //     let visibleHeight = Math.floor(heightOuter * intersectionRatio);
+
+        //     let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        //     //console.log([intersectionRatio, scrollTop]);
+        //     console.log(intersectionRatio);
+        //     // divOuter.style.backgroundPositionY = (100 - ratio) + '%';
+        // }, {
+        //     threshold: [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5,
+        //         0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1
+        //     ],
+        // });
+        // observer.observe(divOuter);
+    };
+
+    createFiveItem(divParent, item, index) {
+        let divGrid = document.createElement('div');
+        divGrid.classList.add('home-five-grid-item');
+        if (item.extraCss != null) {
+            for (let i = 0; i < item.extraCss.length; i++) {
+                divGrid.classList.add(item.extraCss[i]);
+            }
+        }
+        divParent.appendChild(divGrid);
+
+        this.createFiveItemFiller(divGrid, true);
+        this.createFiveItemFiller(divGrid, false);
+
+        let divInfo = document.createElement('div');
+        divInfo.classList.add('home-five-grid-item-info');
+        divGrid.appendChild(divInfo);
+
+        let divValue = document.createElement('div');
+        divValue.classList.add('home-five-grid-item-value');
+        divValue.setAttribute('index', index);
+        divValue.innerHTML = '&nbsp;';
+        divInfo.appendChild(divValue);
+
+        let divName = document.createElement('div');
+        divName.classList.add('home-five-grid-item-name');
+        divName.innerText = item.name[window.langCur];
+        divInfo.appendChild(divName);
+
+        this.createFiveItemFiller(divGrid, true);
+        this.createFiveItemFiller(divGrid, false);
+    };
+
+    createFiveItemFiller(divParent, hasBorder) {
+        let div = document.createElement('div');
+        div.classList.add('home-five-grid-item-filler');
+        if (hasBorder) {
+            div.classList.add('has-border');
+        }
+        divParent.appendChild(div);
+    };
+
+    animateDivFiveValue() {
+        let parent = this;
+        let divValueList = document.getElementsByClassName('home-five-grid-item-value');
+        let timeStart = (new Date()).getTime();
+        let timeAnimate = 600;
+        for (let i = 0; i < divValueList.length; i++) {
+            let divValue = divValueList[i];
+            let index = parseInt(divValue.getAttribute('index'));
+            let data = window.res.home.fiveItem[index];
+            let valueBegin = data.valueBegin;
+            let valueEnd = data.valueEnd;
+            let valueDiff = valueEnd - valueBegin;
+            let easing = window.res.common.easing[data.easing];
+            let object = {
+                timeStart,
+                timeAnimate,
+                valueBegin,
+                valueEnd,
+                valueDiff,
+                divValue,
+                easing,
+                decimal: data.decimal,
+                suffix: data.suffix,
+            }
+            window.requestAnimationFrame(function() {
+                parent.animateValue(object);
+            });
+        }
+    };
+
+    animateValue(object) {
+        let timeCurrent = (new Date()).getTime();
+        let timeDiff = timeCurrent - object.timeStart;
+        if (timeDiff >= object.timeAnimate) {
+            object.divValue.innerHTML = `${object.valueEnd}${object.suffix || ''}`;
+            return;
+        }
+        let valueDiff = object.easing(timeDiff / object.timeAnimate) * object.valueDiff;
+        let valueNew = object.valueBegin + valueDiff;
+        if (object.decimal != 0) {
+            valueNew = Number(valueNew).toFixed(object.decimal);
+        } else {
+            valueNew = Math.floor(valueNew);
+        }
+        object.divValue.innerHTML = `${valueNew}${object.suffix || ''}`;
+        let parent = this;
+        window.requestAnimationFrame(function() {
+            parent.animateValue(object);
+        });
+    };
 };
 
 
@@ -317,13 +469,13 @@ async function removeColor() {
 
 function testMove() {
     let div = document.getElementById('divMove');
-    let easeInOutQuad = function (t) { return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t };
+    let easeInOutQuad = function(t) { return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t };
     let delta = 1000;
     let initX = -50;
     let totalTime = 400;
     let startTime = (new Date()).getTime();
 
-    let work = function () {
+    let work = function() {
         let currentTime = (new Date()).getTime();
         let timeDiff = currentTime - startTime;
         let time = timeDiff / totalTime;
