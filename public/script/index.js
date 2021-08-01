@@ -181,6 +181,11 @@ class ContentHome {
     createThreeItem(divParent, item) {
         let divGrid = document.createElement('div');
         divGrid.classList.add('home-three-grid-item');
+        if (item.extraCss != null) {
+            for (let i = 0; i < item.extraCss.length; i++) {
+                divGrid.classList.add(item.extraCss[i]);
+            }
+        }
         divParent.appendChild(divGrid);
 
         let divLetter = document.createElement('div');

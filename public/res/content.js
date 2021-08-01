@@ -159,6 +159,7 @@ window.res = {
                     vi: 'Bằng quy trình chuẩn mực, kỹ năng tốt và chăm chỉ làm việc, ' +
                         'chúng tôi luôn đáp ứng được mọi nhu cầu cấp bách được quý khách hàng tin tưởng giao cho.',
                 },
+                extraCss: ['first', ],
             },
             {
                 letter: 'P',

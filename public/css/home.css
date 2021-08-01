@@ -31,6 +31,7 @@
     --home-three-image-width: 432px;
     --home-three-image-grid-row: auto;
     --home-three-color-background: var(--color-bright-darker);
+    --home-three-grid-item-first-margin-top: 50px;
     --home-three-grid-item-margin-left: 0px;
     --home-four-grid-template-columns: 1fr 1fr;
     --home-four-text-grid-column: auto / span 2;
@@ -95,6 +96,7 @@
         --home-two-item-first-margin-top: var(--home-two-item-margin-top-first);
         --home-button-align-diff: none;
         --home-three-grid-outer-template-columns: auto 1fr;
+        --home-three-grid-item-first-margin-top: 0px;
         --home-three-image-width: 340px;
         --home-three-image-grid-row: auto / span 5;
         --home-three-grid-item-margin-left: 30px;
@@ -136,6 +138,7 @@
         --home-two-item-first-margin-top: var(--home-two-item-margin-top-first);
         --home-button-align-diff: none;
         --home-three-grid-outer-template-columns: auto 1fr;
+        --home-three-grid-item-first-margin-top: 0px;
         --home-three-image-width: 432px;
         --home-three-image-grid-row: auto / span 5;
         --home-three-grid-item-margin-left: 30px;
@@ -408,6 +411,10 @@ div.home-three-grid-item {
     grid-template-columns: 70px 1fr;
     margin-left: var(--home-three-grid-item-margin-left);
     margin-bottom: var(--home-one-grid-margin-bottom);
+}
+
+.home-three-grid-item.first {
+    margin-top: var(--home-three-grid-item-first-margin-top);
 }
 
 div.home-three-item-letter {
