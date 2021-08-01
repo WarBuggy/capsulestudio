@@ -42,6 +42,8 @@ class ContentHome {
         this.createDivThree(divOuter);
         this.createDivFour(divOuter);
         this.createDivFive(divOuter);
+        this.createDivSix(divOuter);
+        this.createObjectParallax();
     };
 
     createDivOne(divParent) {
@@ -263,9 +265,14 @@ class ContentHome {
     };
 
     createDivFive(divParent) {
+        let hasIntersectionObserver = (typeof(IntersectionObserver) === 'function');
+
         let divOuter = document.createElement('div');
         divOuter.classList.add('home-five');
         divOuter.style.backgroundImage = `url(${window.version.image.home['home_five']})`;
+        if (!hasIntersectionObserver) {
+            divOuter.classList.add('no-parallax');
+        }
         divParent.appendChild(divOuter);
 
         let divOuterOverlay = document.createElement('div');
@@ -278,50 +285,28 @@ class ContentHome {
         divOuterOverlay.appendChild(divGrid);
 
         for (let i = 0; i < window.res.home.fiveItem.length; i++) {
-            this.createFiveItem(divGrid, window.res.home.fiveItem[i], i);
+            this.createFiveItem(divGrid, window.res.home.fiveItem[i], i, hasIntersectionObserver);
         }
 
-        let targetRatio = 0.6
+        if (!hasIntersectionObserver) {
+            return;
+        }
 
-        this.animateDivFiveValueDone = false;
         let parent = this;
+        let targetRatio = 0.6
         let observerValue = new IntersectionObserver(function(entries) {
-            if (parent.animateDivFiveValueDone) {
-                return;
-            }
             let intersectionRatio = parseFloat(entries[0]['intersectionRatio']);
             if (intersectionRatio >= targetRatio) {
-                parent.animateDivFiveValue();
-                parent.animateDivFiveValueDone = true;
+                parent.animateDivFiveValueAll();
+                this.disconnect();
             }
         }, {
             threshold: [targetRatio],
         });
         observerValue.observe(divGrid);
-
-        // let heightOuter = divOuter.getBoundingClientRect().height;
-        // let heightDiff = Math.max(0, window.innerHeight - heightOuter);
-        // this.intersectionRatioLast = 0;
-        // // let rootMarginTop = 
-
-
-        // let observer = new IntersectionObserver(function(entries) {
-        //     let intersectionRatio = parseFloat(entries[0]['intersectionRatio']);
-        //     let visibleHeight = Math.floor(heightOuter * intersectionRatio);
-
-        //     let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-        //     //console.log([intersectionRatio, scrollTop]);
-        //     console.log(intersectionRatio);
-        //     // divOuter.style.backgroundPositionY = (100 - ratio) + '%';
-        // }, {
-        //     threshold: [0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5,
-        //         0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1
-        //     ],
-        // });
-        // observer.observe(divOuter);
     };
 
-    createFiveItem(divParent, item, index) {
+    createFiveItem(divParent, item, index, hasIntersectionObserver) {
         let divGrid = document.createElement('div');
         divGrid.classList.add('home-five-grid-item');
         if (item.extraCss != null) {
@@ -342,6 +327,9 @@ class ContentHome {
         divValue.classList.add('home-five-grid-item-value');
         divValue.setAttribute('index', index);
         divValue.innerHTML = '&nbsp;';
+        if (!hasIntersectionObserver) {
+            divValue.innerHTML = `${item.valueEnd}${item.suffix || ''}`;
+        }
         divInfo.appendChild(divValue);
 
         let divName = document.createElement('div');
@@ -362,11 +350,11 @@ class ContentHome {
         divParent.appendChild(div);
     };
 
-    animateDivFiveValue() {
+    animateDivFiveValueAll() {
         let parent = this;
         let divValueList = document.getElementsByClassName('home-five-grid-item-value');
         let timeStart = (new Date()).getTime();
-        let timeAnimate = 600;
+        let timeAnimate = 1000;
         for (let i = 0; i < divValueList.length; i++) {
             let divValue = divValueList[i];
             let index = parseInt(divValue.getAttribute('index'));
@@ -387,12 +375,12 @@ class ContentHome {
                 suffix: data.suffix,
             }
             window.requestAnimationFrame(function() {
-                parent.animateValue(object);
+                parent.animateDivFiveValue(object);
             });
         }
     };
 
-    animateValue(object) {
+    animateDivFiveValue(object) {
         let timeCurrent = (new Date()).getTime();
         let timeDiff = timeCurrent - object.timeStart;
         if (timeDiff >= object.timeAnimate) {
@@ -409,14 +397,69 @@ class ContentHome {
         object.divValue.innerHTML = `${valueNew}${object.suffix || ''}`;
         let parent = this;
         window.requestAnimationFrame(function() {
-            parent.animateValue(object);
+            parent.animateDivFiveValue(object);
         });
+    };
+
+    createObjectParallax() {
+        let div = document.getElementsByClassName('home-five')[0];
+        let totalPageLength = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+        if (totalPageLength <= window.innerHeight) {
+            div.style.backgroundPosition = 'center';
+            return;
+        }
+
+        let rect = div.getBoundingClientRect();
+        let spaceTop = Math.min(window.innerHeight, rect.top);
+        let parallaxStart = rect.top - spaceTop;
+        let spaceBottom = Math.min(window.innerHeight, totalPageLength - rect.bottom);
+        let parallaxEnd = rect.bottom + spaceBottom - window.innerHeight;
+        let parallaxDistance = parallaxEnd - parallaxStart;
+
+        this.objectParallax = {
+            div,
+            start: parallaxStart,
+            end: parallaxEnd,
+            distance: parallaxDistance,
+        };
+
+        let parent = this;
+        window.addEventListener('scroll', function() {
+            parent.handleParallax(parent.objectParallax);
+        });
+    };
+
+    handleParallax() {
+        let div = this.objectParallax.div;
+        let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        if (scrollTop <= this.objectParallax.start) {
+            div.style.backgroundPosition = '50% 100%';
+            return;
+        }
+        if (scrollTop > this.objectParallax.end) {
+            div.style.backgroundPosition = '50% 0%';
+            return;
+        }
+        let scrollDistance = scrollTop - this.objectParallax.start;
+        let scrollPercentage =
+            Math.floor(scrollDistance / this.objectParallax.distance * 100);
+        div.style.backgroundPosition = `50% ${100 - scrollPercentage}%`;
+    };
+
+    createDivSix(divParent) {
+        let divOuter = document.createElement('div');
+        divOuter.classList.add('home-six');
+        divParent.appendChild(divOuter);
+
+        let divGrid = document.createElement('div');
+        divGrid.classList.add('general-content-grid');
+        divGrid.style.height = '500px';
+        divGrid.style.backgroundColor = 'rgba(255, 0, 0, 0.2)';
+        divOuter.appendChild(divGrid);
     };
 };
 
-
-
-
+/* Functions that help creating images */
 function createText() {
     let text = 'The spinner "Ball" is provided by loading.io.';
     let width = 1500;
@@ -471,25 +514,4 @@ async function removeColor() {
 
     ctx.putImageData(imageData, 0, 0);
 };
-
-function testMove() {
-    let div = document.getElementById('divMove');
-    let easeInOutQuad = function(t) { return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t };
-    let delta = 1000;
-    let initX = -50;
-    let totalTime = 400;
-    let startTime = (new Date()).getTime();
-
-    let work = function() {
-        let currentTime = (new Date()).getTime();
-        let timeDiff = currentTime - startTime;
-        let time = timeDiff / totalTime;
-        let rateChage = easeInOutQuad(time);
-        if (time < 1) {
-            let x = delta * rateChage + initX;
-            div.style.left = x + 'px';
-            window.requestAnimationFrame(work);
-        }
-    };
-    window.requestAnimationFrame(work);
-};
+/* End of functions that help creating images */
