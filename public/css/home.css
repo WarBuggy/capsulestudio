@@ -567,14 +567,10 @@ div.home-four-grid-item-text {
 
 div.home-five {
     width: 100%;
-    background-position: 50% 100%;
-    background-size: cover;
+    background-size: auto;
+    background-position: center;
     background-repeat: no-repeat;
     color: var(--color-bg-1);
-}
-
-.home-five.no-parallax {
-    background-position: center;
 }
 
 div.home-five-overlay {

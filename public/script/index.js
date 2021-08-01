@@ -44,6 +44,13 @@ class ContentHome {
         this.createDivFive(divOuter);
         this.createDivSix(divOuter);
         this.createObjectParallax();
+        let parent = this;
+        window.addEventListener('scroll', function() {
+            parent.handleParallax();
+        });
+        window.addEventListener('resize', function() {
+            parent.createObjectParallax();
+        });
     };
 
     createDivOne(divParent) {
@@ -270,9 +277,6 @@ class ContentHome {
         let divOuter = document.createElement('div');
         divOuter.classList.add('home-five');
         divOuter.style.backgroundImage = `url(${window.version.image.home['home_five']})`;
-        if (!hasIntersectionObserver) {
-            divOuter.classList.add('no-parallax');
-        }
         divParent.appendChild(divOuter);
 
         let divOuterOverlay = document.createElement('div');
@@ -403,17 +407,19 @@ class ContentHome {
 
     createObjectParallax() {
         let div = document.getElementsByClassName('home-five')[0];
-        let totalPageLength = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-        if (totalPageLength <= window.innerHeight) {
-            div.style.backgroundPosition = 'center';
+        let totalPageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+        if (totalPageHeight <= window.innerHeight) {
             return;
         }
+        let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
 
         let rect = div.getBoundingClientRect();
-        let spaceTop = Math.min(window.innerHeight, rect.top);
-        let parallaxStart = rect.top - spaceTop;
-        let spaceBottom = Math.min(window.innerHeight, totalPageLength - rect.bottom);
-        let parallaxEnd = rect.bottom + spaceBottom - window.innerHeight;
+        let rectTop = rect.top + scrollTop;
+        let rectBottom = rectTop + rect.height;
+        let spaceTop = Math.min(window.innerHeight, rectTop);
+        let parallaxStart = rectTop - spaceTop;
+        let spaceBottom = Math.min(window.innerHeight, totalPageHeight - rectBottom);
+        let parallaxEnd = rectBottom + spaceBottom - window.innerHeight;
         let parallaxDistance = parallaxEnd - parallaxStart;
 
         this.objectParallax = {
@@ -422,11 +428,6 @@ class ContentHome {
             end: parallaxEnd,
             distance: parallaxDistance,
         };
-
-        let parent = this;
-        window.addEventListener('scroll', function() {
-            parent.handleParallax(parent.objectParallax);
-        });
     };
 
     handleParallax() {
@@ -453,8 +454,7 @@ class ContentHome {
 
         let divGrid = document.createElement('div');
         divGrid.classList.add('general-content-grid');
-        divGrid.style.height = '500px';
-        divGrid.style.backgroundColor = 'rgba(255, 0, 0, 0.2)';
+        divGrid.style.height = '200px';
         divOuter.appendChild(divGrid);
     };
 };
