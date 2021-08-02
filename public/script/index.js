@@ -1,9 +1,9 @@
-window.onload = async function() {
+window.onload = async function () {
     window.rootStyle = getComputedStyle(document.body);
     let loadingInitial = new LoadingInitial();
     document.body.appendChild(loadingInitial.div);
-    let imagePreloadCategoryList = ['home', 'home_service_common', ];
-    Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function() {
+    let imagePreloadCategoryList = ['home', 'home_service_common',];
+    Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function () {
         document.body.removeChild(loadingInitial.div);
         createDivHomeBanner();
         new ContentHome();
@@ -42,13 +42,15 @@ class ContentHome {
         this.createDivThree(divOuter);
         this.createDivFour(divOuter);
         this.createDivFive(divOuter);
-        this.createDivSix(divOuter);
+        // this.createDivSix(divOuter);
+        new Footer(divOuter);
+
         this.createObjectParallax();
         let parent = this;
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             parent.handleParallax();
         });
-        window.addEventListener('resize', function() {
+        window.addEventListener('resize', function () {
             parent.createObjectParallax();
         });
     };
@@ -272,7 +274,7 @@ class ContentHome {
     };
 
     createDivFive(divParent) {
-        let hasIntersectionObserver = (typeof(IntersectionObserver) === 'function');
+        let hasIntersectionObserver = (typeof (IntersectionObserver) === 'function');
 
         let divOuter = document.createElement('div');
         divOuter.classList.add('home-five');
@@ -298,7 +300,7 @@ class ContentHome {
 
         let parent = this;
         let targetRatio = 0.6
-        let observerValue = new IntersectionObserver(function(entries) {
+        let observerValue = new IntersectionObserver(function (entries) {
             let intersectionRatio = parseFloat(entries[0]['intersectionRatio']);
             if (intersectionRatio >= targetRatio) {
                 parent.animateDivFiveValueAll();
@@ -378,7 +380,7 @@ class ContentHome {
                 decimal: data.decimal,
                 suffix: data.suffix,
             }
-            window.requestAnimationFrame(function() {
+            window.requestAnimationFrame(function () {
                 parent.animateDivFiveValue(object);
             });
         }
@@ -400,7 +402,7 @@ class ContentHome {
         }
         object.divValue.innerHTML = `${valueNew}${object.suffix || ''}`;
         let parent = this;
-        window.requestAnimationFrame(function() {
+        window.requestAnimationFrame(function () {
             parent.animateDivFiveValue(object);
         });
     };
@@ -506,10 +508,6 @@ async function removeColor() {
             imageData.data[indexA] = 0;
             continue;
         }
-        // imageData.data[indexR] = 255;
-        // imageData.data[indexG] = 255;
-        // imageData.data[indexB] = 255;
-        // imageData.data[indexA] = 0;
     }
 
     ctx.putImageData(imageData, 0, 0);
