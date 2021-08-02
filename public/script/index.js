@@ -2,13 +2,13 @@ window.onload = async function () {
     window.rootStyle = getComputedStyle(document.body);
     let loadingInitial = new LoadingInitial();
     document.body.appendChild(loadingInitial.div);
-    // let imagePreloadCategoryList = ['home', 'home_service_common',];
-    // Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function () {
-    //     document.body.removeChild(loadingInitial.div);
-    //     createDivHomeBanner();
-    //     new ContentHome();
-    //     new MenuTop();
-    // });
+    let imagePreloadCategoryList = ['home', 'home_service_common',];
+    Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function () {
+        document.body.removeChild(loadingInitial.div);
+        createDivHomeBanner();
+        new ContentHome();
+        new MenuTop();
+    });
 };
 
 
