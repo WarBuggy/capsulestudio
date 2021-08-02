@@ -34,7 +34,7 @@ window.res = {
             },
             'contact': {
                 en: 'CONTACT',
-                vi: 'LIÊN LẠC',
+                vi: 'LIÊN HỆ',
                 link: 'contact.html',
                 extraCss: ['contact'],
                 id: 'menuTopButtonContact',
@@ -353,22 +353,27 @@ window.res = {
         emos: {
             icon: 'res/img/icon_emos.png',
             name: 'EMOS',
+            showInFooter: true,
         },
         vqmm: {
             icon: 'res/img/icon_vqmm.png',
             name: 'Vòng Quay May Mắn',
+            showInFooter: true,
         },
         qdecor: {
             icon: 'res/img/icon_q.png',
             name: 'Q Décor',
+            showInFooter: true,
         },
         vcsc: {
             icon: 'res/img/icon_vcsc.png',
             name: 'VCSC Calendar',
+            showInFooter: true,
         },
         hhdk: {
             icon: 'res/img/icon_hhdk.png',
             name: 'Huyền Học Du Ký',
+            showInFooter: true,
         },
         wbtv: {
             icon: 'res/img/icon_wbtv.png',
@@ -393,5 +398,15 @@ window.res = {
         mai_mon: {
             icon: 'hsc_chart',
         },
+    },
+    contact: {
+        title: {
+            en: 'Contact Us',
+            vi: 'Liên hệ',
+        },
+        siteMapItemList: [
+            ['common', 'menuItem', 'home'],
+            ['common', 'menuItem', 'contact'],
+        ],
     },
 };

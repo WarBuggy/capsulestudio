@@ -54,6 +54,8 @@
     --loading-initial-image-portrait-display: block;
     --content-grid-max-width: 90%;
     --content-grid-padding: 0px;
+    --general-banner-top-margin-top: 80px;
+    --general-banner-overlay-padding-top: 0px;
     /* Mobile Light mode */
     --color-bg-1: var(--color-bright);
     --color-text-1: var(--color-neutral);
@@ -62,6 +64,8 @@
     --color-button-2: var(--color-bright);
     --logo-darkest: var(--color-blue);
     --logo-lightest: #24CDFF;
+    --color-lg-1: #384EFFD8;
+    --color-lg-2: #24CDFFD8;
     --loading-initial-disclaimer-light-display: block;
     --loading-initial-disclaimer-dark-display: none;
 }
@@ -76,6 +80,8 @@
         --color-button-2: var(--color-dark);
         --logo-darkest: var(--color-yellow-dark);
         --logo-lightest: #FFD500;
+        --color-lg-1: #FB7D2FD8;
+        --color-lg-2: #FBE11CD8;
         --loading-initial-disclaimer-light-display: none;
         --loading-initial-disclaimer-dark-display: block;
     }
@@ -86,6 +92,8 @@
         /* Mobile small screen */
         --content-grid-max-width: 100%;
         --content-grid-padding: var(--space-standard);
+        --general-banner-top-margin-top: 80px;
+        --general-banner-overlay-padding-top: 0px;
     }
 }
 
@@ -94,6 +102,8 @@
         /* Desktop */
         --content-grid-max-width: var(--content-max-width);
         --content-grid-padding: calc(2 * var(--space-standard));
+        --general-banner-top-margin-top: 0px;
+        --general-banner-overlay-padding-top: 50px;
     }
     @media (prefers-color-scheme: light) {
          :root {
@@ -241,4 +251,54 @@ stop.hsc-stop-1 {
 
 stop.hsc-stop-2 {
     stop-color: var(--logo-lightest);
+}
+
+div.general-banner-top {
+    width: 100%;
+    height: 270px;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: var(--general-banner-top-margin-top);
+    margin-bottom: 1000px;
+}
+
+div.general-banner-overlay {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(127deg, var(--color-lg-1) 0%, var(--color-lg-2) 91%);
+    display: grid;
+    box-sizing: border-box;
+    padding-top: var(--general-banner-overlay-padding-top);
+}
+
+div.general-banner-grid {
+    display: grid;
+    justify-self: center;
+    align-self: center;
+    color: var(--color-text-2);
+}
+
+div.general-banner-title {
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 46px;
+    letter-spacing: 1.4px;
+    text-align: center;
+    margin-bottom: calc(2 * var(--space-standard));
+}
+
+div.general-banner-item-sitemap {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.general-banner-item-sitemap.clickable {
+    cursor: pointer;
+}
+
+.general-banner-item-sitemap.arrow {
+    margin-left: 8px;
+    margin-right: 8px;
 }

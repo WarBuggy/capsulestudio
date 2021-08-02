@@ -1,8 +1,8 @@
-window.onload = async function () {
+window.onload = function () {
     window.rootStyle = getComputedStyle(document.body);
     let loadingInitial = new LoadingInitial();
     document.body.appendChild(loadingInitial.div);
-    let imagePreloadCategoryList = ['home', 'home_service_common',];
+    let imagePreloadCategoryList = ['common', 'home', 'home_service_common',];
     Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function () {
         document.body.removeChild(loadingInitial.div);
         createDivHomeBanner();
@@ -10,7 +10,6 @@ window.onload = async function () {
         new MenuTop();
     });
 };
-
 
 function createDivHomeBanner() {
     let div = document.createElement('div');
@@ -45,14 +44,8 @@ class ContentHome {
         // this.createDivSix(divOuter);
         new Footer(divOuter);
 
-        this.createObjectParallax();
-        let parent = this;
-        window.addEventListener('scroll', function () {
-            parent.handleParallax();
-        });
-        window.addEventListener('resize', function () {
-            parent.createObjectParallax();
-        });
+        let divParallax = document.getElementsByClassName('home-five')[0];
+        Common.createDivParallax(divParallax, this.objectParallax);
     };
 
     createDivOne(divParent) {
@@ -405,48 +398,6 @@ class ContentHome {
         window.requestAnimationFrame(function () {
             parent.animateDivFiveValue(object);
         });
-    };
-
-    createObjectParallax() {
-        let div = document.getElementsByClassName('home-five')[0];
-        let totalPageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-        if (totalPageHeight <= window.innerHeight) {
-            return;
-        }
-        let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-
-        let rect = div.getBoundingClientRect();
-        let rectTop = rect.top + scrollTop;
-        let rectBottom = rectTop + rect.height;
-        let spaceTop = Math.min(window.innerHeight, rectTop);
-        let parallaxStart = rectTop - spaceTop;
-        let spaceBottom = Math.min(window.innerHeight, totalPageHeight - rectBottom);
-        let parallaxEnd = rectBottom + spaceBottom - window.innerHeight;
-        let parallaxDistance = parallaxEnd - parallaxStart;
-
-        this.objectParallax = {
-            div,
-            start: parallaxStart,
-            end: parallaxEnd,
-            distance: parallaxDistance,
-        };
-    };
-
-    handleParallax() {
-        let div = this.objectParallax.div;
-        let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
-        if (scrollTop <= this.objectParallax.start) {
-            div.style.backgroundPosition = '50% 100%';
-            return;
-        }
-        if (scrollTop > this.objectParallax.end) {
-            div.style.backgroundPosition = '50% 0%';
-            return;
-        }
-        let scrollDistance = scrollTop - this.objectParallax.start;
-        let scrollPercentage =
-            Math.floor(scrollDistance / this.objectParallax.distance * 100);
-        div.style.backgroundPosition = `50% ${100 - scrollPercentage}%`;
     };
 
     createDivSix(divParent) {
