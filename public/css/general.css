@@ -101,6 +101,13 @@
     }
 }
 
+@media only screen and (min-width: 900px) {
+     :root {
+        --loading-initial-image-landscape-display: block;
+        --loading-initial-image-portrait-display: none;
+    }
+}
+
 @media only screen and (min-width: 1140px) {
      :root {
         /* Desktop */
