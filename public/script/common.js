@@ -1,7 +1,7 @@
 class Common {
     static sleep(ms) {
-        return new Promise(function (resolve) {
-            setTimeout(function () {
+        return new Promise(function(resolve) {
+            setTimeout(function() {
                 resolve();
             }, ms);
         });
@@ -15,7 +15,7 @@ class Common {
         let loadXML = new XMLHttpRequest;
         if (loadXML != null) {
             loadXML.open("GET", path, true);
-            loadXML.onreadystatechange = function () {
+            loadXML.onreadystatechange = function() {
                 if (loadXML.readyState == 4) {
                     if (loadXML.status == 200) {
                         divParent.innerHTML = divParent.innerHTML + loadXML.responseText;
@@ -39,7 +39,7 @@ class Common {
         let loaded = 0;
         let startTime = (new Date()).getTime();
         let keyList = Object.keys(imageObject);
-        let onResponse = function () {
+        let onResponse = function() {
             loaded = loaded + 1;
             if (loaded < keyList.length) {
                 return;
@@ -51,7 +51,7 @@ class Common {
             let loadingTime = endTime - startTime;
             console.log('Time for preloading ' + keyList.length + ' image(s): ' + loadingTime + 'ms.');
             let timeLeft = Math.max(minWaitTime - loadingTime, 0);
-            window.setTimeout(function () {
+            window.setTimeout(function() {
                 callback();
             }, timeLeft);
         };
@@ -62,7 +62,7 @@ class Common {
                 let loadXML = new XMLHttpRequest;
                 if (loadXML != null) {
                     loadXML.open("GET", link, true);
-                    loadXML.onreadystatechange = function () {
+                    loadXML.onreadystatechange = function() {
                         if (loadXML.readyState == 4 && loadXML.status == 200) {
                             window.imagePreload[key] = loadXML.responseText;
                             onResponse();
@@ -107,20 +107,23 @@ class Common {
 
     static createDivParallax(divTarget, objectTarget, bgPercentStart, bgPercentEnd) {
         objectTarget = Common.createObjectParallax(divTarget, bgPercentStart, bgPercentEnd);
-        window.addEventListener('scroll', function () {
+        objectTarget.divParent.addEventListener('scroll', function() {
             Common.handleParallax(objectTarget);
         });
-        window.addEventListener('resize', function () {
+        window.addEventListener('resize', function() {
             objectTarget = Common.createObjectParallax(divTarget, bgPercentStart, bgPercentEnd);
         });
     };
 
-    static createObjectParallax(divTarget, bgPercentStart, bgPercentEnd) {
-        let totalPageHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+    static createObjectParallax(divTarget, bgPercentStart, bgPercentEnd, divParent) {
+        if (divParent == null) {
+            divParent = document.getElementsByClassName('general-content-outer')[0];
+        }
+        let totalPageHeight = divParent.scrollHeight;
         if (totalPageHeight <= window.innerHeight) {
             return;
         }
-        let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        let scrollTop = divParent.scrollTop;
 
         if (bgPercentStart == null) {
             bgPercentStart = 100;
@@ -140,6 +143,7 @@ class Common {
         let parallaxDistance = parallaxEnd - parallaxStart;
 
         return {
+            divParent,
             div: divTarget,
             start: parallaxStart,
             end: parallaxEnd,
@@ -151,8 +155,9 @@ class Common {
     };
 
     static handleParallax(objectParallax) {
+        let divParent = objectParallax.divParent;
         let div = objectParallax.div;
-        let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+        let scrollTop = divParent.scrollTop;
         if (scrollTop <= objectParallax.start) {
             div.style.backgroundPosition = `50% ${objectParallax.bgPercentStart}%`;
             return;
@@ -168,6 +173,29 @@ class Common {
         div.style.backgroundPosition = `50% ${objectParallax.bgPercentStart - bgPercentage}%`;
     };
 
+    static createAndShowDivWaiting() {
+        let div = document.createElement('div');
+        div.classList.add('general-overlay');
+
+        let divLandscape = document.createElement('div');
+        divLandscape.classList.add('general-overlay-image');
+        divLandscape.classList.add('landscape');
+        divLandscape.innerHTML = window.imagePreload['loading_initial_landscape'];
+        div.appendChild(divLandscape);
+
+        let divPortrait = document.createElement('div');
+        divPortrait.classList.add('general-overlay-image');
+        divPortrait.classList.add('portrait');
+        divPortrait.innerHTML = window.imagePreload['loading_initial_portrait'];
+        div.appendChild(divPortrait);
+
+        document.body.appendChild(div);
+        return div;
+    };
+
+    static removeDivWaiting(div) {
+        document.body.removeChild(div);
+    };
 };
 
 class LoadingInitial {
@@ -194,7 +222,7 @@ class LoadingInitial {
         divDisclaimerLight.classList.add('light');
         divDisclaimerLight.style.backgroundImage =
             `url(${window.version.image.common['loading_initial_disclaimer_light']})`;
-        divDisclaimerLight.onclick = function () {
+        divDisclaimerLight.onclick = function() {
             window.open('https://loading.io', '_newtab');
         };
         this.div.appendChild(divDisclaimerLight);
@@ -204,7 +232,7 @@ class LoadingInitial {
         divDisclaimerDark.classList.add('dark');
         divDisclaimerDark.style.backgroundImage =
             `url(${window.version.image.common['loading_initial_disclaimer_dark']})`;
-        divDisclaimerDark.onclick = function () {
+        divDisclaimerDark.onclick = function() {
             window.open('https://loading.io', '_newtab');
         };
         this.div.appendChild(divDisclaimerDark);
@@ -212,13 +240,18 @@ class LoadingInitial {
 };
 
 class MenuTop {
-    constructor() {
+    constructor(scrollTarget) {
+        if (scrollTarget == null) {
+            scrollTarget = 100;
+        }
         this.toggleTime =
             window.rootStyle.getPropertyValue('--menu-top-animation-toggle-time');
 
+        let divParent = document.getElementsByClassName('general-content-outer')[0];
+
         this.div = document.createElement('div');
         this.div.classList.add('menu-top-outer');
-        document.body.appendChild(this.div);
+        divParent.appendChild(this.div);
 
         let divGridOuter = document.createElement('div');
         divGridOuter.classList.add('menu-top-grid-outer');
@@ -229,11 +262,10 @@ class MenuTop {
         this.createItem(divGridOuter);
 
         let parent = this;
-        window.addEventListener('scroll', function (e) {
-            let scrollTarget = 100;
+        divParent.addEventListener('scroll', function(e) {
             let divButtonContact = document.getElementById(window.res.common.menuItem['contact'].id);
             let elementList = [parent.div, divButtonContact];
-            if (document.body.scrollTop > scrollTarget || document.documentElement.scrollTop > scrollTarget) {
+            if (divParent.scrollTop > scrollTarget) {
                 for (let i = 0; i < elementList.length; i++) {
                     let element = elementList[i];
                     if (!element.classList.contains('desktop-scroll')) {
@@ -287,7 +319,7 @@ class MenuTop {
 
         let divClickForHome = document.getElementsByClassName(className);
         for (let i = 0; i < divClickForHome.length; i++) {
-            divClickForHome[i].onclick = function () {
+            divClickForHome[i].onclick = function() {
                 window.location = window.res.common.menuItem['home'].link;
             };
         }
@@ -303,7 +335,7 @@ class MenuTop {
         let svg = document.getElementById('menuTopButtonToggle');
         svg.setAttribute(clickableAttr, 'true');
         svg.setAttribute(closeAttr, 'true');
-        svg.onclick = function () {
+        svg.onclick = function() {
             let clickable = this.getAttribute(clickableAttr);
             let close = this.getAttribute(closeAttr);
             if (clickable == 'false') {
@@ -317,7 +349,7 @@ class MenuTop {
                 endClose = 'true';
                 parent.div.classList.remove('show');
                 parent.div.classList.add('hide');
-                window.setTimeout(function () {
+                window.setTimeout(function() {
                     parent.div.classList.remove('hide');
                 }, parseInt(parent.toggleTime));
             } else {
@@ -329,7 +361,7 @@ class MenuTop {
                 group.children[i].beginElement();
             }
             this.setAttribute(closeAttr, endClose);
-            window.setTimeout(function () {
+            window.setTimeout(function() {
                 svg.setAttribute(clickableAttr, 'true');
             }, parseInt(parent.toggleTime));
         };
@@ -371,7 +403,7 @@ class MenuTop {
         divGrid.appendChild(divItemFillerAfter);
 
         if (!window.location.toString().includes(objectData.link)) {
-            div.onclick = function () {
+            div.onclick = function() {
                 window.location = objectData.link;
             };
         } else {
@@ -390,7 +422,7 @@ class MenuTop {
         let height = (data.heightDelta * progress) + data.heightInitial;
         data.div.style.height = height + 'px';
         let parent = this;
-        window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function() {
             parent.toggleMenuTop(data);
         });
     };
@@ -461,7 +493,7 @@ class Footer {
             divLink.innerText = Common.capitalizeFirstLetterOnly(item[window.langCur]);
             div.appendChild(divLink);
 
-            divLink.onclick = function () {
+            divLink.onclick = function() {
                 window.location = item.link;
             };
         }
@@ -495,7 +527,7 @@ class Footer {
             div.appendChild(divLink);
 
             if (item.link != null) {
-                divLink.onclick = function () {
+                divLink.onclick = function() {
                     window.location = item.link;
                 };
             }
@@ -591,9 +623,40 @@ class Banner {
             divArrow.innerText = '>';
             divSiteMap.appendChild(divArrow);
 
-            divItem.onclick = function () {
+            divItem.onclick = function() {
                 window.location = data.link;
             };
         }
     };
 };
+
+class TextBox {
+    constructor(placeholder, id) {
+        this.div = document.createElement('div');
+        this.div.classList.add('general-text-box-outer');
+
+        this.input = document.createElement('input');
+        this.input.classList.add('general-input-text');
+        this.input.placeholder = placeholder;
+        if (id != null) {
+            this.input.id = id;
+        }
+        this.div.appendChild(this.input);
+    };
+};
+
+class TextArea {
+    constructor(placeholder, id) {
+        this.div = document.createElement('div');
+        this.div.classList.add('general-text-box-outer');
+
+        this.input = document.createElement('textarea');
+        this.input.classList.add('general-input-text');
+        this.input.classList.add('text-area');
+        this.input.placeholder = placeholder;
+        if (id != null) {
+            this.input.id = id;
+        }
+        this.div.appendChild(this.input);
+    };
+}

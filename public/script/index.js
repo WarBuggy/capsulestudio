@@ -1,29 +1,13 @@
-window.onload = function () {
+window.onload = function() {
     window.rootStyle = getComputedStyle(document.body);
     let loadingInitial = new LoadingInitial();
     document.body.appendChild(loadingInitial.div);
-    let imagePreloadCategoryList = ['common', 'home', 'home_service_common',];
-    Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function () {
+    let imagePreloadCategoryList = ['common', 'home', 'home_service_common', ];
+    Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function() {
         document.body.removeChild(loadingInitial.div);
-        createDivHomeBanner();
         new ContentHome();
         new MenuTop();
     });
-};
-
-function createDivHomeBanner() {
-    let div = document.createElement('div');
-    div.classList.add('home-banner');
-    div.style.backgroundImage = `url(${window.version.image.home['home_banner']})`;
-
-    let divOverlay = document.createElement('div');
-    divOverlay.classList.add('home-banner-color-overlay');
-    div.appendChild(divOverlay);
-
-    div.innerHTML = div.innerHTML.concat(window.imagePreload['home_banner_image_overlay']);
-    let svg = div.children[div.children.length - 1];
-    svg.classList.add('home-banner-image-overlay')
-    document.body.appendChild(div);
 };
 
 class ContentHome {
@@ -32,8 +16,11 @@ class ContentHome {
         divOuter.classList.add('general-content-outer');
         document.body.appendChild(divOuter);
 
+        this.createBanner(divOuter);
+
         let divGrid = document.createElement('div');
         divGrid.classList.add('general-content-grid');
+        divGrid.style.position = 'relative';
         divOuter.appendChild(divGrid);
 
         this.createDivOne(divGrid);
@@ -46,6 +33,21 @@ class ContentHome {
 
         let divParallax = document.getElementsByClassName('home-five')[0];
         Common.createDivParallax(divParallax, this.objectParallax);
+    };
+
+    createBanner(divParent) {
+        let div = document.createElement('div');
+        div.classList.add('home-banner');
+        div.style.backgroundImage = `url(${window.version.image.home['home_banner']})`;
+        divParent.appendChild(div);
+
+        let divOverlay = document.createElement('div');
+        divOverlay.classList.add('home-banner-color-overlay');
+        div.appendChild(divOverlay);
+
+        div.innerHTML = div.innerHTML.concat(window.imagePreload['home_banner_image_overlay']);
+        let svg = div.children[div.children.length - 1];
+        svg.classList.add('home-banner-image-overlay');
     };
 
     createDivOne(divParent) {
@@ -267,7 +269,7 @@ class ContentHome {
     };
 
     createDivFive(divParent) {
-        let hasIntersectionObserver = (typeof (IntersectionObserver) === 'function');
+        let hasIntersectionObserver = (typeof(IntersectionObserver) === 'function');
 
         let divOuter = document.createElement('div');
         divOuter.classList.add('home-five');
@@ -293,7 +295,7 @@ class ContentHome {
 
         let parent = this;
         let targetRatio = 0.6
-        let observerValue = new IntersectionObserver(function (entries) {
+        let observerValue = new IntersectionObserver(function(entries) {
             let intersectionRatio = parseFloat(entries[0]['intersectionRatio']);
             if (intersectionRatio >= targetRatio) {
                 parent.animateDivFiveValueAll();
@@ -373,7 +375,7 @@ class ContentHome {
                 decimal: data.decimal,
                 suffix: data.suffix,
             }
-            window.requestAnimationFrame(function () {
+            window.requestAnimationFrame(function() {
                 parent.animateDivFiveValue(object);
             });
         }
@@ -395,7 +397,7 @@ class ContentHome {
         }
         object.divValue.innerHTML = `${valueNew}${object.suffix || ''}`;
         let parent = this;
-        window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function() {
             parent.animateDivFiveValue(object);
         });
     };

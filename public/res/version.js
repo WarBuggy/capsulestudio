@@ -26,6 +26,9 @@ window.version = {
         },
         contact: {
             'contact_banner': 'res/img/home_five.jpg?1.0',
+            'contact_location': 'res/img/contact_location.svg?1.0',
+            'contact_phone': 'res/img/contact_phone.svg?1.0',
+            'contact_email': 'res/img/contact_email.svg?1.0',
         },
     },
 };
