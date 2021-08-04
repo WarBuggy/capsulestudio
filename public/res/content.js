@@ -451,5 +451,15 @@ window.res = {
             en: 'SEND',
             vi: 'GỬI',
         },
+        popup: {
+            success: {
+                en: 'Information will be processed within 48 hours.<br>Many thanks for this opportunity!',
+                vi: 'Nội dung sẽ được xử lý trong vòng 48 tiếng.<br>Xin chân thành cảm ơn!'
+            },
+            fail: {
+                en: 'Sorry, we could not process your contact request (error |<|code|>|). Please contact us via email or phone!',
+                vi: 'Xin thành thật xin lỗi, hệ thống đã gặp lỗi (|<|code|>|)<br>Xin vui lòng liên hệ với chúng tôi qua email hay số điện thoại!',
+            },
+        },
     },
 };

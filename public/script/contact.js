@@ -68,11 +68,29 @@ class ContentContact {
         divButton.innerText = window.res.contact.buttonText[window.langCur];
         divGrid.appendChild(divButton);
 
-        divButton.onclick = function() {
+        let parent = this;
+        divButton.onclick = async function() {
+            let name = parent.inputName.input.value.trim();
+            let contact = parent.inputContact.input.value.trim();
+            let message = parent.inputMessage.input.value.trim();
+            if (name == '' && contact == '' && message == '') {
+                parent.inputName.input.focus();
+                return;
+            }
+            let data = {
+                name,
+                contact,
+                message,
+            }
             let divWaiting = Common.createAndShowDivWaiting();
-            window.setTimeout(function() {
-                Common.removeDivWaiting(divWaiting);
-            }, 5000);
+            let objectResult = await Common.sendToBackend('cs_contact', data);
+            Common.removeDivWaiting(divWaiting);
+            let messagePopup = window.res.contact.popup.success[window.langCur];
+            if (objectResult.success == false) {
+                messagePopup =
+                    window.res.contact.popup.fail[window.langCur].replace('|<|code|>|', objectResult.code);
+            }
+            Common.showMessage(messagePopup);
         };
     };
 

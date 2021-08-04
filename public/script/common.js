@@ -196,6 +196,86 @@ class Common {
     static removeDivWaiting(div) {
         document.body.removeChild(div);
     };
+
+    static sendToBackend(webPart, dataJson) {
+        let url = window.backendURL + webPart;
+        return new Promise(function(resolve, reject) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState === 4) {
+                    if (this.status === 200) {
+                        Common.parseJSON(this['response'])
+                            .then(function(parseResult) {
+                                let result = parseResult.result;
+                                if (result != 0) {
+                                    resolve({
+                                        success: false,
+                                        code: 1,
+                                    });
+                                } else {
+                                    resolve({
+                                        success: true,
+                                        result: parseResult,
+                                    });
+                                }
+                            })
+                            .catch(function() {
+                                resolve({
+                                    success: false,
+                                    code: 2,
+                                });
+                            });
+                    } else {
+                        resolve({
+                            success: false,
+                            code: this.status,
+                        });
+                    }
+                }
+            }
+            xmlhttp.onerror = function(xmlhttpErr) {
+                reject(xmlhttpErr);
+            }
+            let params = '';
+            for (let key in dataJson) {
+                if (dataJson.hasOwnProperty(key)) {
+                    params = params + key + '=' + dataJson[key] + '&';
+                }
+            }
+            params = params.slice(0, -1);
+            xmlhttp.open('POST', url, true);
+            xmlhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xmlhttp.setRequestHeader('cache', 'no-cahce');
+            xmlhttp.send(params);
+        });
+    };
+
+    static showMessage(message) {
+        let div = document.createElement('div');
+        div.classList.add('general-overlay');
+
+        let divMessage = document.createElement('div');
+        divMessage.classList.add('general-overlay-message');
+        divMessage.innerHTML = message;
+        div.appendChild(divMessage);
+
+        document.body.appendChild(div);
+
+        div.onclick = function() {
+            document.body.removeChild(div);
+        };
+    };
+
+    static parseJSON(input) {
+        return new Promise(function(resolve, reject) {
+            let jsonRes = JSON.parse(input);
+            if (jsonRes.success) {
+                resolve(jsonRes);
+            } else {
+                reject(jsonRes);
+            }
+        });
+    };
 };
 
 class LoadingInitial {
