@@ -83,7 +83,7 @@ class ContentContact {
                 message,
             }
             let divWaiting = Common.createAndShowDivWaiting();
-            let objectResult = await Common.sendToBackend('cs_contact', data);
+            let objectResult = await Common.sendToBackend('contact', data);
             Common.removeDivWaiting(divWaiting);
             let messagePopup = window.res.contact.popup.success[window.langCur];
             if (objectResult.success == false) {
