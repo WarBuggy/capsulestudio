@@ -42,6 +42,42 @@ window.version = {
         },
         work: {
             'work_banner': 'res/img/home_five.jpg?1.0',
+            'work_window': 'res/img/work_window.svg?1.0',
+            'work_www': 'res/img/work_www.svg?1.0',
+            'work_android': 'res/img/work_android.svg?1.0',
+            'work_ios': 'res/img/work_ios.svg?1.0',
+        },
+        work_emos: {
+            'work_emos_01': 'res/img/work_emos_01.jpg?1.0',
+            'work_emos_02': 'res/img/work_emos_02.jpg?1.0',
+        },
+        work_vqmm: {
+            'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',
+            'work_vcsc_02': 'res/img/work_emos_02.jpg?1.0',
+        },
+        work_qdecor: {
+            'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',
+            'work_vcsc_02': 'res/img/work_emos_02.jpg?1.0',
+        },
+        work_vcsc: {
+            'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',
+            'work_vcsc_02': 'res/img/work_emos_02.jpg?1.0',
+        },
+        work_hhdk: {
+            'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',
+            'work_vcsc_02': 'res/img/work_emos_02.jpg?1.0',
+        },
+        work_wbtv: {
+            'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',
+            'work_vcsc_02': 'res/img/work_emos_02.jpg?1.0',
+        },
+        work_kungfuball: {
+            'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',
+            'work_vcsc_02': 'res/img/work_emos_02.jpg?1.0',
+        },
+        work_bts: {
+            'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',
+            'work_vcsc_02': 'res/img/work_emos_02.jpg?1.0',
         },
     },
 };

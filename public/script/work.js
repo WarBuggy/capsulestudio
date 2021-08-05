@@ -2,14 +2,18 @@ window.onload = function() {
     window.rootStyle = getComputedStyle(document.body);
     let loadingInitial = new LoadingInitial();
     document.body.appendChild(loadingInitial.div);
-    let imagePreloadCategoryList = ['common', 'home_work_common', 'work', ];
+    let paramApp = Common.getURLParameter('app');
+    if (paramApp == '' || window.res.work.item[paramApp] == null) {
+        let imagePreloadCategoryList = ['common', 'home_work_common', 'work', ];
+        Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function() {
+            document.body.removeChild(loadingInitial.div);
+            new ContentWork();
+        });
+        return;
+    }
+    let imagePreloadCategoryList = ['common', 'work', 'work_' + paramApp];
     Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function() {
         document.body.removeChild(loadingInitial.div);
-        let paramApp = Common.getURLParameter('app');
-        if (paramApp == '' || window.res.work.item[paramApp] == null) {
-            new ContentWork();
-            return;
-        }
         new ContentWorkIndividual(paramApp);
     });
 };
@@ -85,12 +89,80 @@ class ContentWork {
             };
         }
     };
-
-
 };
 
 class ContentWorkIndividual {
     constructor(param) {
-        document.write('Hello World!');
-    }
-}
+        let divOuter = document.createElement('div');
+        divOuter.classList.add('general-content-outer');
+        document.body.appendChild(divOuter);
+
+        let data = window.res.work.item[param];
+        let imageLink = window.version.image.work['work_banner'];
+        let titleBanner = data.name;
+        let siteMapBanner = window.res.work.siteMapItemList;
+        siteMapBanner = siteMapBanner.concat([
+            ['work', 'item', param, 'name', ]
+        ]);
+        let banner = new Banner(divOuter, imageLink, titleBanner, siteMapBanner);
+
+        let divGrid = document.createElement('div');
+        divGrid.classList.add('general-content-grid');
+        divOuter.appendChild(divGrid);
+
+        let divContentOuter = document.createElement('div');
+        divContentOuter.classList.add('work-individual-content-outer');
+        divGrid.appendChild(divContentOuter);
+
+        let divContentGrid = document.createElement('div');
+        divContentGrid.classList.add('work-individual-content-grid');
+        divContentOuter.appendChild(divContentGrid);
+
+        this.createDivInfo(data, divContentGrid);
+
+        new Footer(divOuter);
+
+        new MenuTop(50);
+
+        Common.createDivParallax(banner.div, this.objectParallaxBanner, 50, 0);
+    };
+
+    createDivInfo(data, divParent) {
+        let divOuter = document.createElement('div');
+        divOuter.classList.add('work-individual-item-outer');
+        divParent.appendChild(divOuter);
+
+        let divIcon = document.createElement('div');
+        divIcon.classList.add('work-individual-item-icon');
+        divIcon.style.backgroundImage = `url(${data.icon})`;
+        divOuter.appendChild(divIcon);
+
+        let divTitle = document.createElement('div');
+        divTitle.classList.add('work-individual-item-title');
+        divTitle.style['grid-column'] = `auto / span ${1 + (4 - data.availability.length)}`;
+        divTitle.innerText = data.name;
+        divOuter.appendChild(divTitle);
+
+        for (let i = 0; i < data.availability.length; i++) {
+            let item = data.availability[i];
+
+            let divOS = document.createElement('div');
+            divOS.classList.add('work-individual-os-outer');
+            divOS.innerHTML = window.imagePreload[`work_${item.os}`];
+            divOuter.appendChild(divOS);
+            if (item.link == null) {
+                continue;
+            }
+
+            divOS.style.cursor = 'pointer';
+            divOS.onclick = function() {
+                window.location = item.link;
+            };
+        }
+
+        let divTech = document.createElement('div');
+        divTech.classList.add('work-individual-item-tech');
+        divTech.innerText = data.tech;
+        divOuter.appendChild(divTech);
+    };
+};

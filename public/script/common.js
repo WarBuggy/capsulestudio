@@ -689,10 +689,17 @@ class Banner {
 
         let divTitle = document.createElement('div');
         divTitle.classList.add('general-banner-title');
-        divTitle.innerText = Common.capitalizeFirstLetterOnly(title[window.langCur]);;
+        let titleText = title[window.langCur];
+        if (titleText == null) {
+            titleText = title;
+        } else {
+            titleText = Common.capitalizeFirstLetterOnly(title[window.langCur]);
+        }
+        divTitle.innerText = titleText;
         divGrid.appendChild(divTitle);
 
         let divSiteMap = document.createElement('div');
+        divSiteMap.style.textAlign = 'center';
         divGrid.appendChild(divSiteMap);
         for (let i = 0; i < siteMapItemList.length; i++) {
             let item = siteMapItemList[i];
@@ -702,7 +709,13 @@ class Banner {
             }
             let divItem = document.createElement('div');
             divItem.classList.add('general-banner-item-sitemap');
-            divItem.innerText = Common.capitalizeFirstLetterOnly(data[window.langCur]);;
+            let text = data[window.langCur];
+            if (text == null) {
+                text = data;
+            } else {
+                text = Common.capitalizeFirstLetterOnly(text);
+            }
+            divItem.innerText = text;
             divSiteMap.appendChild(divItem);
 
             if (i >= siteMapItemList.length - 1) {

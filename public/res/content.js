@@ -367,6 +367,10 @@ window.res = {
                     vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
                 },
                 showInFooter: true,
+                availability: [
+                    { os: 'window', },
+                ],
+                tech: 'C#, MSSQL, .NET.',
             },
             vqmm: {
                 icon: window.version.image.home_work_common['hwc_vqmm'],
@@ -376,6 +380,10 @@ window.res = {
                     vi: 'Hệ thống hoàn chỉnh để quản lý và tham dự các chương trình quay số trúng thưởng bằng trình duyệt web.',
                 },
                 showInFooter: true,
+                availability: [
+                    { os: 'www', link: 'https://mayman.acb.com.vn', },
+                ],
+                tech: 'Javascript, NodeJs, MySQL.',
             },
             qdecor: {
                 icon: window.version.image.home_work_common['hwc_qdecor'],
@@ -385,6 +393,12 @@ window.res = {
                     vi: 'App điện thoại sử dụng công nghệ AR để xem xét mức hài hòa của TV với nội thất trong nhà.',
                 },
                 showInFooter: true,
+                availability: [
+                    { os: 'android', },
+                    { os: 'ios', },
+                ],
+                tech: 'ReactJS, ARCore.',
+
             },
             vcsc: {
                 icon: window.version.image.home_work_common['hwc_vcsc'],
@@ -394,6 +408,11 @@ window.res = {
                     vi: 'Hệ thống quản lý, cung cấp và nhắc nhở lịch trình cho các cuộc hội họp, trên trình duyệt và điện thoại.',
                 },
                 showInFooter: true,
+                availability: [
+                    { os: 'android', link: 'https://play.google.com/store/apps/details?id=studio.paradoxcapsule.vcsc.calendar', },
+                    { os: 'ios', link: 'https://apps.apple.com/us/app/vad-calendar/id1444769381', },
+                ],
+                tech: 'ReactJS',
             },
             hhdk: {
                 icon: window.version.image.home_work_common['hwc_hhdk'],
@@ -403,6 +422,10 @@ window.res = {
                     vi: 'Hệ thống để quản lý và cung cấp thông tin về phong thủy cho người dùng, miễn phí và hay trả định kỳ.',
                 },
                 showInFooter: true,
+                availability: [
+                    { os: 'www', link: 'https://huyenhocduky.com', },
+                ],
+                tech: 'ReactJS, NodeJs, MySQL.',
             },
             wbtv: {
                 icon: window.version.image.home_work_common['hwc_wbtv'],
@@ -411,6 +434,10 @@ window.res = {
                     en: 'A complete system to manage different concurrent prize-based events to celebrate Samsung 50th birthday.',
                     vi: 'Hệ thống để quản lý nhiều sự kiện trúng thưởng cùng lúc nhân dịp sinh nhật 50 tuổi của Samsung ',
                 },
+                availability: [
+                    { os: 'www', },
+                ],
+                tech: 'ReactJS, C#, .NET, MSSQL.',
             },
             kungfuball: {
                 icon: window.version.image.home_work_common['hwc_kungfuball'],
@@ -419,6 +446,10 @@ window.res = {
                     en: 'Mobile game app that drawn inspiration from the movie "Shaolin Soccer", made for a Google competition.',
                     vi: 'Game mobile dự thi giải "Game Launcher" do Google tổ chức, lấy ý tưởng từ phim "Đội bóng Thiếu Lâm".',
                 },
+                availability: [
+                    { os: 'android', },
+                ],
+                tech: 'JAVA.',
             },
             bts: {
                 icon: window.version.image.home_work_common['hwc_bts'],
@@ -427,6 +458,10 @@ window.res = {
                     en: 'A non-intrusive web-based service that notify users when a provided lottery number is a winning one.',
                     vi: 'Dịch vụ tiện lợi thông báo cho người dùng nếu vé số truyền thống (cung cấp trước đó) trúng thưởng.',
                 },
+                availability: [
+                    { os: 'www', link: 'https://baotrungso.com' },
+                ],
+                tech: 'Javascript, NodeJS, MySQL.',
             },
         },
         textButton: {
