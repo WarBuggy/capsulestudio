@@ -15,12 +15,12 @@ window.res = {
             'work': {
                 en: 'OUR WORKS',
                 vi: 'DỰ ÁN',
-                link: 'works.html',
+                link: 'work.html',
             },
             'service': {
                 en: 'SERVICES',
                 vi: 'DỊCH VỤ',
-                link: 'services.html',
+                link: 'service.html',
             },
             'blog': {
                 en: 'BLOG',
@@ -350,39 +350,88 @@ window.res = {
         ],
     },
     work: {
-        emos: {
-            icon: 'res/img/icon_emos.png',
-            name: 'EMOS',
-            showInFooter: true,
+        title: {
+            en: 'Our Works',
+            vi: 'Dự án',
         },
-        vqmm: {
-            icon: 'res/img/icon_vqmm.png',
-            name: 'Vòng Quay May Mắn',
-            showInFooter: true,
+        siteMapItemList: [
+            ['common', 'menuItem', 'home'],
+            ['common', 'menuItem', 'work'],
+        ],
+        item: {
+            emos: {
+                icon: window.version.image.home_work_common['hwc_emos'],
+                name: 'EMOS',
+                text: {
+                    en: 'Manage inventory for multiple motorbike stores. Can be quickly adjusted for other purposes.',
+                    vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                },
+                showInFooter: true,
+            },
+            vqmm: {
+                icon: window.version.image.home_work_common['hwc_vqmm'],
+                name: 'Vòng Quay May Mắn',
+                text: {
+                    en: 'Complete browser-based system to manage and participate in multiple lucky wheel style events.',
+                    vi: 'Hệ thống hoàn chỉnh để quản lý và tham dự các chương trình quay số trúng thưởng bằng trình duyệt web.',
+                },
+                showInFooter: true,
+            },
+            qdecor: {
+                icon: window.version.image.home_work_common['hwc_qdecor'],
+                name: 'Q Décor',
+                text: {
+                    en: 'Mobile app for Samsung that uses Agmented Reality (AR) to preview TV placement around the house.',
+                    vi: 'App điện thoại sử dụng công nghệ AR để xem xét mức hài hòa của TV với nội thất trong nhà.',
+                },
+                showInFooter: true,
+            },
+            vcsc: {
+                icon: window.version.image.home_work_common['hwc_vcsc'],
+                name: 'VCSC Calendar',
+                text: {
+                    en: 'System to manage, provide and alert schedules for multiple conferences and events, on web and mobile.',
+                    vi: 'Hệ thống quản lý, cung cấp và nhắc nhở lịch trình cho các cuộc hội họp, trên trình duyệt và điện thoại.',
+                },
+                showInFooter: true,
+            },
+            hhdk: {
+                icon: window.version.image.home_work_common['hwc_hhdk'],
+                name: 'Huyền Học Du Ký',
+                text: {
+                    en: 'A complete web-based system to provide user with feng-shui information, with free and subscription model.   ',
+                    vi: 'Hệ thống để quản lý và cung cấp thông tin về phong thủy cho người dùng, miễn phí và hay trả định kỳ.',
+                },
+                showInFooter: true,
+            },
+            wbtv: {
+                icon: window.version.image.home_work_common['hwc_wbtv'],
+                name: 'World Best TV',
+                text: {
+                    en: 'A complete system to manage different concurrent prize-based events to celebrate Samsung 50th birthday.',
+                    vi: 'Hệ thống để quản lý nhiều sự kiện trúng thưởng cùng lúc nhân dịp sinh nhật 50 tuổi của Samsung ',
+                },
+            },
+            kungfuball: {
+                icon: window.version.image.home_work_common['hwc_kungfuball'],
+                name: 'Kung-fu ball',
+                text: {
+                    en: 'Mobile game app that drawn inspiration from the movie "Shaolin Soccer", made for a Google competition.',
+                    vi: 'Game mobile dự thi giải "Game Launcher" do Google tổ chức, lấy ý tưởng từ phim "Đội bóng Thiếu Lâm".',
+                },
+            },
+            bts: {
+                icon: window.version.image.home_work_common['hwc_bts'],
+                name: 'Báo Trúng Số',
+                text: {
+                    en: 'A non-intrusive web-based service that notify users when a provided lottery number is a winning one.',
+                    vi: 'Dịch vụ tiện lợi thông báo cho người dùng nếu vé số truyền thống (cung cấp trước đó) trúng thưởng.',
+                },
+            },
         },
-        qdecor: {
-            icon: 'res/img/icon_q.png',
-            name: 'Q Décor',
-            showInFooter: true,
-        },
-        vcsc: {
-            icon: 'res/img/icon_vcsc.png',
-            name: 'VCSC Calendar',
-            showInFooter: true,
-        },
-        hhdk: {
-            icon: 'res/img/icon_hhdk.png',
-            name: 'Huyền Học Du Ký',
-            showInFooter: true,
-        },
-        wbtv: {
-            icon: 'res/img/icon_wbtv.png',
-        },
-        kungfuball: {
-            icon: 'res/img/icon_kungfuball.png',
-        },
-        bts: {
-            icon: 'res/img/icon_bts.png',
+        textButton: {
+            en: 'Detail',
+            vi: 'Chi tiết',
         },
     },
     service: {

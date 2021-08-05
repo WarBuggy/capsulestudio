@@ -107,6 +107,9 @@ class Common {
 
     static createDivParallax(divTarget, objectTarget, bgPercentStart, bgPercentEnd) {
         objectTarget = Common.createObjectParallax(divTarget, bgPercentStart, bgPercentEnd);
+        if (objectTarget == null) {
+            return;
+        }
         objectTarget.divParent.addEventListener('scroll', function() {
             Common.handleParallax(objectTarget);
         });
@@ -275,6 +278,20 @@ class Common {
                 reject(jsonRes);
             }
         });
+    };
+
+    static getURLParameter(sParam, locationSearch) {
+        if (locationSearch == null) {
+            locationSearch = document.location.search;
+        }
+        let sPageURL = locationSearch.substring(1);
+        let sURLVariables = sPageURL.split('&');
+        for (let i = 0; i < sURLVariables.length; i++) {
+            let sParameterName = sURLVariables[i].split('=');
+            if (sParameterName[0].trim() == sParam) {
+                return sParameterName[1].trim();
+            }
+        }
     };
 };
 
@@ -589,9 +606,9 @@ class Footer {
         divTitle.innerText = window.res.common.footer.threeTitle[window.langCur];
         div.appendChild(divTitle);
 
-        let keyList = Object.keys(window.res.work);
+        let keyList = Object.keys(window.res.work.item);
         for (let i = 0; i < keyList.length; i++) {
-            let item = window.res.work[keyList[i]];
+            let item = window.res.work.item[keyList[i]];
             if (item.showInFooter != true) {
                 continue;
             }

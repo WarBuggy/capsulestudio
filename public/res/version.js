@@ -18,6 +18,16 @@ window.version = {
             'home_team_kevin': 'res/img/team_kevin.png?1.0',
             'home_five': 'res/img/home_five.jpg?1.0',
         },
+        home_work_common: {
+            'hwc_emos': 'res/img/icon_emos.png?1.0',
+            'hwc_vqmm': 'res/img/icon_vqmm.png?1.0',
+            'hwc_qdecor': 'res/img/icon_q.png?1.0',
+            'hwc_vcsc': 'res/img/icon_vcsc.png?1.0',
+            'hwc_hhdk': 'res/img/icon_hhdk.png?1.0',
+            'hwc_wbtv': 'res/img/icon_wbtv.png?1.0',
+            'hwc_kungfuball': 'res/img/icon_kungfuball.png?1.0',
+            'hwc_bts': 'res/img/icon_bts.png?1.0',
+        },
         home_service_common: {
             'hsc_chart': 'res/img/service_chart.svg?1.0',
             'hsc_doc': 'res/img/service_doc.svg?1.0',
@@ -29,6 +39,9 @@ window.version = {
             'contact_location': 'res/img/contact_location.svg?1.0',
             'contact_phone': 'res/img/contact_phone.svg?1.0',
             'contact_email': 'res/img/contact_email.svg?1.0',
+        },
+        work: {
+            'work_banner': 'res/img/home_five.jpg?1.0',
         },
     },
 };

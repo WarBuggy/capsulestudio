@@ -1,0 +1,92 @@
+:root {
+    --work-item-icon-size: 75px;
+    --work-one-item-grid-margin-left: 40px;
+    --work-one-item-icon-size-diff: calc(var(--work-item-icon-size) - var(--work-one-item-grid-margin-left));
+    --work-one-grid-template-columns: auto;
+    --work-one-item-grid-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        /* Dark mode */
+        --work-one-item-grid-box-shadow: 0px 2px 48px 0 rgba(122, 122, 122, 0.2);
+    }
+}
+
+@media only screen and (min-width: 700px) {
+     :root {
+        --work-one-grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+     :root {
+        --work-one-grid-template-columns: auto auto auto;
+    }
+}
+
+div.work-one-grid {
+    display: grid;
+    grid-template-columns: var(--work-one-grid-template-columns);
+    grid-row-gap: 30px;
+    grid-column-gap: 32px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+div.work-one-item-grid {
+    display: grid;
+    grid-template-columns: var(--work-one-item-icon-size-diff) 1fr;
+    grid-template-rows: auto 1fr auto;
+    box-shadow: var(--work-one-item-grid-box-shadow);
+    margin-left: var(--work-one-item-grid-margin-left);
+}
+
+div.work-one-item-icon-outer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+    grid-row: auto / span 3;
+}
+
+div.work-one-item-icon {
+    width: var(--work-item-icon-size);
+    height: var(--work-item-icon-size);
+    position: absolute;
+    top: 20px;
+    left: calc(-1 * var(--work-one-item-grid-margin-left));
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+div.work-one-item-title {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--color-title-1);
+    letter-spacing: 0.7px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+}
+
+div.work-one-item-text {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--color-text-1);
+    line-height: 26px;
+    letter-spacing: 0.88px;
+    margin-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.general-button.center {
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}

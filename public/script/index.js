@@ -2,7 +2,7 @@ window.onload = function() {
     window.rootStyle = getComputedStyle(document.body);
     let loadingInitial = new LoadingInitial();
     document.body.appendChild(loadingInitial.div);
-    let imagePreloadCategoryList = ['common', 'home', 'home_service_common', ];
+    let imagePreloadCategoryList = ['common', 'home', 'home_service_common', 'home_work_common', ];
     Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function() {
         document.body.removeChild(loadingInitial.div);
         new ContentHome();
@@ -76,10 +76,10 @@ class ContentHome {
     };
 
     populateDivOneGridIcon(divParent) {
-        let keyList = Object.keys(window.res.work);
+        let keyList = Object.keys(window.res.work.item);
         for (let i = 0; i < keyList.length; i++) {
             let key = keyList[i];
-            let data = window.res.work[key];
+            let data = window.res.work.item[key];
             let div = document.createElement('div');
             div.classList.add('one-icon');
             div.style.backgroundImage = `url(${data.icon})`;
