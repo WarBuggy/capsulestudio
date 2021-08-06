@@ -247,7 +247,7 @@ class ContentWorkIndividual {
             divOuter.appendChild(divDescGrid);
 
             for (let j = 0; j < version.desc.length; j++) {
-                let desc = version.desc[i];
+                let desc = version.desc[j];
 
                 let divBullet = document.createElement('div');
                 divBullet.classList.add('work-individual-version-desc-grid-bullet');
