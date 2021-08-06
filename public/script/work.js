@@ -118,7 +118,10 @@ class ContentWorkIndividual {
         divContentGrid.classList.add('work-individual-content-grid');
         divContentOuter.appendChild(divContentGrid);
 
-        this.createDivInfo(data, divContentGrid);
+        this.createDivOne(data, divContentGrid);
+        this.createDivTwo(data, divContentGrid);
+        this.createDivThree(data, divContentGrid);
+        this.createDivFour(data, divContentGrid);
 
         new Footer(divOuter);
 
@@ -127,7 +130,7 @@ class ContentWorkIndividual {
         Common.createDivParallax(banner.div, this.objectParallaxBanner, 50, 0);
     };
 
-    createDivInfo(data, divParent) {
+    createDivOne(data, divParent) {
         let divOuter = document.createElement('div');
         divOuter.classList.add('work-individual-item-outer');
         divParent.appendChild(divOuter);
@@ -164,5 +167,98 @@ class ContentWorkIndividual {
         divTech.classList.add('work-individual-item-tech');
         divTech.innerText = data.tech;
         divOuter.appendChild(divTech);
+    };
+
+    createDivTwo(data, divParent) {
+        let svgContent = window.imagePreload['work_ind_desc'];
+        divParent.innerHTML = divParent.innerHTML.concat(svgContent);
+
+        let divTextOuter = document.createElement('div');
+        divParent.appendChild(divTextOuter);
+
+        let divTitle = document.createElement('div');
+        divTitle.classList.add('work-individual-title');
+        divTitle.innerText = window.res.work.workIndDescription[window.langCur];
+        divTextOuter.appendChild(divTitle);
+
+        for (let i = 0; i < data.desc[window.langCur].length; i++) {
+            let text = data.desc[window.langCur][i];
+            let divText = document.createElement('div');
+            divText.classList.add('work-individual-text');
+            divText.innerText = data.desc[window.langCur];
+            divTextOuter.appendChild(divText);
+        }
+    };
+
+    createDivThree(data, divParent) {
+        let svgContent = window.imagePreload['work_ind_screenshot'];
+        divParent.innerHTML = divParent.innerHTML.concat(svgContent);
+
+        let divOuter = document.createElement('div');
+        divParent.appendChild(divOuter);
+
+        let divTitle = document.createElement('div');
+        divTitle.classList.add('work-individual-title');
+        divTitle.innerText = window.res.work.workIndScreenshot[window.langCur];
+        divOuter.appendChild(divTitle);
+
+        let divGrid = document.createElement('div');
+        divGrid.classList.add('work-individual-screenshot-grid');
+        divOuter.appendChild(divGrid);
+
+        for (let i = 0; i < data.image.length; i++) {
+            let dataImage = data.image[i];
+            let colSpan = dataImage.colSpan;
+
+            let divImageOuter = document.createElement('div');
+            divImageOuter.classList.add('work-individual-screenshot-image-outer');
+            divImageOuter.style['grid-column'] = `auto / span ${colSpan}`;
+            divGrid.appendChild(divImageOuter);
+
+            let img = document.createElement('img');
+            img.classList.add('work-individual-screenshot-img');
+            img.src = window.imagePreload[dataImage.name].src;
+            divImageOuter.appendChild(img);
+        }
+    };
+
+    createDivFour(data, divParent) {
+        let svgContent = window.imagePreload['work_ind_version'];
+        divParent.innerHTML = divParent.innerHTML.concat(svgContent);
+
+        let divOuter = document.createElement('div');
+        divParent.appendChild(divOuter);
+
+        let divTitle = document.createElement('div');
+        divTitle.classList.add('work-individual-title');
+        divTitle.innerText = window.res.work.workIndVersion[window.langCur];
+        divOuter.appendChild(divTitle);
+
+        for (let i = 0; i < data.version.length; i++) {
+            let version = data.version[i];
+
+            let divVersion = document.createElement('div');
+            divVersion.classList.add('work-individual-version-number')
+            divVersion.innerText = version.version;
+            divOuter.appendChild(divVersion);
+
+            let divDescGrid = document.createElement('div');
+            divDescGrid.classList.add('work-individual-version-desc-grid');
+            divOuter.appendChild(divDescGrid);
+
+            for (let j = 0; j < version.desc.length; j++) {
+                let desc = version.desc[i];
+
+                let divBullet = document.createElement('div');
+                divBullet.classList.add('work-individual-version-desc-grid-bullet');
+                divBullet.innerText = '>';
+                divDescGrid.appendChild(divBullet);
+
+                let divText = document.createElement('div');
+                divText.classList.add('work-individual-version-desc-grid-text');
+                divText.innerText = desc[window.langCur];
+                divDescGrid.appendChild(divText);
+            }
+        }
     };
 };

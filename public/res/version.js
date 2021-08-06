@@ -46,6 +46,9 @@ window.version = {
             'work_www': 'res/img/work_www.svg?1.0',
             'work_android': 'res/img/work_android.svg?1.0',
             'work_ios': 'res/img/work_ios.svg?1.0',
+            'work_ind_desc': 'res/img/work_ind_desc.svg?1.0',
+            'work_ind_screenshot': 'res/img/work_ind_screenshot.svg?1.0',
+            'work_ind_version': 'res/img/work_ind_version.svg?1.0',
         },
         work_emos: {
             'work_emos_01': 'res/img/work_emos_01.jpg?1.0',

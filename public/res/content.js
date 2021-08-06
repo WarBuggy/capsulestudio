@@ -371,6 +371,72 @@ window.res = {
                     { os: 'window', },
                 ],
                 tech: 'C#, MSSQL, .NET.',
+                desc: {
+                    en: 'Not available.',
+                    vi: [
+                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.' +
+                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.' +
+                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.' +
+                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.' +
+                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.' +
+                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.' +
+                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                    ],
+                },
+                image: [
+                    { name: 'work_emos_01', colSpan: 2, },
+                    { name: 'work_emos_02', colSpan: 2, },
+                ],
+                version: [{
+                        version: '1.2',
+                        desc: [{
+                                en: 'Not available.',
+                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                            },
+                        ],
+                    },
+                    {
+                        version: '1.1',
+                        desc: [{
+                                en: 'Not available.',
+                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                            },
+                        ],
+                    },
+                    {
+                        version: '1.0',
+                        desc: [{
+                                en: 'Not available.',
+                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                            },
+                        ],
+                    },
+                ],
             },
             vqmm: {
                 icon: window.version.image.home_work_common['hwc_vqmm'],
@@ -467,6 +533,18 @@ window.res = {
         textButton: {
             en: 'Detail',
             vi: 'Chi tiết',
+        },
+        workIndDescription: {
+            en: 'Description',
+            vi: 'Mô tả',
+        },
+        workIndScreenshot: {
+            en: 'Screenshots',
+            vi: 'Ảnh mình họa',
+        },
+        workIndVersion: {
+            en: 'Version History',
+            vi: 'Lịch sử phiên bản',
         },
     },
     service: {

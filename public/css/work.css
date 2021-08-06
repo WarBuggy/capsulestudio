@@ -4,24 +4,29 @@
     --work-one-item-icon-size-diff: calc(var(--work-item-icon-size) - var(--work-one-item-grid-margin-left));
     --work-one-grid-template-columns: auto;
     --work-one-item-grid-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+    --work-individual-screenshot-grid-template-columns: 1fr;
+    --work-individual-screenshot-image-outer-border-color: var(--color-border-light);
 }
 
 @media (prefers-color-scheme: dark) {
      :root {
         /* Dark mode */
         --work-one-item-grid-box-shadow: 0px 2px 48px 0 rgba(122, 122, 122, 0.2);
+        --work-individual-screenshot-image-outer-border-color: var(--color-border-dark);
     }
 }
 
 @media only screen and (min-width: 700px) {
      :root {
         --work-one-grid-template-columns: auto auto;
+        --work-individual-screenshot-grid-template-columns: 1fr 1fr;
     }
 }
 
 @media only screen and (min-width: 1100px) {
      :root {
         --work-one-grid-template-columns: auto auto auto;
+        --work-individual-screenshot-grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
 
@@ -93,7 +98,6 @@ div.work-one-item-text {
 
 div.work-individual-content-outer {
     width: 100%;
-    height: 400px;
     box-shadow: var(--work-one-item-grid-box-shadow);
     margin-top: 100px;
     margin-bottom: 100px;
@@ -104,29 +108,28 @@ div.work-individual-content-outer {
 
 div.work-individual-content-grid {
     display: grid;
-    grid-template-columns: 62px 1fr;
+    grid-template-columns: 60px 1fr;
+    grid-row-gap: 60px;
 }
 
 div.work-individual-item-outer {
     grid-column: auto / span 2;
     display: grid;
-    grid-template-columns: 90px 1fr auto auto auto auto;
-    column-gap: var(--space-standard);
+    grid-template-columns: 60px 1fr auto auto auto auto;
 }
 
 div.work-individual-item-icon {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    justify-self: center;
-    align-self: auto;
+    justify-self: start;
     grid-row: auto / span 2;
 }
 
 div.work-individual-item-title {
-    font-weight: 400;
+    font-weight: 700;
     font-size: 24px;
     letter-spacing: 1px;
     margin-bottom: 10px;
@@ -136,10 +139,11 @@ div.work-individual-item-title {
 div.work-individual-os-outer {
     display: block;
     grid-row: auto / span 2;
+    margin-left: var(--space-standard);
 }
 
 svg.work-individual-os {
-    height: 60px;
+    height: 45px;
     width: auto;
 }
 
@@ -149,4 +153,82 @@ div.work-individual-item-tech {
     letter-spacing: 0.88px;
     line-height: 28px;
     color: var(--color-text-1);
+}
+
+svg.work-individual-icon {
+    width: 23px;
+    height: 23px;
+    justify-self: start;
+    align-self: start;
+}
+
+div.work-individual-title {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--color-title-1);
+    margin-bottom: 20px;
+}
+
+div.work-individual-text {
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.88px;
+    line-height: 28px;
+    color: var(--color-text-1);
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+div.work-individual-screenshot-grid {
+    display: grid;
+    grid-template-columns: var(--work-individual-screenshot-grid-template-columns);
+    grid-gap: calc(2* var(--space-standard));
+}
+
+div.work-individual-screenshot-image-outer {
+    box-shadow: var(--work-one-item-grid-box-shadow);
+    border: 1px solid;
+    border-color: var(--work-individual-screenshot-image-outer-border-color);
+    padding: 4px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+img.work-individual-screenshot-img {
+    width: 100%;
+}
+
+div.work-individual-version-number {
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--color-title-1);
+}
+
+div.work-individual-version-desc-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin-bottom: 30px;
+}
+
+div.work-individual-version-desc-grid-bullet {
+    color: var(--logo-darkest);
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+div.work-individual-version-desc-grid-text {
+    font-size: 14px;
+    color: var(--color-text-1);
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    text-align: justify;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.work-individual-version-desc-grid-text:hover {
+    padding-left: 5px;
 }

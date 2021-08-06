@@ -84,6 +84,10 @@ class ContentHome {
             div.classList.add('one-icon');
             div.style.backgroundImage = `url(${data.icon})`;
             divParent.appendChild(div);
+
+            div.onclick = function() {
+                window.location = `work.html?app=${key}`;
+            };
         }
     };
 
@@ -433,13 +437,13 @@ function createText() {
 };
 
 async function removeColor() {
-    let imgPath = 'res/img/team_ben.png';
+    let imgPath = 'res/img/avatar.png';
     let img = document.createElement('img');
     img.src = imgPath;
     await Common.sleep(1000);
 
-    let width = 256;
-    let height = 256;
+    let width = 865;
+    let height = 865;
     let canvas = document.createElement('canvas');
     canvas.width = width;
     canvas.height = height;
@@ -457,7 +461,7 @@ async function removeColor() {
         let r = imageData.data[indexR];
         let g = imageData.data[indexG];
         let b = imageData.data[indexB];
-        if (r > 240 && g > 240 && b > 240) {
+        if (r > 245 && g > 245 && b > 245) {
             imageData.data[indexA] = 0;
             continue;
         }
