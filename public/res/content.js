@@ -374,14 +374,24 @@ window.res = {
                 desc: {
                     en: 'Not available.',
                     vi: [
-                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.' +
-                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.' +
-                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.' +
-                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
-                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.' +
-                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.' +
-                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.' +
-                        'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                        'Hệ thống hoàn chỉnh để quản lý xuất nhập kho, được thiết kế và phát triển cho khách hàng là ' +
+                        'chủ chuỗi cửa hàng xe máy. Đây là giải pháp tầng enterprise, theo đúng quy chuẩn quốc tế về xuất nhập kho. ' +
+                        'Giám đốc luôn có thể nắm được số lượng của hàng trăm mặt hàng lớn nhỏ, tại từng vị trí trong mỗi cửa hàng, ' +
+                        'theo thời gian thực. Việc xuất nhập kho được thực hiện với sự trợ giúp của hệ thống, bảo đảm chính xác và ' +
+                        'nhanh chóng. Việc quản lý chặt chẽ giúp đề cao tính trung thực của từng nhân viên, góp phần nâng cao hiệu quả ' +
+                        'của môi trường làm việc.',
+
+                        'Không dừng lại ở việc quản lý kho, hệ thống đã được yêu cầu nâng cấp, gắn thêm tính năng quản lý, theo dõi và ' +
+                        'chăm sóc khách hàng. Việc nhắn tin chúc mừng khách hàng được thực hiện tự động theo điều chỉnh của quản lý. ' +
+                        'Nhân viên CSKH sẽ được thông báo khi nào cần liên hệ, cũng như hướng dẫn từng nội dung cần thiết để tác nghiệp. ' +
+                        'Tiếp tục sau đó là module quản lý các chương trình khuyến mãi, giảm giá, tặng quà, được hoàn toàn quản lý và ' +
+                        'theo dõi bởi giám đốc và các nhân viên cấp quyền.',
+
+                        'Hệ thống hiện đang được sử dụng trên 18 cửa hàng thuộc 2 công ty khác nhau. Việc huấn luyện nhân viên được thực hiện ' +
+                        'trực tiếp bằng phương pháp tập trung cũng như tại từng cửa hàng cụ thể bởi đội ngũ tận tình và chuyên nghiệp.',
+
+                        'Một điều xin được lưu ý là tuy được thiết kế riêng cho mặt hàng xe máy và các phụ tùng liên quan, ' +
+                        'hệ thống có thể dễ dàng điều chỉnh cho phù hợp với các mặt hàng và môi trường khác nhau.'
                     ],
                 },
                 image: [
@@ -392,15 +402,11 @@ window.res = {
                         version: '1.2',
                         desc: [{
                                 en: 'Not available.',
-                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                                vi: 'Quản lý các sự kiện, chương trình khuyến mãi.',
                             },
                             {
                                 en: 'Not available.',
-                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                                vi: 'Quản lý mức độ hiệu quả các sự kiện, chương trình khuyến mãi.',
                             },
                         ],
                     },
@@ -408,15 +414,15 @@ window.res = {
                         version: '1.1',
                         desc: [{
                                 en: 'Not available.',
-                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                                vi: 'Quản lý khách hàng.',
                             },
                             {
                                 en: 'Not available.',
-                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                                vi: 'Quản lý các nghiệp vụ chăm sóc khách hàng.',
                             },
                             {
                                 en: 'Not available.',
-                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                                vi: 'Quản lý từng sự kiện chăm sóc khách hàng.',
                             },
                         ],
                     },
@@ -424,15 +430,15 @@ window.res = {
                         version: '1.0',
                         desc: [{
                                 en: 'Not available.',
-                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                                vi: 'Quản lý của hàng, nhân viên.',
                             },
                             {
                                 en: 'Not available.',
-                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                                vi: 'Quản lý mặt hàng, phụ tùng.',
                             },
                             {
                                 en: 'Not available.',
-                                vi: 'Quản lý kho cho hệ thống chuỗi cửa hàng đại lý xe máy. Dễ dàng điều chỉnh cho các mặt hàng khác.',
+                                vi: 'Quản lý xuất nhập kho.',
                             },
                         ],
                     },

@@ -185,7 +185,7 @@ class ContentWorkIndividual {
             let text = data.desc[window.langCur][i];
             let divText = document.createElement('div');
             divText.classList.add('work-individual-text');
-            divText.innerText = data.desc[window.langCur];
+            divText.innerText = text;
             divTextOuter.appendChild(divText);
         }
     };
