@@ -60,8 +60,10 @@ window.version = {
             'work_vqmm_03': 'res/img/work_vqmm_03.jpg?1.0',
         },
         work_qdecor: {
-            'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',
-            'work_vcsc_02': 'res/img/work_emos_02.jpg?1.0',
+            'work_qdecor_01': 'res/img/work_qdecor_01.jpg?1.0',
+            'work_qdecor_02': 'res/img/work_qdecor_02.jpg?1.0',
+            'work_qdecor_03': 'res/img/work_qdecor_03.jpg?1.0',
+            'work_qdecor_04': 'res/img/work_qdecor_04.jpg?1.0',
         },
         work_vcsc: {
             'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',

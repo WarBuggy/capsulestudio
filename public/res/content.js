@@ -542,6 +542,62 @@ window.res = {
                 ],
                 tech: 'ReactJS, ARCore.',
 
+                desc: {
+                    en: [
+                        'Not available.',
+
+                        "QLED TV is an Augmented Reality ( AR ) Application designed for Mobile to help users experience the new " +
+                        "Samsung TVs before buying their new tvs. It’s an effective marketing tools target tech enthusiast.",
+                    ],
+                    vi: [
+                        'Nhằm khẳng định vị trí đầu trong lĩnh vực sản xuất và phát triển TV màn hình rộng, đồng thời tạo sức ép lên ' +
+                        'đối thủ cạnh tranh, Samsung đã phát triển app điện thoại Q Décor. Người sử dụng có thể ngắm nhìn Samsung QLED ' +
+                        'TV trong không gian sống của bạn, Lựa chọn một chiếc TV phù hợp với không gian từng cá nhân dễ dàng với Q Décor, ' +
+                        '"chuyên gia tư vấn" TV tuyệt vời. Sử dụng công nghệ Thực tế ảo mô phỏng nên một chiếc TV với kích thước ' +
+                        'tương ứng thực tế, cho phép dễ dàng hình dung & lựa chọn chiết TV phù hợp với không gian sống',
+
+                        'Sắm một chiếc TV mới là lựa chọn không dễ dàng. Nhưng với phép màu từ công nghệ Thực tế ảo, khách hàng có thể ' +
+                        'thử lắp đặt tất cả mẫu TV trước khi chọn chiếc ưng ý nhất. Q Décor sẽ giúp:<br>' +
+                        '> Lựa chọn kích thước TV nào là phù hợp với từng cá nhân nhất, dựa trên khoảng cách tối ưu cho người xem.<br>' +
+                        '> Mẹo vặt trang trí nội thất cho căn hộ.<br>' +
+                        '> Lên kế hoạch mua săms cho không gian giải trí hoàn hảo trước khi đến cửa hàng Samsung để mua sắm.',
+                    ],
+                },
+                image: [
+                    { name: 'work_qdecor_01', },
+                    { name: 'work_qdecor_02', },
+                    { name: 'work_qdecor_03', },
+                    { name: 'work_qdecor_04', },
+                ],
+                version: [{
+                        version: '1.1',
+                        desc: [{
+                                en: 'Not available.',
+                                vi: 'Quản lý kêt quả khảo sát.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Quản lý các khảo sát.',
+                            },
+                        ],
+                    },
+                    {
+                        version: '1.0',
+                        desc: [{
+                                en: 'Not available.',
+                                vi: 'Quản lý quy trình trao quà.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Quản lý khách hàng.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Quản lý sự kiện (giải thưởng, nội dung thông báo, v..v..).',
+                            },
+                        ],
+                    },
+                ],
             },
             vcsc: {
                 icon: window.version.image.home_work_common['hwc_vcsc'],
