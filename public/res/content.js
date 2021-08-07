@@ -395,8 +395,8 @@ window.res = {
                     ],
                 },
                 image: [
-                    { name: 'work_emos_01', colSpan: 2, },
-                    { name: 'work_emos_02', colSpan: 2, },
+                    { name: 'work_emos_01', colSpan: true, },
+                    { name: 'work_emos_02', colSpan: true, },
                 ],
                 version: [{
                         version: '1.2',
@@ -456,6 +456,77 @@ window.res = {
                     { os: 'www', link: 'https://mayman.acb.com.vn', },
                 ],
                 tech: 'Javascript, NodeJs, MySQL.',
+                desc: {
+                    en: [
+                        'Not available.',
+
+                        'mayman.acb.com.vn is a responsive microsite serving ACB customers. Qualified customers can log in at the ' +
+                        'website and try their luck at the lucky wheel for prizes. Winners can go to ACB branches across the ' +
+                        'country and claim their prizes. The microsite can host multiple events at the same time. Events are created ' +
+                        'and managed by ACB.',
+
+                        'The system includes the following components:<br>' +
+                        '> The admin webapp where designated ACB headquarter employees can create and manage all aspects of an events, ' +
+                        'such as timeline, graphics, prizes, rules. Admins can also generate various reports for management purposes.<br>' +
+                        "> The website where customers can log in, spin the wheel, view winning history and other event’s information.<br>" +
+                        '> The redeem webapp: ACB employees at any branches can log in with internal ACB credentials and ' +
+                        'help customers exchange code for actual prizes.',
+                    ],
+                    vi: [
+                        'mayman.acb.com.vn là trang web dành riêng cho các khách hàng của ngân hàng ACB tham gia các sự kiến quay số ' +
+                        'trúng thưởng. Khi đủ điều kiện tham gia, khách hàng sẽ được thông báo và thử vận may tại trang web để trúng ' +
+                        'các phần quà khách nhau. Quà trúng thưởng có thể được nhận tại các chi nhánh của ACB trên toàn quốc. ' +
+                        'Nhiều sự kiện có thể diễn ra cùng lúc tại địa chỉ trên. Tất cả các sự kiện và thành phần liên quan đều được ' +
+                        'quản lý hoàn toàn khép kín bởi nhân viên ACB.',
+
+                        'Hệ thống được nâng cấp thêm tính năng quản lý khảo sát khách hàng tham gia, giúp ACB dễ dàng hơn trong việc ' +
+                        'tìm hiểu và chăm sóc khách hàng. Hệ thống linh hoạt, cho phép thay đổi nội dung khảo sát và xuất ra các ' +
+                        'báo cáo tương ứng.',
+
+                        'Hệ thống bao gồm các thành phần sau:<br>' +
+                        '> Trang web dành cho nhân viên ACB tại hội sở để quản lý, theo dõi toàn bộ các chi tiết liên quan đến các ' +
+                        'sự kiện như thời gian, hình ảnh, giải thưởng, các quy tắc liên quan. Đây cũng nơi để xem và xuất các báo cáo ' +
+                        'hỗ trợ cho việc quản lý.<br>' +
+                        "> Trang web mayman.acb.com.vn, nơi khách hàng có thể đăng nhập theo thông tin được gửi qua email / SMS, " +
+                        "xem nội dung sự kiện, quay số và quản lý các phần quà đã trúng.<br>" +
+                        '> Trang trao quà danh cho nhân viên của ACB tại các chi nhánh trên toàn quốc. Được dùng để đối chiếu mã trúng ' +
+                        'thưởng khách cung cấp với dữ liệu trên hệ thống, giúp việc nhận thưởng được nhanh chóng và chính xác.',
+                    ],
+                },
+                image: [
+                    { name: 'work_vqmm_01', },
+                    { name: 'work_vqmm_02', },
+                    { name: 'work_vqmm_03', colSpan: true, },
+                ],
+                version: [{
+                        version: '1.1',
+                        desc: [{
+                                en: 'Not available.',
+                                vi: 'Quản lý kêt quả khảo sát.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Quản lý các khảo sát.',
+                            },
+                        ],
+                    },
+                    {
+                        version: '1.0',
+                        desc: [{
+                                en: 'Not available.',
+                                vi: 'Quản lý quy trình trao quà.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Quản lý khách hàng.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Quản lý sự kiện (giải thưởng, nội dung thông báo, v..v..).',
+                            },
+                        ],
+                    },
+                ],
             },
             qdecor: {
                 icon: window.version.image.home_work_common['hwc_qdecor'],

@@ -185,7 +185,7 @@ class ContentWorkIndividual {
             let text = data.desc[window.langCur][i];
             let divText = document.createElement('div');
             divText.classList.add('work-individual-text');
-            divText.innerText = text;
+            divText.innerHTML = text;
             divTextOuter.appendChild(divText);
         }
     };
@@ -212,7 +212,9 @@ class ContentWorkIndividual {
 
             let divImageOuter = document.createElement('div');
             divImageOuter.classList.add('work-individual-screenshot-image-outer');
-            divImageOuter.style['grid-column'] = `auto / span ${colSpan}`;
+            if (colSpan === true) {
+                divImageOuter.style.gridColumn = 'var(--work-individual-screenshot-image-outer-grid-column)';
+            }
             divGrid.appendChild(divImageOuter);
 
             let img = document.createElement('img');

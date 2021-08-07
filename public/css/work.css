@@ -5,6 +5,7 @@
     --work-one-grid-template-columns: auto;
     --work-one-item-grid-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
     --work-individual-screenshot-grid-template-columns: 1fr;
+    --work-individual-screenshot-image-outer-grid-column: auto;
     --work-individual-screenshot-image-outer-border-color: var(--color-border-light);
 }
 
@@ -20,6 +21,7 @@
      :root {
         --work-one-grid-template-columns: auto auto;
         --work-individual-screenshot-grid-template-columns: 1fr 1fr;
+        --work-individual-screenshot-image-outer-grid-column: auto / span 2;
     }
 }
 
@@ -186,7 +188,11 @@ div.work-individual-screenshot-grid {
 }
 
 div.work-individual-screenshot-image-outer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     box-shadow: var(--work-one-item-grid-box-shadow);
+    background-color: transparent;
     border: 1px solid;
     border-color: var(--work-individual-screenshot-image-outer-border-color);
     padding: 4px;
@@ -196,6 +202,8 @@ div.work-individual-screenshot-image-outer {
 
 img.work-individual-screenshot-img {
     width: 100%;
+    justify-self: center;
+    align-self: center;
 }
 
 div.work-individual-version-number {

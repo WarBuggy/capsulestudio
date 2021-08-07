@@ -55,8 +55,9 @@ window.version = {
             'work_emos_02': 'res/img/work_emos_02.jpg?1.0',
         },
         work_vqmm: {
-            'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',
-            'work_vcsc_02': 'res/img/work_emos_02.jpg?1.0',
+            'work_vqmm_01': 'res/img/work_vqmm_01.jpg?1.0',
+            'work_vqmm_02': 'res/img/work_vqmm_02.jpg?1.0',
+            'work_vqmm_03': 'res/img/work_vqmm_03.jpg?1.0',
         },
         work_qdecor: {
             'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',
