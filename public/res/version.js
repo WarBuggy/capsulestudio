@@ -66,8 +66,10 @@ window.version = {
             'work_qdecor_04': 'res/img/work_qdecor_04.jpg?1.0',
         },
         work_vcsc: {
-            'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',
-            'work_vcsc_02': 'res/img/work_emos_02.jpg?1.0',
+            'work_vcsc_01': 'res/img/work_vcsc_01.jpg?1.0',
+            'work_vcsc_02': 'res/img/work_vcsc_02.jpg?1.0',
+            'work_vcsc_03': 'res/img/work_vcsc_03.jpg?1.0',
+            'work_vcsc_04': 'res/img/work_vcsc_04.jpg?1.0',
         },
         work_hhdk: {
             'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',
@@ -78,8 +80,10 @@ window.version = {
             'work_vcsc_02': 'res/img/work_emos_02.jpg?1.0',
         },
         work_kungfuball: {
-            'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',
-            'work_vcsc_02': 'res/img/work_emos_02.jpg?1.0',
+            'work_kungfuball_01': 'res/img/work_kungfuball_01.jpg?1.0',
+            'work_kungfuball_02': 'res/img/work_kungfuball_02.jpg?1.0',
+            'work_kungfuball_03': 'res/img/work_kungfuball_03.jpg?1.0',
+            'work_kungfuball_04': 'res/img/work_kungfuball_04.jpg?1.0',
         },
         work_bts: {
             'work_vcsc_01': 'res/img/work_emos_01.jpg?1.0',

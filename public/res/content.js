@@ -541,7 +541,6 @@ window.res = {
                     { os: 'ios', },
                 ],
                 tech: 'ReactJS, ARCore.',
-
                 desc: {
                     en: [
                         'Not available.',
@@ -612,6 +611,42 @@ window.res = {
                     { os: 'ios', link: 'https://apps.apple.com/us/app/vad-calendar/id1444769381', },
                 ],
                 tech: 'ReactJS',
+
+                desc: {
+                    en: [
+                        'Not available.',
+
+                        "VAD App is an internal Meeting Organizer system, designed for internal to schedules for customers " +
+                        "meeting. The System features push notification, map, users management, checking in.",
+                    ],
+                    vi: [
+                        'Hệ thống VAD được phát triển bởi CTCP Chứng Khoán Bản Việt (VCSC), bao gồm app điện thoại cho khách hàng ' +
+                        'và web app dành cho quản trị hệ thống. Hệ thống giúp VCSC có thể dễ dàng quản lý các cuộc hội thảo, họp báo ' +
+                        'nhằm cung cấp thông tin cho mọi đối tượng khách hàng về các diến biến và cơ hội của thị trường chứng khoán.',
+
+                        'Với VAD app, khách mời có thể nhận thông báo, nhắc nhở khi có sự kiện; cũng như xem hướng dẫn vị trí của ' +
+                        'nơi diễn ra. Ban tổ chức có thể linh hoạt thay đổi vị trí, thời gian của các cuộc họp để được sự phục vụ tốt ' +
+                        'và khách mời luôn luôn được cập nhật những thông tin mới nhất.',
+                    ],
+                },
+                image: [
+                    { name: 'work_vcsc_01', },
+                    { name: 'work_vcsc_02', },
+                    { name: 'work_vcsc_03', },
+                    { name: 'work_vcsc_04', },
+                ],
+                version: [{
+                    version: '1.0',
+                    desc: [{
+                            en: 'Not available.',
+                            vi: 'Quản lý mức độ tham gia của khách mời.',
+                        },
+                        {
+                            en: 'Not available.',
+                            vi: 'Quản lý sự kiện và các chi tiết liên quan (danh sách khách mời, bản đồ, v..v..).',
+                        },
+                    ],
+                }, ],
             },
             hhdk: {
                 icon: window.version.image.home_work_common['hwc_hhdk'],
@@ -649,6 +684,35 @@ window.res = {
                     { os: 'android', },
                 ],
                 tech: 'JAVA.',
+                desc: {
+                    en: [
+                        'Not available.',
+                    ],
+                    vi: [
+                        'Trò chơi mobile được tạo ra để tham gia cuộc thi Google Game Launcher (2018), dưới tên của công ty tiền thân.' +
+                        'Lấy cảm hứng từ <a style="color:var(--logo-darkest);" href="https://www.youtube.com/watch?v=gmk1iStpovo">' +
+                        'phân cảnh luyện tập</a> nổi tiếng của phim "Đội bóng Thiếu Lâm", người chơi sẽ vào vai một chú tiểu, luyện tập ' +
+                        'sút bóng để cứu nguy cho làng của mình.',
+
+                        'Xin chân thành cảm ơn Google đã tổ chức và huấn luyện các thành viên tham gia cuộc thi. ' +
+                        'Trò chơi được viết trên nền tảng JAVA cho hệ điều hành Android, hoàn toàn không sử dụng bất kỳ một thư viện ' +
+                        'hỗ trợ nào. Tuy không được vào sâu trong cuộc thi, quá trình thực hiện đã đem tới cho đội ngũ công ty một ' +
+                        'niềm vui khôn tả khi được sống với đam mê và sở thích của mọi người.'
+                    ],
+                },
+                image: [
+                    { name: 'work_kungfuball_01', },
+                    { name: 'work_kungfuball_02', },
+                    { name: 'work_kungfuball_03', },
+                    { name: 'work_kungfuball_04', },
+                ],
+                version: [{
+                    version: '1.0',
+                    desc: [{
+                        en: 'Not available.',
+                        vi: 'Phiên bản dự thi.',
+                    }, ],
+                }, ],
             },
             bts: {
                 icon: window.version.image.home_work_common['hwc_bts'],
