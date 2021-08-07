@@ -660,18 +660,135 @@ window.res = {
                     { os: 'www', link: 'https://huyenhocduky.com', },
                 ],
                 tech: 'ReactJS, NodeJs, MySQL.',
+                desc: {
+                    en: [
+                        'Not available.',
+
+                        'mayman.acb.com.vn is a responsive microsite serving ACB customers. Qualified customers can log in at the ' +
+                        'website and try their luck at the lucky wheel for prizes. Winners can go to ACB branches across the ' +
+                        'country and claim their prizes. The microsite can host multiple events at the same time. Events are created ' +
+                        'and managed by ACB.',
+
+                        'The system includes the following components:<br>' +
+                        '> The admin webapp where designated ACB headquarter employees can create and manage all aspects of an events, ' +
+                        'such as timeline, graphics, prizes, rules. Admins can also generate various reports for management purposes.<br>' +
+                        "> The website where customers can log in, spin the wheel, view winning history and other event’s information.<br>" +
+                        '> The redeem webapp: ACB employees at any branches can log in with internal ACB credentials and ' +
+                        'help customers exchange code for actual prizes.',
+                    ],
+                    vi: [
+                        'huyenhocduky.com là một trang web để mọi người có thể tham khảo các thông tin liên quan đến phong thủy. Trang web ' +
+                        'đã không ngừng tự nâng cấp và thêm các chức năng mới để tạo sự dễ dàng trong việc tìm hiểu tất cả các điều ' +
+                        'liên quan tại một địa điểm duy nhất. Từ là việc phân tích lá số tử vi, cho đên việc chọn tên cho con, hay tìm hiểu ' +
+                        'mức độ tương hổ của các thành viên trong 1 tập thể, người sử dụng luôn luôn có thể nhận ra nhiều điều thú vị qua ' +
+                        'các phân tích sâu sắc trang web đưa ra. Các dịch vụ của trang web rất đa dạng, với nhiều cách tính phí khác nhau, ' +
+                        'bảo đảm hài lòng mọi đối tượng sử dụng.',
+
+                        'Các quy tắc và dữ liệu dùng để tính toán được quản lý bởi quản trị hệ thống. Điều này giúp cho việc nâng cấp, ' +
+                        'đổi mới các quy định lâu đời cho phù hợp với cuộc sống hiện tại trở nên nhanh chóng và dễ dàng hơn bao giờ hết.',
+
+                        'Với hơn 20 tính năng khác nhau, cộng với chính sách ưu đãi cho các thành viên nòng cốt, Huyền Học Du Ký hứa hẹn ' +
+                        'sẽ là nơi hội tụ cho những người yêu mến bộ môn nghiên cứu lâu đời này.',
+                    ],
+                },
+                image: [
+                    { name: 'work_hhdk_01', },
+                    { name: 'work_hhdk_02', },
+                    { name: 'work_hhdk_03', colSpan: true, },
+                ],
+                version: [{
+                        version: '1.3',
+                        desc: [{
+                            en: 'Not available.',
+                            vi: 'Chức năng phân tích theo nguyên tắc thần số.',
+                        }, ],
+                    },
+                    {
+                        version: '1.2',
+                        desc: [{
+                                en: 'Not available.',
+                                vi: 'Chức năng hỗ trợ và chia phí cho các cộng tác viên.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Chức năng lưu nhớ dữ liệu đã nhập cho người sử dụng.',
+                            },
+                        ],
+                    },
+                    {
+                        version: '1.1',
+                        desc: [{
+                                en: 'Not available.',
+                                vi: 'Thêm chức năng theo dõi lịch và vẽ biểu đồ thời vận.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Thêm các chức năng phân tích như la bàn, tử vi, lá số.',
+                            },
+                        ],
+                    },
+                    {
+                        version: '1.0',
+                        desc: [{
+                                en: 'Not available.',
+                                vi: 'Quản lý dữ liệu cho việc phân tích.',
+                            },
+                            {
+                                en: 'Not available.',
+                                vi: 'Chức năng phân tích tên, số điện thoại.',
+                            },
+                        ],
+                    },
+                ],
             },
             wbtv: {
                 icon: window.version.image.home_work_common['hwc_wbtv'],
                 name: 'World Best TV',
                 text: {
                     en: 'A complete system to manage different concurrent prize-based events to celebrate Samsung 50th birthday.',
-                    vi: 'Hệ thống để quản lý nhiều sự kiện trúng thưởng cùng lúc nhân dịp sinh nhật 50 tuổi của Samsung ',
+                    vi: 'Hệ thống để quản lý nhiều sự kiện trúng thưởng cùng lúc nhân dịp sinh nhật 50 tuổi của Samsung (2019).',
                 },
                 availability: [
                     { os: 'www', },
                 ],
                 tech: 'ReactJS, C#, .NET, MSSQL.',
+                desc: {
+                    en: [
+                        'Not available.',
+                        "World Best TV microsites are parts of Samsung’s campaign to celebrate 50 year anniversary. Visitors " +
+                        "can visit the microsites and register to receive free prizes and store discount. In most cases, they " +
+                        "receive automated emails informing about the results of their activities. There is also the admin web " +
+                        "app where admins can create winning codes, manually select winners and create various reports for " +
+                        "management purposes.",
+                    ],
+                    vi: [
+                        "Nhân dịp sinh nhật 50 tuổi của Samsung, Samsung Việt Nam đã tổ chức ba sự kiện cho các khách hàng tham gia online. " +
+                        "Các sự kiện bao gồm:<br>" +
+                        "> Đăng ký trực tuyến để được bốc thăm ngẫu nhiên trúng thưởng.<br>" +
+                        "> Tặng mã giảm giá sử dụng khi mua sắm tại các chuỗi bán lẻ tham gia sự kiện.<br>" +
+                        "> Tặng TV mới cho chủ sở hữu của những chiếc TV Samsung thế hệ trước, căn cứ qua các bức ảnh được tải lên.",
+
+                        "Một microsite và hệ thống quản lý đã được phát triển để dáp ứng nhu cầu đa dạng trên. Trang admin được xây dựng " +
+                        "để có thể quản lý mã dự thưởng, các chuỗi bán lẻ cũng các thông tin dự thưởng khác. Việc thông báo trúng thưởng " +
+                        "cũng được thực hiện tự động qua hệ thống. Hệ thống bảo đảm được đầy đủ các yêu cầu chặt chẽ của Samsung về mặt kỹ thuật " +
+                        "cũng như bảo mật thông tin. Vì thế, chương trình có thể được vận hành và theo dõi bởi rất nhiều bộ phận khác nhau như " +
+                        "nhân viên của Samsung (quốc tế và VN), công ty tổ chức sự kiện, quản lý cơ sở hạ tầng của Microsoft " +
+                        "cũng như đội ngũ nhân viên của công ty.",
+                    ],
+                },
+                image: [
+                    { name: 'work_wbtv_01', },
+                    { name: 'work_wbtv_02', },
+                    { name: 'work_wbtv_03', },
+                    { name: 'work_wbtv_04', },
+                ],
+                version: [{
+                    version: '1.0',
+                    desc: [{
+                        en: 'Not available.',
+                        vi: 'Phiên bản sử dụng trong suốt 2 tháng diễn ra sự kiện.',
+                    }, ],
+                }, ],
             },
             kungfuball: {
                 icon: window.version.image.home_work_common['hwc_kungfuball'],
@@ -725,6 +842,36 @@ window.res = {
                     { os: 'www', link: 'https://baotrungso.com' },
                 ],
                 tech: 'Javascript, NodeJS, MySQL.',
+                desc: {
+                    en: [
+                        'Not available.',
+                    ],
+                    vi: [
+                        'baotrungso.com là trang web cung cấp các dịch vụ tiện ích miễn phí cho người tham gia các giải xổ số ' +
+                        'kiến thiết truyền thống. Tại đây, người sử dụng có thể cung cấp các vé cần dò trước khi có kết quả xổ số. ', +
+                        'Nếu có vé trúng, hệ thống sẽ gửi email / SMS (dự định) đến từng người. Trang web được làm với tiêu chí ' +
+                        'nhanh chóng, dễ dàng, chỉ cần những thông tin liên lạc tối thiểu, bảo vệ thông tin cho người sử dụng. ',
+
+                        'Hệ thống tự động tìm thông tin sổ xố từ nhiều nguồn khác nhau, sau đó tổng kết và phân tích, tìm ra người ' +
+                        'trúng giải trong những thông tin đã được cung cấp.',
+
+                        'Ngoài ra, hệ thống còn cung cấp các tiện ích khác như sổ dò trong vòng 4 tuần trước; hay dò kết quả của vé số ' +
+                        'trong tất cả các đài hiện hữu.'
+                    ],
+                },
+                image: [
+                    { name: 'work_bts_01', },
+                    { name: 'work_bts_02', },
+                    { name: 'work_bts_03', },
+                    { name: 'work_bts_04', },
+                ],
+                version: [{
+                    version: '1.0',
+                    desc: [{
+                        en: 'Experimental version.',
+                        vi: 'Phiên bản thử nghiệm.',
+                    }, ],
+                }, ],
             },
         },
         textButton: {

@@ -128,6 +128,18 @@ class ContentWorkIndividual {
         new MenuTop(50);
 
         Common.createDivParallax(banner.div, this.objectParallaxBanner, 50, 0);
+
+        let divOSList = document.getElementsByClassName('work-individual-os-outer');
+        for (let i = 0; i < divOSList.length; i++) {
+            let div = divOSList[i];
+            let link = div.getAttribute('link');
+            if (link == null || link == '') {
+                continue;
+            }
+            div.onclick = function() {
+                window.location = link;
+            };
+        }
     };
 
     createDivOne(data, divParent) {
@@ -156,11 +168,8 @@ class ContentWorkIndividual {
             if (item.link == null) {
                 continue;
             }
-
             divOS.style.cursor = 'pointer';
-            divOS.onclick = function() {
-                window.location = item.link;
-            };
+            divOS.setAttribute('link', item.link);
         }
 
         let divTech = document.createElement('div');
