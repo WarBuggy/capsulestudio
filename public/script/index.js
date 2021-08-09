@@ -141,21 +141,25 @@ class ContentHome {
             }
             divOuter.appendChild(divItemOuter);
             this.populateDivTwoColumnItem(divItemOuter, data);
+
+            divItemOuter.onclick = function() {
+                window.location = `service.html?service=${data.serviceName}`;
+            };
         }
     };
 
     populateDivTwoColumnItem(divParent, data) {
-        let iconSVGName = window.res.service[data.serviceName].icon;
+        let iconSVGName = window.res.service.item[data.serviceName].icon;
         divParent.innerHTML = window.imagePreload[iconSVGName];
 
         let divTitle = document.createElement('div');
         divTitle.classList.add('home-two-item-title');
-        divTitle.innerText = data.title[window.langCur];
+        divTitle.innerText = window.res.service.item[data.serviceName].title[window.langCur];
         divParent.appendChild(divTitle);
 
         let divText = document.createElement('div');
         divText.classList.add('home-two-item-text');
-        divText.innerText = data.text[window.langCur];
+        divText.innerText = window.res.service.item[data.serviceName].text[window.langCur];
         divParent.appendChild(divText);
     };
 

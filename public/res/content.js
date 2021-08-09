@@ -139,51 +139,19 @@ window.res = {
         twoColumn: {
             first: [{
                     serviceName: 'req_spe',
-                    title: {
-                        en: 'Requirements Specification',
-                        vi: 'Phân tích yêu cầu',
-                    },
-                    text: {
-                        en: 'Not available.',
-                        vi: 'Làm rõ yêu cầu, sau đó xem xét khả năng thực thi và làm tài liệu mô tả.',
-                    },
                     extraCss: ['first', 'dummy', ],
                 },
                 {
                     serviceName: 'sys_des',
-                    title: {
-                        en: 'System Design',
-                        vi: 'Thiết kế hệ thống',
-                    },
-                    text: {
-                        en: 'Not available.',
-                        vi: 'Tạo ra hay chỉnh sửa quy trình làm việc đề phù hợp với nhu cầu đặt ra.',
-                    },
                     extraCss: ['dummy', ],
                 },
             ],
             second: [{
                     serviceName: 'sof_dev',
-                    title: {
-                        en: 'Software development',
-                        vi: 'Phát triển phần mềm',
-                    },
-                    text: {
-                        en: 'Not available.',
-                        vi: 'Phát triển trên mọi nền tảng. Khép tín, nhanh chóng và chát lượng.',
-                    },
                     extraCss: ['highlighted', ],
                 },
                 {
                     serviceName: 'mai_mon',
-                    title: {
-                        en: 'Maintenance & Monitoring',
-                        vi: 'Bảo trì & Theo dõi.',
-                    },
-                    text: {
-                        en: '',
-                        vi: 'Theo dõi và xử lý các tình huống để bảo đảm như cầu vận hành.',
-                    },
                     extraCss: ['dummy', ],
                 },
             ],
@@ -892,18 +860,82 @@ window.res = {
         },
     },
     service: {
-        req_spe: {
-            icon: 'hsc_doc',
+        title: {
+            en: 'Services',
+            vi: 'Dịch vụ',
         },
-        sys_des: {
-            icon: 'hsc_gear',
-        },
-        sof_dev: {
-            icon: 'hsc_app',
-        },
-        mai_mon: {
-            icon: 'hsc_chart',
-        },
+        siteMapItemList: [
+            ['common', 'menuItem', 'home'],
+            ['common', 'menuItem', 'service'],
+        ],
+        item: {
+            req_spe: {
+                icon: 'hsc_doc',
+                title: {
+                    en: 'Requirements Specification',
+                    vi: 'Phân tích yêu cầu',
+                },
+                text: {
+                    en: 'Not available.',
+                    vi: 'Làm rõ yêu cầu, sau đó xem xét khả năng thực thi và làm tài liệu mô tả.',
+                },
+            },
+            sys_des: {
+                icon: 'hsc_gear',
+                title: {
+                    en: 'System Design',
+                    vi: 'Thiết kế hệ thống',
+                },
+                text: {
+                    en: 'Not available.',
+                    vi: 'Tạo ra hay chỉnh sửa quy trình làm việc đề phù hợp với nhu cầu đặt ra.',
+                },
+            },
+            sof_dev: {
+                icon: 'hsc_app',
+                title: {
+                    en: 'Software development',
+                    vi: 'Phát triển phần mềm',
+                },
+                text: {
+                    en: 'Not available.',
+                    vi: 'Phát triển trên mọi nền tảng. Khép tín, nhanh chóng và chát lượng.',
+                },
+            },
+            mai_mon: {
+                icon: 'hsc_chart',
+                title: {
+                    en: 'Maintenance & Monitoring',
+                    vi: 'Bảo trì & Theo dõi.',
+                },
+                text: {
+                    en: 'Not available.',
+                    vi: 'Theo dõi và xử lý các tình huống để bảo đảm như cầu vận hành.',
+                },
+            },
+            pro_gam: {
+                icon: 'service_game',
+                title: {
+                    en: 'Promotional Game.',
+                    vi: 'Trò chơi quảng bá.',
+                },
+                text: {
+                    en: 'Not available.',
+                    vi: 'Tư vấn, thiết kế những trò chơi lôi cuốn cho các sự kiện hay chương trình quảng bá.',
+                },
+            },
+            gra_ass: {
+                icon: 'service_screenshot',
+                title: {
+                    en: 'Graphical Asset.',
+                    vi: 'Thiết kế hình ảnh.',
+                },
+                text: {
+                    en: 'Not available.',
+                    vi: 'Tư vấn, thiết kế những hình ảnh minh họa phù hợp với hợp với nôi dung cần thiết.',
+                },
+            },
+        }
     },
     contact: {
         title: {

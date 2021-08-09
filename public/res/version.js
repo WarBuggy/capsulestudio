@@ -94,5 +94,10 @@ window.version = {
             'work_bts_03': 'res/img/work_bts_03.jpg?1.0',
             'work_bts_04': 'res/img/work_bts_04.jpg?1.0',
         },
+        service: {
+            'service_banner': 'res/img/home_five.jpg?1.0',
+            'service_screenshot': 'res/img/work_ind_screenshot.svg?1.0',
+            'service_game': 'res/img/service_dice.svg?1.0',
+        },
     },
 };
