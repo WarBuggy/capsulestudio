@@ -879,6 +879,23 @@ window.res = {
                     en: 'Not available.',
                     vi: 'Làm rõ yêu cầu, sau đó xem xét khả năng thực thi và làm tài liệu mô tả.',
                 },
+                text_ind: [{
+                        type: 'text',
+                        content: 'text1',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text2',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text3',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text4',
+                    },
+                ],
             },
             sys_des: {
                 icon: 'hsc_gear',
@@ -890,6 +907,23 @@ window.res = {
                     en: 'Not available.',
                     vi: 'Tạo ra hay chỉnh sửa quy trình làm việc đề phù hợp với nhu cầu đặt ra.',
                 },
+                text_ind: [{
+                        type: 'text',
+                        content: 'text1',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text2',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text3',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text4',
+                    },
+                ],
             },
             sof_dev: {
                 icon: 'hsc_app',
@@ -901,6 +935,23 @@ window.res = {
                     en: 'Not available.',
                     vi: 'Phát triển trên mọi nền tảng. Khép tín, nhanh chóng và chát lượng.',
                 },
+                text_ind: [{
+                        type: 'text',
+                        content: 'text1',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text2',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text3',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text4',
+                    },
+                ],
             },
             mai_mon: {
                 icon: 'hsc_chart',
@@ -912,6 +963,23 @@ window.res = {
                     en: 'Not available.',
                     vi: 'Theo dõi và xử lý các tình huống để bảo đảm như cầu vận hành.',
                 },
+                text_ind: [{
+                        type: 'text',
+                        content: 'text1',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text2',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text3',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text4',
+                    },
+                ],
             },
             pro_gam: {
                 icon: 'service_game',
@@ -923,6 +991,23 @@ window.res = {
                     en: 'Not available.',
                     vi: 'Tư vấn, thiết kế những trò chơi lôi cuốn cho các sự kiện hay chương trình quảng bá.',
                 },
+                text_ind: [{
+                        type: 'text',
+                        content: 'text1',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text2',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text3',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text4',
+                    },
+                ],
             },
             gra_ass: {
                 icon: 'service_screenshot',
@@ -934,8 +1019,35 @@ window.res = {
                     en: 'Not available.',
                     vi: 'Tư vấn, thiết kế những hình ảnh minh họa phù hợp với hợp với nôi dung cần thiết.',
                 },
+                text_ind: [{
+                        type: 'text',
+                        content: 'text1',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text2',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text3',
+                    },
+                    {
+                        type: 'text',
+                        content: 'text4',
+                    },
+                ],
             },
-        }
+        },
+        contact: {
+            en: 'Tell us about your projects and we’ll get back to you with details on how we can make this work. ' +
+                'Or just ask us anything mobile.',
+            vi: 'Cho chúng tôi biết về nhu cầu quý khách đang có! Chúng tôi sẽ liên hệ lại với gợi ý để biến thành hiện thực. ' +
+                'Hay hỏi về bất cứ điều gì.',
+        },
+        contactButton: {
+            en: 'Contact Us',
+            vi: 'Liên hệ ngay',
+        },
     },
     contact: {
         title: {

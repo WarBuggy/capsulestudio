@@ -1,24 +1,81 @@
 :root {
     --service-one-grid-template-columns: 1fr;
     --service-one-item-box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.06);
+    --service-individual-content-grid-template-columns: 1fr;
+    --service-individual-image-height: 215px;
+    --service-individual-bg-size-width: 100% auto;
+    --service-individual-bg-size-height: auto 100%;
+    --service-individual-bg-size-width-hover: 120% auto;
+    --service-individual-bg-size-height-hover: auto 120%;
+    --image-1-bg-size: var(--service-individual-bg-size-width);
+    --image-2-bg-size: var(--service-individual-bg-size-width);
+    --image-3-bg-size: var(--service-individual-bg-size-width);
+    --image-1-bg-size-hover: var(--service-individual-bg-size-width-hover);
+    --image-2-bg-size-hover: var(--service-individual-bg-size-width-hover);
+    --image-3-bg-size-hover: var(--service-individual-bg-size-width-hover);
+    --image-2-grid-column: auto;
+    --image-2-grid-row: auto;
+    --image-3-grid-column: auto;
+    --image-3-grid-row: auto;
+    --image-3-height: var(--service-individual-image-height);
+    --service-individual-text-outer-grid-row: auto;
+    --service-individual-text-outer-grid-column: auto;
+    --service-individual-two-outer-grid-row: auto;
+    --service-individual-two-outer-grid-column: auto;
+    --service-individual-two-menu-border-color: var(--color-border-light);
+    --service-individual-two-menu-item-current-bg-color: #F4F8FB;
 }
 
 @media (prefers-color-scheme: dark) {
      :root {
         /* Dark mode */
         --service-one-item-box-shadow: 0px 2px 48px 0 rgba(122, 122, 122, 0.2);
+        --service-individual-two-menu-border-color: var(--color-border-dark);
+        --service-individual-two-menu-item-current-bg-color: #1E1E1E;
     }
 }
 
 @media only screen and (min-width: 700px) {
      :root {
         --service-one-grid-template-columns: auto auto;
+        --service-individual-content-grid-template-columns: 1fr 1fr 1fr;
+        --image-1-bg-size: var(--service-individual-bg-size-height);
+        --image-2-bg-size: var(--service-individual-bg-size-height);
+        --image-3-bg-size: var(--service-individual-bg-size-height);
+        --image-1-bg-size-hover: var(--service-individual-bg-size-height-hover);
+        --image-2-bg-size-hover: var(--service-individual-bg-size-height-hover);
+        --image-3-bg-size-hover: var(--service-individual-bg-size-height-hover);
+        --image-2-grid-column: auto;
+        --image-2-grid-row: auto;
+        --image-3-grid-column: auto;
+        --image-3-grid-row: auto;
+        --image-3-height: var(--service-individual-image-height);
+        --service-individual-text-outer-grid-row: auto;
+        --service-individual-text-outer-grid-column: auto / span 3;
+        --service-individual-two-outer-grid-row: auto;
+        --service-individual-two-outer-grid-column: auto / span 3;
     }
 }
 
 @media only screen and (min-width: 1100px) {
      :root {
         --service-one-grid-template-columns: auto auto auto;
+        --service-individual-content-grid-template-columns: 1fr 1fr 1fr;
+        --image-1-bg-size: var(--service-individual-bg-size-width);
+        --image-2-bg-size: var(--service-individual-bg-size-width);
+        --image-3-bg-size: var(--service-individual-bg-size-height);
+        --image-1-bg-size-hover: var(--service-individual-bg-size-width-hover);
+        --image-2-bg-size-hover: var(--service-individual-bg-size-width-hover);
+        --image-3-bg-size-hover: var(--service-individual-bg-size-height-hover);
+        --image-2-grid-column: 1;
+        --image-2-grid-row: 2;
+        --image-3-grid-column: 2;
+        --image-3-grid-row: 1 / span 2;
+        --image-3-height: 100%;
+        --service-individual-text-outer-grid-row: 3;
+        --service-individual-text-outer-grid-column: auto / span 2;
+        --service-individual-two-outer-grid-row: 1 / span 3;
+        --service-individual-two-outer-grid-column: 3;
     }
 }
 
@@ -99,4 +156,147 @@ div.service-one-item-text {
 
 .service-one-item-grid:hover .service-one-item-text {
     color: var(--color-bg-1);
+}
+
+div.service-individual-content-grid {
+    display: grid;
+    grid-template-columns: var(--service-individual-content-grid-template-columns);
+    grid-gap: 30px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+div.service-individual-one-image {
+    width: 100;
+    height: var(--service-individual-image-height);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.service-individual-one-image.image-1 {
+    grid-column: auto;
+    grid-row: auto;
+    background-size: var(--image-1-bg-size);
+}
+
+.service-individual-one-image.image-2 {
+    grid-column: var(--image-2-grid-column);
+    grid-row: var(--image-2-grid-row);
+    background-size: var(--image-2-bg-size);
+}
+
+.service-individual-one-image.image-3 {
+    height: var(--image-3-height);
+    grid-column: var(--image-3-grid-column);
+    grid-row: var(--image-3-grid-row);
+    background-size: var(--image-3-bg-size);
+}
+
+.service-individual-one-image.image-1:hover {
+    background-size: var(--image-1-bg-size-hover);
+}
+
+.service-individual-one-image.image-2:hover {
+    background-size: var(--image-2-bg-size-hover);
+}
+
+.service-individual-one-image.image-3:hover {
+    background-size: var(--image-3-bg-size-hover);
+}
+
+div.service-individual-one-text-outer {
+    grid-row: var(--service-individual-text-outer-grid-row);
+    grid-column: var(--service-individual-text-outer-grid-column);
+    color: var(--color-text-1);
+}
+
+div.service-individual-one-text {
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0.88px;
+    line-height: 28px;
+    margin-bottom: 28px;
+}
+
+div.service-individual-two-outer {
+    width: 100%;
+    align-self: start;
+    justify-self: start;
+    grid-row: var(--service-individual-two-outer-grid-row);
+    grid-column: var(--service-individual-two-outer-grid-column);
+}
+
+div.service-individual-two-menu-outer {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    border: 1px solid;
+    border-color: var(--service-individual-two-menu-border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    color: var(--color-title-1);
+    font-size: 14px;
+    letter-spacing: 0.88px;
+    line-height: 60px;
+    font-weight: 700;
+}
+
+div.service-individual-two-menu-bullet {
+    display: block;
+    height: 60px;
+    text-align: center;
+}
+
+div.service-individual-two-menu-item {
+    display: block;
+    height: 60px;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.service-individual-two-menu-item.dummy:hover {
+    padding-left: 12px;
+}
+
+.service-individual-two-menu-bullet.current {
+    font-weight: 400;
+    color: var(--color-text-1);
+    background-color: var(--service-individual-two-menu-item-current-bg-color);
+}
+
+.service-individual-two-menu-item.current {
+    cursor: default;
+    pointer-events: none;
+    font-weight: 400;
+    color: var(--color-text-1);
+    background-color: var(--service-individual-two-menu-item-current-bg-color);
+}
+
+div.service-individual-two-contact-outer {
+    padding: 30px;
+    border-radius: 4px;
+    background-image: linear-gradient(127deg, var(--logo-darkest) 0%, var(--logo-lightest) 91%);
+    color: var(--color-bg-1);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.7px;
+}
+
+div.service-individual-two-contact-text {
+    margin-bottom: 23px !important;
+}
+
+.general-button.service-contact {
+    width: 100%;
 }

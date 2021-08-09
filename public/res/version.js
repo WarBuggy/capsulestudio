@@ -99,5 +99,11 @@ window.version = {
             'service_screenshot': 'res/img/work_ind_screenshot.svg?1.0',
             'service_game': 'res/img/service_dice.svg?1.0',
         },
+        service_ind: {
+            'service_ind_banner': 'res/img/home_five.jpg?1.0',
+            'service_ind_1': 'res/img/service_ind_1.jpg?1.0',
+            'service_ind_2': 'res/img/service_ind_2.jpg?2.0',
+            'service_ind_3': 'res/img/service_ind_3.jpg?3.0',
+        },
     },
 };
