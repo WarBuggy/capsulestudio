@@ -107,6 +107,9 @@ class ContentHome {
         divButton.classList.add('align-diff');
         divButton.innerText = window.res.common.menuItem.service[window.langCur];
         divTextGridOuter.appendChild(divButton);
+        divButton.onclick = function() {
+            window.location = 'service.html';
+        };
 
         this.createDivTwoColumn(divGridOuter, 'first');
         this.createDivTwoColumn(divGridOuter, 'second');

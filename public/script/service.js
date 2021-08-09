@@ -19,7 +19,7 @@ window.onload = function() {
 };
 
 
-class ContentServiceIndividual {
+class ContentService {
     constructor() {
         let divOuter = document.createElement('div');
         divOuter.classList.add('general-content-outer');
@@ -58,7 +58,6 @@ class ContentServiceIndividual {
             divGrid.appendChild(div);
 
             div.innerHTML = window.imagePreload[item.icon];
-            console.log(div.children);
             let svg = div.children[0];
             svg.setAttribute('class', '');
             svg.classList.add('service-one-item-icon');
