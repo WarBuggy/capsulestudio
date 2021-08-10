@@ -73,40 +73,40 @@ window.res = {
                     en: 'Email',
                     vi: 'Email',
                     text: '<a href="mailto:admin@capsulestudio.com.vn">admin@capsulestudio.com.vn</a>',
-                    extraCssText: ['email', ],
+                    extraCssText: ['email',],
                 },
             },
         },
         easing: {
             // no easing, no acceleration
-            linear: function(t) { return t },
+            linear: function (t) { return t },
             // accelerating from zero velocity
-            easeInQuad: function(t) { return t * t },
+            easeInQuad: function (t) { return t * t },
             // decelerating to zero velocity
-            easeOutQuad: function(t) { return t * (2 - t) },
+            easeOutQuad: function (t) { return t * (2 - t) },
             // acceleration until halfway, then deceleration
-            easeInOutQuad: function(t) { return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t },
+            easeInOutQuad: function (t) { return t < .5 ? 2 * t * t : -1 + (4 - 2 * t) * t },
             // accelerating from zero velocity 
-            easeInCubic: function(t) { return t * t * t },
+            easeInCubic: function (t) { return t * t * t },
             // decelerating to zero velocity 
-            easeOutCubic: function(t) { return (--t) * t * t + 1 },
+            easeOutCubic: function (t) { return (--t) * t * t + 1 },
             // acceleration until halfway, then deceleration 
-            easeInOutCubic: function(t) { return t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1 },
+            easeInOutCubic: function (t) { return t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1 },
             // accelerating from zero velocity 
-            easeInQuart: function(t) { return t * t * t * t },
+            easeInQuart: function (t) { return t * t * t * t },
             // decelerating to zero velocity 
-            easeOutQuart: function(t) { return 1 - (--t) * t * t * t },
+            easeOutQuart: function (t) { return 1 - (--t) * t * t * t },
             // acceleration until halfway, then deceleration
-            easeInOutQuart: function(t) { return t < .5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t },
+            easeInOutQuart: function (t) { return t < .5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t },
             // accelerating from zero velocity
-            easeInQuint: function(t) { return t * t * t * t * t },
+            easeInQuint: function (t) { return t * t * t * t * t },
             // decelerating to zero velocity
-            easeOutQuint: function(t) { return 1 + (--t) * t * t * t * t },
+            easeOutQuint: function (t) { return 1 + (--t) * t * t * t * t },
             // acceleration until halfway, then deceleration 
-            easeInOutQuint: function(t) { return t < .5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t },
+            easeInOutQuint: function (t) { return t < .5 ? 16 * t * t * t * t * t : 1 + 16 * (--t) * t * t * t * t },
             // exponential decelerating
-            exp: function(t) { return (1 - Math.exp(-t * 7)) },
-            gompertz: function(t) { return Math.exp(-30 * Math.exp(-13 * t)); },
+            exp: function (t) { return (1 - Math.exp(-t * 7)) },
+            gompertz: function (t) { return Math.exp(-30 * Math.exp(-13 * t)); },
         },
     },
     home: {
@@ -138,72 +138,72 @@ window.res = {
         },
         twoColumn: {
             first: [{
-                    serviceName: 'req_spe',
-                    extraCss: ['first', 'dummy', ],
-                },
-                {
-                    serviceName: 'sys_des',
-                    extraCss: ['dummy', ],
-                },
+                serviceName: 'req_spe',
+                extraCss: ['first', 'dummy',],
+            },
+            {
+                serviceName: 'sys_des',
+                extraCss: ['dummy',],
+            },
             ],
             second: [{
-                    serviceName: 'sof_dev',
-                    extraCss: ['highlighted', ],
-                },
-                {
-                    serviceName: 'mai_mon',
-                    extraCss: ['dummy', ],
-                },
+                serviceName: 'sof_dev',
+                extraCss: ['highlighted',],
+            },
+            {
+                serviceName: 'mai_mon',
+                extraCss: ['dummy',],
+            },
             ],
         },
         threeItem: [{
-                letter: 'S',
-                title: 'SPEED', // SỨC MẠNH TẬP THỂ'
-                text: {
-                    en: 'With proven process, well-honed skill and hardworking, we are able to deliver results at an extraordinary pace.',
-                    vi: 'Bằng quy trình chuẩn mực, kỹ năng tốt và chăm chỉ làm việc, ' +
-                        'chúng tôi luôn đáp ứng được mọi nhu cầu cấp bách được quý khách hàng tin tưởng giao cho.',
-                },
-                extraCss: ['first', ],
+            letter: 'S',
+            title: 'SPEED', // SỨC MẠNH TẬP THỂ'
+            text: {
+                en: 'With proven process, well-honed skill and hardworking, we are able to deliver results at an extraordinary pace.',
+                vi: 'Bằng quy trình chuẩn mực, kỹ năng tốt và chăm chỉ làm việc, ' +
+                    'chúng tôi luôn đáp ứng được mọi nhu cầu cấp bách được quý khách hàng tin tưởng giao cho.',
             },
-            {
-                letter: 'P',
-                title: 'PASSION', // PHÂN TÍCH
-                text: {
-                    en: 'Problem-solving through software development is what keeps us up at night and gets us out of bed in the morning.',
-                    vi: 'Giải quyết các vấn đề của đời sống thực tế, qua các sản phẩm phần mềm đã, ' +
-                        'trở thành một phần trong cuộc sống của tập thể công ty.',
+            extraCss: ['first',],
+        },
+        {
+            letter: 'P',
+            title: 'PASSION', // PHÂN TÍCH
+            text: {
+                en: 'Problem-solving through software development is what keeps us up at night and gets us out of bed in the morning.',
+                vi: 'Giải quyết các vấn đề của đời sống thực tế, qua các sản phẩm phần mềm đã, ' +
+                    'trở thành một phần trong cuộc sống của tập thể công ty.',
 
-                },
             },
-            {
-                letter: 'A',
-                title: 'ANALYSIS', // AM HIỂU THỰC TẾ'
-                text: {
-                    en: 'Your problems are also ours. No stone left unturned until solutions are well-defined.',
-                    vi: 'Vấn đề của quý khách hàng là nỗi trăn trở của chúng tôi. ' +
-                        'Mọi khía cạnh sẽ được suy xét, phân tích, áp dụng cho đến khi vấn đề được giải quyết.',
-                },
+        },
+        {
+            letter: 'A',
+            title: 'ANALYSIS', // AM HIỂU THỰC TẾ'
+            text: {
+                en: 'Your problems are also ours. No stone left unturned until solutions are well-defined.',
+                vi: 'Vấn đề của quý khách hàng là nỗi trăn trở của chúng tôi. ' +
+                    'Mọi khía cạnh sẽ được suy xét, phân tích, áp dụng cho đến khi vấn đề được giải quyết.',
             },
-            {
-                letter: 'R',
-                title: 'RESPONSIBILITY', // tRÁCH NHIỆM???
-                text: {
-                    en: 'Late night research, genuine consultation, throughout support. ' +
-                        'We go at length to deliver all-round good products and experiences for you.',
-                    vi: 'Nhiệm vụ, công việc được giao là phải được hoàn thành. ' +
-                        'Chúng tôi sẽ không ngừng nghỉ cho đến khi hoàn thành trách nhiệm, của từng thành viên và cả tập thể',
-                },
+        },
+        {
+            letter: 'R',
+            title: 'RESPONSIBILITY', // tRÁCH NHIỆM???
+            text: {
+                en: 'Late night research, genuine consultation, throughout support. ' +
+                    'We go at length to deliver all-round good products and experiences for you.',
+                vi: 'Nhiệm vụ, công việc được giao là phải được hoàn thành. ' +
+                    'Chúng tôi sẽ không ngừng nghỉ cho đến khi hoàn thành trách nhiệm, của từng thành viên và cả tập thể',
             },
-            {
-                letter: 'K',
-                title: 'KNOWLEDGE', // KINH NGHIỆM
-                text: {
-                    en: 'We never rest in the pursuit of elegant solutions and interesting opportunities.',
-                    vi: 'Khám phá và đóng góp cho cộng đồng công nghệ là niềm đam mê của mỗi cá nhân.' +
-                        'Ngọn lửa này luôn được nâng niu và vun đắp để tạo ra những sản phẩm hoàn chỉnh.',
-                },
+        },
+        {
+            letter: 'K',
+            title: 'KNOWLEDGE', // KINH NGHIỆM
+            text: {
+                en: 'We never rest in the pursuit of elegant solutions and interesting opportunities.',
+                vi: 'Khám phá và đóng góp cho cộng đồng công nghệ là niềm đam mê của mỗi cá nhân.' +
+                    'Ngọn lửa này luôn được nâng niu và vun đắp để tạo ra những sản phẩm hoàn chỉnh.',
             },
+        },
         ],
         fourTitle: {
             en: 'Our Team',
@@ -215,106 +215,106 @@ window.res = {
                 'Những người sẽ trực tiếp tham gia phát triển sản phẩm.',
         },
         fourItem: [{
-                name: {
-                    en: 'Andy Duong',
-                    vi: 'Dương Đ.Q. Dũng',
-                },
-                title: {
-                    en: 'Requirement Engineer',
-                    vi: 'Phân tích yêu cầu',
-                },
-                text: {
-                    en: 'Not available.',
-                    vi: 'Là người quý khách hàng sẽ tiếp xúc đầu tiên và thường xuyên nhất. 16 năm kinh nghiệm xuyên suốt.',
-                },
-                image: 'home_team_andy',
+            name: {
+                en: 'Andy Duong',
+                vi: 'Dương Đ.Q. Dũng',
             },
-            {
-                name: {
-                    en: 'Ben Ho',
-                    vi: 'Hồ V. Bửu',
-                },
-                title: {
-                    en: 'System Engineer',
-                    vi: 'Thiết kế hệ thống',
-                },
-                text: {
-                    en: 'Not available.',
-                    vi: 'Kiến trúc hệ thống kiêm lập trình viên trên nền tảng Android. Từng làm việc ở 3 quốc gia khác nhau.',
-                },
-                image: 'home_team_ben',
+            title: {
+                en: 'Requirement Engineer',
+                vi: 'Phân tích yêu cầu',
             },
-            {
-                name: {
-                    en: 'Kevin Do',
-                    vi: 'Đỗ V. Dũng',
-                },
-                title: {
-                    en: 'Automation Engineer',
-                    vi: 'Kiểm soát chất lượng',
-                },
-                text: {
-                    en: 'Not available.',
-                    vi: 'Bảo đảm sản phẩm đi vào hoạt động trơn tru, với đầy đủ tính năng yêu cầu. Một mắc xích cực kỳ quan trọng.  ',
-                },
-                image: 'home_team_kevin',
+            text: {
+                en: 'Not available.',
+                vi: 'Là người quý khách hàng sẽ tiếp xúc đầu tiên và thường xuyên nhất. 16 năm kinh nghiệm xuyên suốt.',
             },
-            {
-                name: {
-                    en: 'Mi Nguyen',
-                    vi: 'Nguyễn N.T. Mi',
-                },
-                title: {
-                    en: 'Account Manager',
-                    vi: 'Chăm sóc khách hàng',
-                },
-                text: {
-                    en: 'Not available.',
-                    vi: 'Chịu trách nhiệm duy trì và phát triển mối quan hệ với quý khách hàng để có sự tin tưởng bền lâu.',
-                },
-                image: 'home_team_mi',
+            image: 'home_team_andy',
+        },
+        {
+            name: {
+                en: 'Ben Ho',
+                vi: 'Hồ V. Bửu',
             },
+            title: {
+                en: 'System Engineer',
+                vi: 'Thiết kế hệ thống',
+            },
+            text: {
+                en: 'Not available.',
+                vi: 'Kiến trúc hệ thống kiêm lập trình viên trên nền tảng Android. Từng làm việc ở 3 quốc gia khác nhau.',
+            },
+            image: 'home_team_ben',
+        },
+        {
+            name: {
+                en: 'Kevin Do',
+                vi: 'Đỗ V. Dũng',
+            },
+            title: {
+                en: 'Automation Engineer',
+                vi: 'Kiểm soát chất lượng',
+            },
+            text: {
+                en: 'Not available.',
+                vi: 'Bảo đảm sản phẩm đi vào hoạt động trơn tru, với đầy đủ tính năng yêu cầu. Một mắc xích cực kỳ quan trọng.  ',
+            },
+            image: 'home_team_kevin',
+        },
+        {
+            name: {
+                en: 'Mi Nguyen',
+                vi: 'Nguyễn N.T. Mi',
+            },
+            title: {
+                en: 'Account Manager',
+                vi: 'Chăm sóc khách hàng',
+            },
+            text: {
+                en: 'Not available.',
+                vi: 'Chịu trách nhiệm duy trì và phát triển mối quan hệ với quý khách hàng để có sự tin tưởng bền lâu.',
+            },
+            image: 'home_team_mi',
+        },
         ],
         fiveItem: [{
-                valueBegin: 0,
-                valueEnd: 500,
-                suffix: '+',
-                name: {
-                    en: 'Application\nAPI',
-                    vi: 'Kêt nối\nAPI',
-                },
-                easing: 'easeInQuad',
+            valueBegin: 0,
+            valueEnd: 500,
+            suffix: '+',
+            name: {
+                en: 'Application\nAPI',
+                vi: 'Kêt nối\nAPI',
             },
-            {
-                valueBegin: 0,
-                valueEnd: 124,
-                name: {
-                    en: 'App\nversion',
-                    vi: 'Phiên bản\nnâng cấp',
-                },
-                easing: 'easeInQuad',
+            easing: 'easeInQuad',
+        },
+        {
+            valueBegin: 0,
+            valueEnd: 124,
+            name: {
+                en: 'App\nversion',
+                vi: 'Phiên bản\nnâng cấp',
             },
-            {
-                valueBegin: 0,
-                valueEnd: 3,
-                name: {
-                    en: 'Enterprise\ncustomer',
-                    vi: 'Doanh nghiệp\nTop 50',
-                },
-                easing: 'easeInQuad',
+            easing: 'easeInQuad',
+        },
+        {
+            valueBegin: 0,
+            valueEnd: 3,
+            name: {
+                en: 'Enterprise\ncustomer',
+                vi: 'Doanh nghiệp\nTop 50',
             },
-            {
-                valueBegin: 0,
-                valueEnd: 1.5,
-                suffix: 'M+',
-                decimal: 1,
-                name: {
-                    en: 'End\nuser',
-                    vi: 'Người\nsử dụng',
-                },
-                easing: 'easeInQuad',
-                extraCss: ['last'],
+            easing: 'easeInQuad',
+        },
+        {
+            valueBegin: 0,
+            valueEnd: 1.5,
+            suffix: 'M+',
+            decimal: 1,
+            name: {
+                en: 'End\nuser',
+                vi: 'Người\nsử dụng',
             },
+            easing: 'easeInQuad',
+            extraCss: ['last'],
+        },
         ],
     },
     work: {
@@ -367,49 +367,49 @@ window.res = {
                     { name: 'work_emos_02', colSpan: true, },
                 ],
                 version: [{
-                        version: '1.2',
-                        desc: [{
-                                en: 'Not available.',
-                                vi: 'Quản lý các sự kiện, chương trình khuyến mãi.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Quản lý mức độ hiệu quả các sự kiện, chương trình khuyến mãi.',
-                            },
-                        ],
+                    version: '1.2',
+                    desc: [{
+                        en: 'Not available.',
+                        vi: 'Quản lý các sự kiện, chương trình khuyến mãi.',
                     },
                     {
-                        version: '1.1',
-                        desc: [{
-                                en: 'Not available.',
-                                vi: 'Quản lý khách hàng.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Quản lý các nghiệp vụ chăm sóc khách hàng.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Quản lý từng sự kiện chăm sóc khách hàng.',
-                            },
-                        ],
+                        en: 'Not available.',
+                        vi: 'Quản lý mức độ hiệu quả các sự kiện, chương trình khuyến mãi.',
+                    },
+                    ],
+                },
+                {
+                    version: '1.1',
+                    desc: [{
+                        en: 'Not available.',
+                        vi: 'Quản lý khách hàng.',
                     },
                     {
-                        version: '1.0',
-                        desc: [{
-                                en: 'Not available.',
-                                vi: 'Quản lý của hàng, nhân viên.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Quản lý mặt hàng, phụ tùng.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Quản lý xuất nhập kho.',
-                            },
-                        ],
+                        en: 'Not available.',
+                        vi: 'Quản lý các nghiệp vụ chăm sóc khách hàng.',
                     },
+                    {
+                        en: 'Not available.',
+                        vi: 'Quản lý từng sự kiện chăm sóc khách hàng.',
+                    },
+                    ],
+                },
+                {
+                    version: '1.0',
+                    desc: [{
+                        en: 'Not available.',
+                        vi: 'Quản lý của hàng, nhân viên.',
+                    },
+                    {
+                        en: 'Not available.',
+                        vi: 'Quản lý mặt hàng, phụ tùng.',
+                    },
+                    {
+                        en: 'Not available.',
+                        vi: 'Quản lý xuất nhập kho.',
+                    },
+                    ],
+                },
                 ],
             },
             vqmm: {
@@ -467,33 +467,33 @@ window.res = {
                     { name: 'work_vqmm_03', colSpan: true, },
                 ],
                 version: [{
-                        version: '1.1',
-                        desc: [{
-                                en: 'Not available.',
-                                vi: 'Quản lý kêt quả khảo sát.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Quản lý các khảo sát.',
-                            },
-                        ],
+                    version: '1.1',
+                    desc: [{
+                        en: 'Not available.',
+                        vi: 'Quản lý kêt quả khảo sát.',
                     },
                     {
-                        version: '1.0',
-                        desc: [{
-                                en: 'Not available.',
-                                vi: 'Quản lý quy trình trao quà.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Quản lý khách hàng.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Quản lý sự kiện (giải thưởng, nội dung thông báo, v..v..).',
-                            },
-                        ],
+                        en: 'Not available.',
+                        vi: 'Quản lý các khảo sát.',
                     },
+                    ],
+                },
+                {
+                    version: '1.0',
+                    desc: [{
+                        en: 'Not available.',
+                        vi: 'Quản lý quy trình trao quà.',
+                    },
+                    {
+                        en: 'Not available.',
+                        vi: 'Quản lý khách hàng.',
+                    },
+                    {
+                        en: 'Not available.',
+                        vi: 'Quản lý sự kiện (giải thưởng, nội dung thông báo, v..v..).',
+                    },
+                    ],
+                },
                 ],
             },
             qdecor: {
@@ -537,33 +537,33 @@ window.res = {
                     { name: 'work_qdecor_04', },
                 ],
                 version: [{
-                        version: '1.1',
-                        desc: [{
-                                en: 'Not available.',
-                                vi: 'Quản lý kêt quả khảo sát.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Quản lý các khảo sát.',
-                            },
-                        ],
+                    version: '1.1',
+                    desc: [{
+                        en: 'Not available.',
+                        vi: 'Quản lý kêt quả khảo sát.',
                     },
                     {
-                        version: '1.0',
-                        desc: [{
-                                en: 'Not available.',
-                                vi: 'Quản lý quy trình trao quà.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Quản lý khách hàng.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Quản lý sự kiện (giải thưởng, nội dung thông báo, v..v..).',
-                            },
-                        ],
+                        en: 'Not available.',
+                        vi: 'Quản lý các khảo sát.',
                     },
+                    ],
+                },
+                {
+                    version: '1.0',
+                    desc: [{
+                        en: 'Not available.',
+                        vi: 'Quản lý quy trình trao quà.',
+                    },
+                    {
+                        en: 'Not available.',
+                        vi: 'Quản lý khách hàng.',
+                    },
+                    {
+                        en: 'Not available.',
+                        vi: 'Quản lý sự kiện (giải thưởng, nội dung thông báo, v..v..).',
+                    },
+                    ],
+                },
                 ],
             },
             vcsc: {
@@ -606,15 +606,15 @@ window.res = {
                 version: [{
                     version: '1.0',
                     desc: [{
-                            en: 'Not available.',
-                            vi: 'Quản lý mức độ tham gia của khách mời.',
-                        },
-                        {
-                            en: 'Not available.',
-                            vi: 'Quản lý sự kiện và các chi tiết liên quan (danh sách khách mời, bản đồ, v..v..).',
-                        },
+                        en: 'Not available.',
+                        vi: 'Quản lý mức độ tham gia của khách mời.',
+                    },
+                    {
+                        en: 'Not available.',
+                        vi: 'Quản lý sự kiện và các chi tiết liên quan (danh sách khách mời, bản đồ, v..v..).',
+                    },
                     ],
-                }, ],
+                },],
             },
             hhdk: {
                 icon: window.version.image.home_work_common['hwc_hhdk'],
@@ -665,48 +665,48 @@ window.res = {
                     { name: 'work_hhdk_03', colSpan: true, },
                 ],
                 version: [{
-                        version: '1.3',
-                        desc: [{
-                            en: 'Not available.',
-                            vi: 'Chức năng phân tích theo nguyên tắc thần số.',
-                        }, ],
+                    version: '1.3',
+                    desc: [{
+                        en: 'Not available.',
+                        vi: 'Chức năng phân tích theo nguyên tắc thần số.',
+                    },],
+                },
+                {
+                    version: '1.2',
+                    desc: [{
+                        en: 'Not available.',
+                        vi: 'Chức năng hỗ trợ và chia phí cho các cộng tác viên.',
                     },
                     {
-                        version: '1.2',
-                        desc: [{
-                                en: 'Not available.',
-                                vi: 'Chức năng hỗ trợ và chia phí cho các cộng tác viên.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Chức năng lưu nhớ dữ liệu đã nhập cho người sử dụng.',
-                            },
-                        ],
+                        en: 'Not available.',
+                        vi: 'Chức năng lưu nhớ dữ liệu đã nhập cho người sử dụng.',
+                    },
+                    ],
+                },
+                {
+                    version: '1.1',
+                    desc: [{
+                        en: 'Not available.',
+                        vi: 'Thêm chức năng theo dõi lịch và vẽ biểu đồ thời vận.',
                     },
                     {
-                        version: '1.1',
-                        desc: [{
-                                en: 'Not available.',
-                                vi: 'Thêm chức năng theo dõi lịch và vẽ biểu đồ thời vận.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Thêm các chức năng phân tích như la bàn, tử vi, lá số.',
-                            },
-                        ],
+                        en: 'Not available.',
+                        vi: 'Thêm các chức năng phân tích như la bàn, tử vi, lá số.',
+                    },
+                    ],
+                },
+                {
+                    version: '1.0',
+                    desc: [{
+                        en: 'Not available.',
+                        vi: 'Quản lý dữ liệu cho việc phân tích.',
                     },
                     {
-                        version: '1.0',
-                        desc: [{
-                                en: 'Not available.',
-                                vi: 'Quản lý dữ liệu cho việc phân tích.',
-                            },
-                            {
-                                en: 'Not available.',
-                                vi: 'Chức năng phân tích tên, số điện thoại.',
-                            },
-                        ],
+                        en: 'Not available.',
+                        vi: 'Chức năng phân tích tên, số điện thoại.',
                     },
+                    ],
+                },
                 ],
             },
             wbtv: {
@@ -755,8 +755,8 @@ window.res = {
                     desc: [{
                         en: 'Not available.',
                         vi: 'Phiên bản sử dụng trong suốt 2 tháng diễn ra sự kiện.',
-                    }, ],
-                }, ],
+                    },],
+                },],
             },
             kungfuball: {
                 icon: window.version.image.home_work_common['hwc_kungfuball'],
@@ -796,8 +796,8 @@ window.res = {
                     desc: [{
                         en: 'Not available.',
                         vi: 'Phiên bản dự thi.',
-                    }, ],
-                }, ],
+                    },],
+                },],
             },
             bts: {
                 icon: window.version.image.home_work_common['hwc_bts'],
@@ -838,8 +838,8 @@ window.res = {
                     desc: [{
                         en: 'Experimental version.',
                         vi: 'Phiên bản thử nghiệm.',
-                    }, ],
-                }, ],
+                    },],
+                },],
             },
         },
         textButton: {
@@ -880,27 +880,27 @@ window.res = {
                     vi: 'Làm rõ yêu cầu, sau đó xem xét khả năng thực thi và làm tài liệu mô tả.',
                 },
                 text_ind: [{
-                        type: 'text',
-                        content: 'Khi đến với chúng tôi, quý khách có một ý tưởng. Có thể là việc đổi mới một quy trình để ' +
-                            'đem lại hiệu suất cao hơn. Có thể là xây dựng môt hế thống hoàn toàn mới. Chúng tôi luôn sẵn sàng ' +
-                            'lắng nghe mọi điều, từ nhỏ đến lớn; cũng như đóng góp các ý kiến chuyên môn trong lĩnh vực công nghệ, ' +
-                            'để giúp quý khách hàng cụ thể hóa ý tưởng của mình thành những quy trình chặt chẽ, hiệu quả cao.',
-                    },
-                    {
-                        type: 'text',
-                        content: 'Việc tìm hiểu và phân tích yêu cầu là một giai đoạn mấu chốt trong quá trình phát triển. Nó đặt ' +
-                            'ra những nền móng quan trọng nhất cho việc biến ý tưởng thành hiện thực. Nói đòi hỏi sự kết hợp của tất cả ' +
-                            'các cá nhân, thành phần liên quan đến hệ thống sau này. Dự án có thành công hay không có thể khẳng định ' +
-                            'được quá trình và kết quả của việc phân tích yêu cầu.',
-                    },
-                    {
-                        type: 'text',
-                        content: 'Với hơn 20 năm kinh nghiệm tập thể, chúng tôi tự tin sẽ luôn biến bất kỳ ý tưởng nào của ' +
-                            'quý khách thành những yêu cầu rõ ràng, cụ thể, bám sát với như cầu thực tế, dựa trên những công nghệ ' +
-                            'phù hợp và mới nhất. Nếu có như cầu, xin quý khách đừng do dự, mà hãy <a href="contact.html">' +
-                            'cho chúng tôi biết ngay</a>. Việc tư vấn ban đầu sẽ hoàn toàn miễn phí và không đòi hỏi gì thông tin ' +
-                            'cá nhân của quý khách.',
-                    },
+                    type: 'text',
+                    content: 'Khi đến với chúng tôi, quý khách có một ý tưởng. Có thể là việc đổi mới một quy trình để ' +
+                        'đem lại hiệu suất cao hơn. Có thể là xây dựng môt hế thống hoàn toàn mới. Chúng tôi luôn sẵn sàng ' +
+                        'lắng nghe mọi điều, từ nhỏ đến lớn; cũng như đóng góp các ý kiến chuyên môn trong lĩnh vực công nghệ, ' +
+                        'để giúp quý khách hàng cụ thể hóa ý tưởng của mình thành những quy trình chặt chẽ, hiệu quả cao.',
+                },
+                {
+                    type: 'text',
+                    content: 'Việc tìm hiểu và phân tích yêu cầu là một giai đoạn mấu chốt trong quá trình phát triển. Nó đặt ' +
+                        'ra những nền móng quan trọng nhất cho việc biến ý tưởng thành hiện thực. Nói đòi hỏi sự kết hợp của tất cả ' +
+                        'các cá nhân, thành phần liên quan đến hệ thống sau này. Dự án có thành công hay không có thể khẳng định ' +
+                        'được quá trình và kết quả của việc phân tích yêu cầu.',
+                },
+                {
+                    type: 'text',
+                    content: 'Với hơn 20 năm kinh nghiệm tập thể, chúng tôi tự tin sẽ luôn biến bất kỳ ý tưởng nào của ' +
+                        'quý khách thành những yêu cầu rõ ràng, cụ thể, bám sát với như cầu thực tế, dựa trên những công nghệ ' +
+                        'phù hợp và mới nhất. Nếu có như cầu, xin quý khách đừng do dự, mà hãy <a href="contact.html">' +
+                        'cho chúng tôi biết ngay</a>. Việc tư vấn ban đầu sẽ hoàn toàn miễn phí và không đòi hỏi gì thông tin ' +
+                        'cá nhân của quý khách.',
+                },
                 ],
             },
             sys_des: {
@@ -914,26 +914,26 @@ window.res = {
                     vi: 'Tạo ra hay chỉnh sửa quy trình làm việc đề phù hợp với nhu cầu đặt ra.',
                 },
                 text_ind: [{
-                        type: 'text',
-                        content: 'Chúng tôi luôn đưa ra các giải pháp phù hợp nhất với hoàn cảnh và nhu cầu hiện tại của ' +
-                            'quý khách hàng. Từ hệ thống nhỏ lẻ độc lập đến việc tích hợp với các hệ thống của ngân hàng hay ' +
-                            'máy chủ đám mây, chuyên môn và kinh nghiệm của đội ngũ công ty sẽ luôn đề ra hướng giải quyết hiệu quả ' +
-                            'an toàn. ',
-                    },
-                    {
-                        type: 'text',
-                        content: 'Các thành phần mã nguồn mở nổi tiếng, đã qua chứng minh thực tiễn luôn được chúng tôi ưu tiên ' +
-                            'sử dụng khi thiết kế hệ thống. Điều này giúp quý khách có được sự phục vụ tốt nhất với chi phí phát triển và ' +
-                            'vận hành thấp nhất. Nếu có yêu cầu, chúng tôi vẫn có thể sẵn sàng thiết kế và phát triển toàn bộ từ những ' +
-                            'bước đầu tiên, giúp hệ thống vận hành độc lập, không phụ thuộc vào những biến đổi đến từ môi trường bên ngoài.',
-                    },
-                    {
-                        type: 'text',
-                        content: 'Khi hệ thống liên quan đến quy trình và nhân sự vận hành của qúy khách hàng, chúng tôi sẽ làm việc ' +
-                            'với từng bộ phận hay cá nhân để nắm được tình hình, từ đó đề ra những giải pháp thích hợp dự trên thông tin ' +
-                            'thu thập. Giải pháp đề ra luôn phù hợp với khả năng của thành phần tham gia, bảo đảm hệ thống đi vào hoạt động ' +
-                            'hiệu quả trong thời gian ngắn nhất.',
-                    },
+                    type: 'text',
+                    content: 'Chúng tôi luôn đưa ra các giải pháp phù hợp nhất với hoàn cảnh và nhu cầu hiện tại của ' +
+                        'quý khách hàng. Từ hệ thống nhỏ lẻ độc lập đến việc tích hợp với các hệ thống của ngân hàng hay ' +
+                        'máy chủ đám mây, chuyên môn và kinh nghiệm của đội ngũ công ty sẽ luôn đề ra hướng giải quyết hiệu quả ' +
+                        'an toàn. ',
+                },
+                {
+                    type: 'text',
+                    content: 'Các thành phần mã nguồn mở nổi tiếng, đã qua chứng minh thực tiễn luôn được chúng tôi ưu tiên ' +
+                        'sử dụng khi thiết kế hệ thống. Điều này giúp quý khách có được sự phục vụ tốt nhất với chi phí phát triển và ' +
+                        'vận hành thấp nhất. Nếu có yêu cầu, chúng tôi vẫn có thể sẵn sàng thiết kế và phát triển toàn bộ từ những ' +
+                        'bước đầu tiên, giúp hệ thống vận hành độc lập, không phụ thuộc vào những biến đổi đến từ môi trường bên ngoài.',
+                },
+                {
+                    type: 'text',
+                    content: 'Khi hệ thống liên quan đến quy trình và nhân sự vận hành của qúy khách hàng, chúng tôi sẽ làm việc ' +
+                        'với từng bộ phận hay cá nhân để nắm được tình hình, từ đó đề ra những giải pháp thích hợp dự trên thông tin ' +
+                        'thu thập. Giải pháp đề ra luôn phù hợp với khả năng của thành phần tham gia, bảo đảm hệ thống đi vào hoạt động ' +
+                        'hiệu quả trong thời gian ngắn nhất.',
+                },
                 ],
             },
             sof_dev: {
@@ -947,27 +947,27 @@ window.res = {
                     vi: 'Phát triển trên mọi nền tảng. Khép tín, nhanh chóng và chát lượng.',
                 },
                 text_ind: [{
-                        type: 'text',
-                        content: 'Với đội ngũ lập trình viên kinh nghiệm, giàu kỹ năng, công ty luôn sẵn sàng thực hiện ' +
-                            'bất cứ yêu cầu nào được đưa ra. Từ kiến tạo giao diện front-end đến những chức năng ' +
-                            'hệ thống cho back-end, chúng tôi luôn làm chủ được công nghệ, dẫn đến việc phát triển có thể ' +
-                            'được thực hiện trên bất kỳ nền tảng ngôn ngữ nào, độc quyền đến mã nguồn mở. Điều này giúp ' +
-                            'quý khách hàng sẽ luôn có được sản phẩm hiểu quả nhất với chi phí phát triển và vận hành thấp nhất.',
-                    },
-                    {
-                        type: 'text',
-                        content: 'Chúng tôi hiểu rõ việc phát triển phần mềm không đơn giản là dựa vào kỹ thuật của ' +
-                            'lập trình viên. Quản lý dự án luôn bám sát tiến độ từng dự án, cập nhật những yêu cầu và xử lý ' +
-                            'những thay đổi mới nhất. Toàn đội ngũ luôn hướng về một mục tiêu là hoàn thành sản phẩm phù hợp nhất ' +
-                            'với nhu cầu của quý khách hàng trong thời gian được giao.',
-                    },
-                    {
-                        type: 'text',
-                        content: 'Cho dù việc phát triển được làm theo mô hình tuần tự (waterfall) hay linh hoạt (agile), chúng tôi ' +
-                            'luôn giữ sự liên hệ cần thiết với quý khách hàng. Mọi ý kiến, nhu cầu đều được truyền đạt tới mọi bên liên quan. ' +
-                            'Đội ngũ lập trình viên cũng không ngần ngại đưa ra các ý kiến dựa trên kinh nghiệm lâu năm để góp phần tối ưu ' +
-                            'hóa dự án. Vì thế các sản phẩm làm ra luôn có tính linh hoạt và độ ứng dụng thực tế cao nhất có thể.',
-                    },
+                    type: 'text',
+                    content: 'Với đội ngũ lập trình viên kinh nghiệm, giàu kỹ năng, công ty luôn sẵn sàng thực hiện ' +
+                        'bất cứ yêu cầu nào được đưa ra. Từ kiến tạo giao diện front-end đến những chức năng ' +
+                        'hệ thống cho back-end, chúng tôi luôn làm chủ được công nghệ, dẫn đến việc phát triển có thể ' +
+                        'được thực hiện trên bất kỳ nền tảng ngôn ngữ nào, độc quyền đến mã nguồn mở. Điều này giúp ' +
+                        'quý khách hàng sẽ luôn có được sản phẩm hiểu quả nhất với chi phí phát triển và vận hành thấp nhất.',
+                },
+                {
+                    type: 'text',
+                    content: 'Chúng tôi hiểu rõ việc phát triển phần mềm không đơn giản là dựa vào kỹ thuật của ' +
+                        'lập trình viên. Quản lý dự án luôn bám sát tiến độ từng dự án, cập nhật những yêu cầu và xử lý ' +
+                        'những thay đổi mới nhất. Toàn đội ngũ luôn hướng về một mục tiêu là hoàn thành sản phẩm phù hợp nhất ' +
+                        'với nhu cầu của quý khách hàng trong thời gian được giao.',
+                },
+                {
+                    type: 'text',
+                    content: 'Cho dù việc phát triển được làm theo mô hình tuần tự (waterfall) hay linh hoạt (agile), chúng tôi ' +
+                        'luôn giữ sự liên hệ cần thiết với quý khách hàng. Mọi ý kiến, nhu cầu đều được truyền đạt tới mọi bên liên quan. ' +
+                        'Đội ngũ lập trình viên cũng không ngần ngại đưa ra các ý kiến dựa trên kinh nghiệm lâu năm để góp phần tối ưu ' +
+                        'hóa dự án. Vì thế các sản phẩm làm ra luôn có tính linh hoạt và độ ứng dụng thực tế cao nhất có thể.',
+                },
                 ],
             },
             mai_mon: {
@@ -981,26 +981,26 @@ window.res = {
                     vi: 'Theo dõi và xử lý các tình huống để bảo đảm như cầu vận hành.',
                 },
                 text_ind: [{
-                        type: 'text',
-                        content: 'Với kinh nghiệm góp phần thực hiện các sự kiện, chương trình khuyến mãi cho các công ty ' +
-                            'Top 50, chúng tôi hiểu việc đồng hành cùng quý khách hàng là một mắc xích thiết yếu. Chúng tôi ' +
-                            'nhận lãnh phần công tác kỹ thuật, để quý khách dồn tâm trí vào công việc chuyện môn, đem đến hiệu quả ' +
-                            'cao nhất cho từng sự kiện.',
-                    },
-                    {
-                        type: 'text',
-                        content: 'Chúng tôi cũng thực hiện công việc huấn luyện, hướng dẫn sử dụng cho các nhân viên tại các ' +
-                            'địa điểm khách hàng mong muốn. Với tác phong chuyên nghiệp, quen thuộc với nhiều vùng miền trên cả nước, ' +
-                            'việc làm quen với chức năng hay hệ thống mới, sau đó đưa vào sử dụng và phát huy hiệu quả luôn diễn ra ' +
-                            'nhanh chóng và ít tốn công sức.',
-                    },
-                    {
-                        type: 'text',
-                        content: 'Với phương châm phục vụ trên, Capsule Studio đã có được sự tin tưởng vững chắc từ nhiều ' +
-                            'quý khách hàng, cụ thể hóa bằng các yêu cầu nâng cấp sản phẩm hàng năm. Với lượng người sử dụng ' +
-                            'sản phẩm trải suốt chiều dài đất nước, chúng tôi luôn nỗ lực hết mình để phục vụ công tác hậu cần để ' +
-                            'xứng đáng với sự tin tưởng vô giá của quý khách hàng.',
-                    },
+                    type: 'text',
+                    content: 'Với kinh nghiệm góp phần thực hiện các sự kiện, chương trình khuyến mãi cho các công ty ' +
+                        'Top 50, chúng tôi hiểu việc đồng hành cùng quý khách hàng là một mắc xích thiết yếu. Chúng tôi ' +
+                        'nhận lãnh phần công tác kỹ thuật, để quý khách dồn tâm trí vào công việc chuyện môn, đem đến hiệu quả ' +
+                        'cao nhất cho từng sự kiện.',
+                },
+                {
+                    type: 'text',
+                    content: 'Chúng tôi cũng thực hiện công việc huấn luyện, hướng dẫn sử dụng cho các nhân viên tại các ' +
+                        'địa điểm khách hàng mong muốn. Với tác phong chuyên nghiệp, quen thuộc với nhiều vùng miền trên cả nước, ' +
+                        'việc làm quen với chức năng hay hệ thống mới, sau đó đưa vào sử dụng và phát huy hiệu quả luôn diễn ra ' +
+                        'nhanh chóng và ít tốn công sức.',
+                },
+                {
+                    type: 'text',
+                    content: 'Với phương châm phục vụ trên, Capsule Studio đã có được sự tin tưởng vững chắc từ nhiều ' +
+                        'quý khách hàng, cụ thể hóa bằng các yêu cầu nâng cấp sản phẩm hàng năm. Với lượng người sử dụng ' +
+                        'sản phẩm trải suốt chiều dài đất nước, chúng tôi luôn nỗ lực hết mình để phục vụ công tác hậu cần để ' +
+                        'xứng đáng với sự tin tưởng vô giá của quý khách hàng.',
+                },
                 ],
             },
             pro_gam: {
@@ -1014,28 +1014,28 @@ window.res = {
                     vi: 'Tư vấn, thiết kế những trò chơi lôi cuốn cho các sự kiện hay chương trình quảng bá.',
                 },
                 text_ind: [{
-                        type: 'text',
-                        content: 'Các trò chơi đơn giản thường xuyên được sử dụng để lôi cuốn người tham gia. ' +
-                            'Khách hàng sẽ cảm thấy hấp dẫn hơn nếu được trúng thưởng một món quà, thay vì chỉ đơn giản ' +
-                            'là được tặng miễn phí. Sự hấp dẫn này đồng nghĩa với thương hiệu gắn kết với trò chơi sẽ ' +
-                            'ấn tượng hơn, dẫn đến nhiều cơ hội giao dịch hơn.',
-                    },
-                    {
-                        type: 'text',
-                        content: 'Thiết kế và phát triển trò chơi luôn là niềm đam mê của từng thành viên trong công ty. ' +
-                            'Chúng tôi luôn mong muốn được đem ngọn lửa này vào công việc, tạo ra những sản phẩm vừa mang tính ' +
-                            'giải trí cao, vừa đem đến những hiệu quả rõ ràng trong đời sống thực tế. Điều này thể hiện rõ trong ' +
-                            'độ tinh tế của các trò chơi đã được công ty sản xuất. Trò chơi nhỏ nhưng được áp dụng những ' +
-                            'kinh nghiệm tích lũy từ các sản phẩm lớn, từ khâu thiết kế giao diện cho đến độ mượt mà khi sử dụng.'
-                    },
-                    {
-                        type: 'text',
-                        content: 'Chúng tôi luôn sẵn sàng thiết kế ra những trò chơi mới, lạ cũng như phát triển trên ' +
-                            'những nền tảng ý tưởng đã được chứng minh hiệu quả cao. Từ việc lên ý tưởng, thiết kế sơ bộ cho đến ' +
-                            'phát triển sản phầm và hoàn thiện đều được thực hiện bởi những cá nhân giàu kinh nghiệm và đam mê. ' +
-                            'Chúng tôi cũng sẽ đồng hành cùng quý khách hàng trong suốt thời gian diễn ra sự kiện, ' +
-                            'bảo đảm mọi chuyện sẽ thuận buồm xui gió.'
-                    },
+                    type: 'text',
+                    content: 'Các trò chơi đơn giản thường xuyên được sử dụng để lôi cuốn người tham gia. ' +
+                        'Khách hàng sẽ cảm thấy hấp dẫn hơn nếu được trúng thưởng một món quà, thay vì chỉ đơn giản ' +
+                        'là được tặng miễn phí. Sự hấp dẫn này đồng nghĩa với thương hiệu gắn kết với trò chơi sẽ ' +
+                        'ấn tượng hơn, dẫn đến nhiều cơ hội giao dịch hơn.',
+                },
+                {
+                    type: 'text',
+                    content: 'Thiết kế và phát triển trò chơi luôn là niềm đam mê của từng thành viên trong công ty. ' +
+                        'Chúng tôi luôn mong muốn được đem ngọn lửa này vào công việc, tạo ra những sản phẩm vừa mang tính ' +
+                        'giải trí cao, vừa đem đến những hiệu quả rõ ràng trong đời sống thực tế. Điều này thể hiện rõ trong ' +
+                        'độ tinh tế của các trò chơi đã được công ty sản xuất. Trò chơi nhỏ nhưng được áp dụng những ' +
+                        'kinh nghiệm tích lũy từ các sản phẩm lớn, từ khâu thiết kế giao diện cho đến độ mượt mà khi sử dụng.'
+                },
+                {
+                    type: 'text',
+                    content: 'Chúng tôi luôn sẵn sàng thiết kế ra những trò chơi mới, lạ cũng như phát triển trên ' +
+                        'những nền tảng ý tưởng đã được chứng minh hiệu quả cao. Từ việc lên ý tưởng, thiết kế sơ bộ cho đến ' +
+                        'phát triển sản phầm và hoàn thiện đều được thực hiện bởi những cá nhân giàu kinh nghiệm và đam mê. ' +
+                        'Chúng tôi cũng sẽ đồng hành cùng quý khách hàng trong suốt thời gian diễn ra sự kiện, ' +
+                        'bảo đảm mọi chuyện sẽ thuận buồm xui gió.'
+                },
                 ],
             },
             gra_ass: {
@@ -1049,21 +1049,20 @@ window.res = {
                     vi: 'Tư vấn, thiết kế những hình ảnh minh họa phù hợp với hợp với nôi dung cần thiết.',
                 },
                 text_ind: [{
-                        type: 'text',
-                        content: 'text1',
-                    },
-                    {
-                        type: 'text',
-                        content: 'text2',
-                    },
-                    {
-                        type: 'text',
-                        content: 'text3',
-                    },
-                    {
-                        type: 'text',
-                        content: 'text4',
-                    },
+                    type: 'text',
+                    content: 'Đối với các dự án liên quan đến khách hàng sử dụng phổ thông, việc trình bày bắt mắt là rất quan trọng. ' +
+                        'Trình bày nội dung với một phong cách ấn tượng hay chuyên nghiệp sẽ giúp sản phẩm lập tức bắt được thiện cảm của ' +
+                        'khách hàng. Sử dụng các hình ảnh đẹp, phù hợp với nội dung là cách tốt nhất để thực hiện điều trên. Capsule Studio ' +
+                        'luôn có đội ngũ nhân viên và cộng tác viên kinh nghiệm để hỗ trợ quý khách hàng có được những hình ảnh đẹp nhất.',
+                },
+                {
+                    type: 'text',
+                    content: 'Chúng tôi có ê kíp cộng tác viên chụp ảnh sản phẩm chuyên nghiệp, tạo ra hình ảnh chất lượng cao, có thể ' +
+                        'sử dụng vào nhiều mục đích: in ấn catalogue, menu nhà hàng, upload website, thiết kế các ấn phẩm quảng cáo online ' +
+                        'hiệu quả, in ấn quảng cáo di động, cố định, billboard hoặc trên các phương tiện giao thông. Chúng tôi sẵn sàng đến ' +
+                        'tận nơi, thực hiện chụp hình quảng cáo sản phẩm có kích thước lớn như: bàn ghế, giường tủ, sản phẩm công nghiệp, ' +
+                        'sản phẩm hóa chất độc hại,...',
+                },
                 ],
             },
         },
@@ -1088,17 +1087,17 @@ window.res = {
             ['common', 'menuItem', 'contact'],
         ],
         item: [{
-                image: 'contact_location',
-                text: 'name',
-            },
-            {
-                image: 'contact_phone',
-                text: 'phone',
-            },
-            {
-                image: 'contact_email',
-                text: 'email',
-            },
+            image: 'contact_location',
+            text: 'name',
+        },
+        {
+            image: 'contact_phone',
+            text: 'phone',
+        },
+        {
+            image: 'contact_email',
+            text: 'email',
+        },
         ],
         titleGrid: {
             en: 'Get in touch!',
