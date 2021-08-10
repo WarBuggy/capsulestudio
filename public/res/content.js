@@ -915,19 +915,24 @@ window.res = {
                 },
                 text_ind: [{
                         type: 'text',
-                        content: 'text1',
+                        content: 'Chúng tôi luôn đưa ra các giải pháp phù hợp nhất với hoàn cảnh và nhu cầu hiện tại của ' +
+                            'quý khách hàng. Từ hệ thống nhỏ lẻ độc lập đến việc tích hợp với các hệ thống của ngân hàng hay ' +
+                            'máy chủ đám mây, chuyên môn và kinh nghiệm của đội ngũ công ty sẽ luôn đề ra hướng giải quyết hiệu quả ' +
+                            'an toàn. ',
                     },
                     {
                         type: 'text',
-                        content: 'text2',
+                        content: 'Các thành phần mã nguồn mở nổi tiếng, đã qua chứng minh thực tiễn luôn được chúng tôi ưu tiên ' +
+                            'sử dụng khi thiết kế hệ thống. Điều này giúp quý khách có được sự phục vụ tốt nhất với chi phí phát triển và ' +
+                            'vận hành thấp nhất. Nếu có yêu cầu, chúng tôi vẫn có thể sẵn sàng thiết kế và phát triển toàn bộ từ những ' +
+                            'bước đầu tiên, giúp hệ thống vận hành độc lập, không phụ thuộc vào những biến đổi đến từ môi trường bên ngoài.',
                     },
                     {
                         type: 'text',
-                        content: 'text3',
-                    },
-                    {
-                        type: 'text',
-                        content: 'text4',
+                        content: 'Khi hệ thống liên quan đến quy trình và nhân sự vận hành của qúy khách hàng, chúng tôi sẽ làm việc ' +
+                            'với từng bộ phận hay cá nhân để nắm được tình hình, từ đó đề ra những giải pháp thích hợp dự trên thông tin ' +
+                            'thu thập. Giải pháp đề ra luôn phù hợp với khả năng của thành phần tham gia, bảo đảm hệ thống đi vào hoạt động ' +
+                            'hiệu quả trong thời gian ngắn nhất.',
                     },
                 ],
             },

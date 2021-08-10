@@ -303,5 +303,6 @@ div.service-individual-two-contact-text {
 }
 
 .general-button.service-contact {
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
