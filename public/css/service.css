@@ -224,6 +224,10 @@ div.service-individual-one-text {
     text-align: justify;
 }
 
+.service-individual-one-text>a {
+    color: var(--color-link);
+}
+
 div.service-individual-two-outer {
     width: 100%;
     align-self: start;

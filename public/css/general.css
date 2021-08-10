@@ -70,6 +70,7 @@
     --loading-initial-disclaimer-light-display: block;
     --loading-initial-disclaimer-dark-display: none;
     --color-text-box-border: var(--color-border-light);
+    --color-link: blue;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -88,6 +89,7 @@
         --loading-initial-disclaimer-light-display: none;
         --loading-initial-disclaimer-dark-display: block;
         --color-text-box-border: var(--color-border-dark);
+        --color-link: yellow;
     }
 }
 

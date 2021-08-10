@@ -881,19 +881,25 @@ window.res = {
                 },
                 text_ind: [{
                         type: 'text',
-                        content: 'text1',
+                        content: 'Khi đến với chúng tôi, quý khách có một ý tưởng. Có thể là việc đổi mới một quy trình để ' +
+                            'đem lại hiệu suất cao hơn. Có thể là xây dựng môt hế thống hoàn toàn mới. Chúng tôi luôn sẵn sàng ' +
+                            'lắng nghe mọi điều, từ nhỏ đến lớn; cũng như đóng góp các ý kiến chuyên môn trong lĩnh vực công nghệ, ' +
+                            'để giúp quý khách hàng cụ thể hóa ý tưởng của mình thành những quy trình chặt chẽ, hiệu quả cao.',
                     },
                     {
                         type: 'text',
-                        content: 'text2',
+                        content: 'Việc tìm hiểu và phân tích yêu cầu là một giai đoạn mấu chốt trong quá trình phát triển. Nó đặt ' +
+                            'ra những nền móng quan trọng nhất cho việc biến ý tưởng thành hiện thực. Nói đòi hỏi sự kết hợp của tất cả ' +
+                            'các cá nhân, thành phần liên quan đến hệ thống sau này. Dự án có thành công hay không có thể khẳng định ' +
+                            'được quá trình và kết quả của việc phân tích yêu cầu.',
                     },
                     {
                         type: 'text',
-                        content: 'text3',
-                    },
-                    {
-                        type: 'text',
-                        content: 'text4',
+                        content: 'Với hơn 20 năm kinh nghiệm tập thể, chúng tôi tự tin sẽ luôn biến bất kỳ ý tưởng nào của ' +
+                            'quý khách thành những yêu cầu rõ ràng, cụ thể, bám sát với như cầu thực tế, dựa trên những công nghệ ' +
+                            'phù hợp và mới nhất. Nếu có như cầu, xin quý khách đừng do dự, mà hãy <a href="contact.html">' +
+                            'cho chúng tôi biết ngay</a>. Việc tư vấn ban đầu sẽ hoàn toàn miễn phí và không đòi hỏi gì thông tin ' +
+                            'cá nhân của quý khách.',
                     },
                 ],
             },
