@@ -937,19 +937,25 @@ window.res = {
                 },
                 text_ind: [{
                         type: 'text',
-                        content: 'text1',
+                        content: 'Với đội ngũ lập trình viên kinh nghiệm, giàu kỹ năng, công ty luôn sẵn sàng thực hiện ' +
+                            'bất cứ yêu cầu nào được đưa ra. Từ kiến tạo giao diện front-end đến những chức năng ' +
+                            'hệ thống cho back-end, chúng tôi luôn làm chủ được công nghệ, dẫn đến việc phát triển có thể ' +
+                            'được thực hiện trên bất kỳ nền tảng ngôn ngữ nào, độc quyền đến mã nguồn mở. Điều này giúp ' +
+                            'quý khách hàng sẽ luôn có được sản phẩm hiểu quả nhất với chi phí phát triển và vận hành thấp nhất.',
                     },
                     {
                         type: 'text',
-                        content: 'text2',
+                        content: 'Chúng tôi hiểu rõ việc phát triển phần mềm không đơn giản là dựa vào kỹ thuật của ' +
+                            'lập trình viên. Quản lý dự án luôn bám sát tiến độ từng dự án, cập nhật những yêu cầu và xử lý ' +
+                            'những thay đổi mới nhất. Toàn đội ngũ luôn hướng về một mục tiêu là hoàn thành sản phẩm phù hợp nhất ' +
+                            'với nhu cầu của quý khách hàng trong thời gian được giao.',
                     },
                     {
                         type: 'text',
-                        content: 'text3',
-                    },
-                    {
-                        type: 'text',
-                        content: 'text4',
+                        content: 'Cho dù việc phát triển được làm theo mô hình tuần tự (waterfall) hay linh hoạt (agile), chúng tôi ' +
+                            'luôn giữ sự liên hệ cần thiết với quý khách hàng. Mọi ý kiến, nhu cầu đều được truyền đạt tới mọi bên liên quan. ' +
+                            'Đội ngũ lập trình viên cũng không ngần ngại đưa ra các ý kiến dựa trên kinh nghiệm lâu năm để góp phần tối ưu ' +
+                            'hóa dự án. Vì thế các sản phẩm làm ra luôn có tính linh hoạt và độ ứng dụng thực tế cao nhất có thể.',
                     },
                 ],
             },
@@ -957,7 +963,7 @@ window.res = {
                 icon: 'hsc_chart',
                 title: {
                     en: 'Maintenance & Monitoring',
-                    vi: 'Bảo trì & Theo dõi.',
+                    vi: 'Bảo trì & Theo dõi',
                 },
                 text: {
                     en: 'Not available.',
@@ -965,27 +971,32 @@ window.res = {
                 },
                 text_ind: [{
                         type: 'text',
-                        content: 'text1',
+                        content: 'Với kinh nghiệm góp phần thực hiện các sự kiện, chương trình khuyến mãi cho các công ty ' +
+                            'Top 50, chúng tôi hiểu việc đồng hành cùng quý khách hàng là một mắc xích thiết yếu. Chúng tôi ' +
+                            'nhận lãnh phần công tác kỹ thuật, để quý khách dồn tâm trí vào công việc chuyện môn, đem đến hiệu quả ' +
+                            'cao nhất cho từng sự kiện.',
                     },
                     {
                         type: 'text',
-                        content: 'text2',
+                        content: 'Chúng tôi cũng thực hiện công việc huấn luyện, hướng dẫn sử dụng cho các nhân viên tại các ' +
+                            'địa điểm khách hàng mong muốn. Với tác phong chuyên nghiệp, quen thuộc với nhiều vùng miền trên cả nước, ' +
+                            'việc làm quen với chức năng hay hệ thống mới, sau đó đưa vào sử dụng và phát huy hiệu quả luôn diễn ra ' +
+                            'nhanh chóng và ít tốn công sức.',
                     },
                     {
                         type: 'text',
-                        content: 'text3',
-                    },
-                    {
-                        type: 'text',
-                        content: 'text4',
+                        content: 'Với phương châm phục vụ trên, Capsule Studio đã có được sự tin tưởng vững chắc từ nhiều ' +
+                            'quý khách hàng, cụ thể hóa bằng các yêu cầu nâng cấp sản phẩm hàng năm. Với lượng người sử dụng ' +
+                            'sản phẩm trải suốt chiều dài đất nước, chúng tôi luôn nỗ lực hết mình để phục vụ công tác hậu cần để ' +
+                            'xứng đáng với sự tin tưởng vô giá của quý khách hàng.',
                     },
                 ],
             },
             pro_gam: {
                 icon: 'service_game',
                 title: {
-                    en: 'Promotional Game.',
-                    vi: 'Trò chơi quảng bá.',
+                    en: 'Promotional Game',
+                    vi: 'Trò chơi quảng bá',
                 },
                 text: {
                     en: 'Not available.',
@@ -993,27 +1004,34 @@ window.res = {
                 },
                 text_ind: [{
                         type: 'text',
-                        content: 'text1',
+                        content: 'Các trò chơi đơn giản thường xuyên được sử dụng để lôi cuốn người tham gia. ' +
+                            'Khách hàng sẽ cảm thấy hấp dẫn hơn nếu được trúng thưởng một món quà, thay vì chỉ đơn giản ' +
+                            'là được tặng miễn phí. Sự hấp dẫn này đồng nghĩa với thương hiệu gắn kết với trò chơi sẽ ' +
+                            'ấn tượng hơn, dẫn đến nhiều cơ hội giao dịch hơn.',
                     },
                     {
                         type: 'text',
-                        content: 'text2',
+                        content: 'Thiết kế và phát triển trò chơi luôn là niềm đam mê của từng thành viên trong công ty. ' +
+                            'Chúng tôi luôn mong muốn được đem ngọn lửa này vào công việc, tạo ra những sản phẩm vừa mang tính ' +
+                            'giải trí cao, vừa đem đến những hiệu quả rõ ràng trong đời sống thực tế. Điều này thể hiện rõ trong ' +
+                            'độ tinh tế của các trò chơi đã được công ty sản xuất. Trò chơi nhỏ nhưng được áp dụng những ' +
+                            'kinh nghiệm tích lũy từ các sản phẩm lớn, từ khâu thiết kế giao diện cho đến độ mượt mà khi sử dụng.'
                     },
                     {
                         type: 'text',
-                        content: 'text3',
-                    },
-                    {
-                        type: 'text',
-                        content: 'text4',
+                        content: 'Chúng tôi luôn sẵn sàng thiết kế ra những trò chơi mới, lạ cũng như phát triển trên ' +
+                            'những nền tảng ý tưởng đã được chứng minh hiệu quả cao. Từ việc lên ý tưởng, thiết kế sơ bộ cho đến ' +
+                            'phát triển sản phầm và hoàn thiện đều được thực hiện bởi những cá nhân giàu kinh nghiệm và đam mê. ' +
+                            'Chúng tôi cũng sẽ đồng hành cùng quý khách hàng trong suốt thời gian diễn ra sự kiện, ' +
+                            'bảo đảm mọi chuyện sẽ thuận buồm xui gió.'
                     },
                 ],
             },
             gra_ass: {
                 icon: 'service_screenshot',
                 title: {
-                    en: 'Graphical Asset.',
-                    vi: 'Thiết kế hình ảnh.',
+                    en: 'Graphical Asset',
+                    vi: 'Thiết kế hình ảnh',
                 },
                 text: {
                     en: 'Not available.',
