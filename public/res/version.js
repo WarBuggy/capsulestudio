@@ -105,5 +105,8 @@ window.version = {
             'service_ind_2': 'res/img/service_ind_2.jpg?2.0',
             'service_ind_3': 'res/img/service_ind_3.jpg?3.0',
         },
+        blog: {
+            'blog_banner': 'res/img/home_five.jpg?1.0',
+        },
     },
 };

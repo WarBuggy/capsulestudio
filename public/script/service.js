@@ -204,6 +204,5 @@ class ContentServiceIndividual {
         divButton.onclick = function() {
             window.location = 'contact.html';
         };
-
     };
 };

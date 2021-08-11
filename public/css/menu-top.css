@@ -4,7 +4,7 @@
     /* Mobile */
     --menu-top-item-height: 50px;
     --menu-top-outer-grid-template-columns: 1fr;
-    --menu-top-outer-grid-template-rows: 80px repeat(6, var(--menu-top-item-height));
+    --menu-top-outer-grid-template-rows: 80px repeat(5, var(--menu-top-item-height));
     --menu-top-outer-height: 80px;
     --menu-top-outer-height-show: 380px;
     --menu-top-grid-bg-color: var(--color-bg-1);
@@ -40,7 +40,7 @@
 @media only screen and (min-width: 1140px) {
      :root {
         /* Desktop */
-        --menu-top-outer-grid-template-columns: 40% repeat(6, auto);
+        --menu-top-outer-grid-template-columns: 40% repeat(5, auto);
         --menu-top-outer-grid-template-rows: 1fr;
         --menu-top-outer-height: 100px;
         --menu-top-outer-height-show: 100px;
