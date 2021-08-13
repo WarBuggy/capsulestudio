@@ -1159,17 +1159,218 @@ window.res = {
         },
         item: {
             blog1: {
-                date: '2021-08-28',
+                date: '2021-08-11',
                 thumbnail: 'res/img/blog/thumb1.jpg?1.0',
                 title: {
-                    en: 'Title',
-                    vi: 'Tựa đề',
+                    en: 'The best way to use SVG images on web pages.',
+                    vi: 'Cách tốt nhất để sử dụng hình SVG trên trang web.',
                 },
                 desc: {
-                    en: 'Desc',
-                    vi: 'Mô tả',
+                    en: 'Not available.',
+                    vi: 'Tận dụng lợi thế hiểu được CSS của SVG, đồng thời giữ được mọi thứ ngăn nắp, tách biệt và dễ kiểm soát.',
                 },
-                content: {},
+                imageList: {},
+                content: [{
+                        type: 'title',
+                        content: {
+                            en: 'Not available.',
+                            vi: 'Vì sao sử dụng SVG?',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Đã có rất nhiều bài viết nêu lên các lợi ích khi sử dùng hình định dạng SVG. Xin tóm tắt nhanh 
+                                gọn tại đây một vài điều để các độc giả dễ theo dõi:
+                                '<ul>
+                                <li>Một hình duy nhất cho mọi độ phân giải màn hình.
+                                <li>Có thể tương tác với từng thành phần trong hình.
+                                <li>Có thể chỉnh sửa dễ dàng nếu là lập trình viên.
+                                <li>Có thể hiểu tất cả các luật CSS được khai báo trong phạm vi toàn trang web.
+                                </ul>
+                                Bài viết này xin được nói về điều cuối và phương pháp tốt nhất để tận dụng được điểm mạnh này.`,
+                        },
+                    },
+                    {
+                        type: 'title',
+                        content: {
+                            en: 'Not available.',
+                            vi: 'CSS trên toàn trang?',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Lấy ví dụ <a href='https://codepen.io/hovanbuu/pen/GRmzNay'>code pen</a> đơn giản này. Nó bao gồm 
+                                một luật CSS duy nhất:`,
+                        },
+                    },
+                    {
+                        type: 'code',
+                        language: 'css',
+                        content: {
+                            en: 'Not available.',
+                            vi: ".fill-color {&newline" +
+                                "&indentfill: red;&newline" +
+                                "}",
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Và trang html cũng chỉ chứa một hình svg đơn giản là một hình tròn:`,
+                        },
+                    },
+                    {
+                        type: 'code',
+                        language: 'xml',
+                        content: {
+                            en: 'Not available.',
+                            vi: '<svg width="200px" height="200px" viewBox="0 0 200 200">&newline' +
+                                '&indent<circle id="circleInSvg" class="fill-color" cx="100" cy="100" r="100" />&newline</svg>',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Trang sẽ hiển thị 1 hình tròn được tô đỏ đỏ bên trong.
+                                <svg width="200px" height="200px" viewBox="0 0 200 200" style='display: block; 
+                                    margin: 15px 0px 15px 0px;'>
+                                <circle fill="red" cx="100" cy="100" r="100" />&newline
+                                </svg>
+                                Nếu xem chi tiết thẻ <span style='font-family: monospace;'>circle</span>, chúng ta sẽ 
+                                thấy lớp CSS được khai báo là <span style='font-family: monospace;'>fill-color</span>.
+                                Trong nội bộ của thẻ <span style='font-family: monospace;'>circle</span> không hề có lớp
+                                này, nhưng hình vẫn được tô đỏ, đó là vì nội dung của hình SVG được trình duyệt xử lý như 
+                                một thành phần HTML bình thưởng trên trang, chia sẻ được với tất cả các thành phần còn lại. 
+                                Mọi thành phần trong SVG đều có thể được điều khiển và xứ lý như các div, span, v..v.. Nếu
+                                đánh vào console của trình duyệt lệnh tìm sau: `,
+                        },
+                    },
+                    {
+                        type: 'code',
+                        language: 'javascript',
+                        content: {
+                            en: 'Not available.',
+                            vi: 'document.getElementById("circleInSvg");',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Kết quả sẽ là thẻ <span style='font-family: monospace;'>circle</span> (nằm bên trong thẻ 
+                                <span style='font-family: monospace;'>svg</span>). Việc tìm kiếm này giống như bất kỳ thành phần 
+                                HTML nào khác trên trang.`,
+                        },
+                    },
+                    {
+                        type: 'title',
+                        content: {
+                            en: 'Not available.',
+                            vi: 'In-line SVG',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Tuy nhiên, điều trên chỉ có thể thực hiện được nếu toàn bộ nội dung của hình SVG được 
+                                khai báo trực tiếp trong HTML của trang. Nếu SVG được sử dụng thông qua thẻ 
+                                <span style='font-family: monospace;'>img</span> như sau:`,
+                        },
+                    },
+                    {
+                        type: 'code',
+                        language: 'xml',
+                        content: {
+                            en: 'Not available.',
+                            vi: '<img src="path/image.svg" >',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `hay sử dụng thẻ <span style='font-family: monospace;'>object</span>:`,
+                        },
+                    },
+                    {
+                        type: 'code',
+                        language: 'xml',
+                        content: {
+                            en: 'Not available.',
+                            vi: '<object data="path/image.svg" type="image/svg+xml">',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `chúng ta sẽ thấy hình tròn bị tô đen, màu mặc định. Lớp CSS 
+                        <span style='font-family: monospace;'>fill-color</span> trở nên vô nghĩa 
+                        với các thành phần bên trong hình SVG nếu sử dụng cách trên. SVG phải được khai báo trực điếp trong 
+                        HTML thì mới phát huy dược hết hiệu quả.`,
+                        },
+                    },
+                    {
+                        type: 'title',
+                        content: {
+                            en: 'But in-line SVG is so messy!',
+                            vi: 'Nhưng khai báo trực tiếp nhìn rối quá!',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Đúng như vậy! Việc bảo trì mã nguồn in-line làm mọi thứ trở nên phức tạp và mất đi tính độc lập. 
+                            Để chỉnh sửa một hình, chúng ta phải vào nơi có cả những thông tin khác để chỉnh sửa. Điều này dễ 
+                            dẫn tới các sai sót và lỗi một cách không cần thiết. Vậy có cách nào để vừa bảo đảm tính linh hoạt của 
+                            hình SVG, vừa giữ mọi thứ trật tự ngăn nắp?`,
+                        },
+                    },
+                    {
+                        type: 'title',
+                        content: {
+                            en: 'Not available.',
+                            vi: 'Cách sử dụng SVG tốt nhất',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Xin giới thiệu với quý độc giả một phương pháp đơn giản để có thể khai báo SVG trực tiếp trong HTML. 
+                            Đầu tiên, chúng ta gửi yêu cầu tải nội dung của SVG. Việc đó có thể thực hiện bằng một hàm tương tự như sau:`,
+                        },
+                    },
+                    {
+                        type: 'code',
+                        language: 'javascript',
+                        content: {
+                            en: 'Not available.',
+                            vi: 'function asyncLoadSVGContent(link) {&newline' +
+                                '&indentreturn new Promise(function(resolve) {&newline' +
+                                '&indent&indentlet request = new XMLHttpRequest();&newline' +
+                                '&indent&indentif (request != null) {&newline' +
+                                '&indent&indent&indentrequest.open("GET", link, true);&newline' +
+                                '&indent&indent&indentrequest.onreadystatechange = function() {&newline' +
+                                '&indent&indent&indent&indentif (request.readyState == 4 && request.status == 200) {&newline' +
+                                '&indent&indent&indent&indent&indentresolve(request.responseText);&newline' +
+                                '&indent&indent&indent&indent}&newline' +
+                                '&indent&indent&indent};&newline' +
+                                '&indent&indent&indentrequest.send();&newline' +
+                                '&indent&indent}&newline' +
+                                '&indent});&newline' +
+                                '};',
+                        },
+                    },
+                ],
             },
             blog2: {
                 date: '2021-08-29',

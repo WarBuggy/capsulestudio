@@ -58,6 +58,7 @@
     --general-banner-overlay-padding-top: 0px;
     /* Mobile Light mode */
     --color-bg-1: var(--color-bright);
+    --color-bg-2: var(--color-dark);
     --color-text-1: var(--color-neutral);
     --color-text-2: var(--color-bright);
     --color-title-1: var(--color-neutral-dark);
@@ -77,6 +78,7 @@
      :root {
         /* Mobile Dark mode */
         --color-bg-1: var(--color-dark);
+        --color-bg-2: var(--color-bright-dark-mode);
         --color-text-1: var(--color-bright-dark-mode);
         --color-text-2: var(--color-dark);
         --color-title-1: var(--color-bright);

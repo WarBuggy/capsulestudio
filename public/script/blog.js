@@ -2,21 +2,21 @@ window.onload = function() {
     window.rootStyle = getComputedStyle(document.body);
     let loadingInitial = new LoadingInitial();
     document.body.appendChild(loadingInitial.div);
+    let imagePreloadCategoryList = ['common', 'blog', ];
     let param = Common.getURLParameter('blog');
     if (param == '' || window.res.blog.item[param] == null) {
         let itemList = ContentBlog.processBlogItem();
-        let imagePreloadCategoryList = ['common', 'blog', ];
         Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function() {
             document.body.removeChild(loadingInitial.div);
             new ContentBlog(itemList);
         });
         return;
     }
-    // let imagePreloadCategoryList = ['common', 'service_ind'];
-    // Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function() {
-    //     document.body.removeChild(loadingInitial.div);
-    //     new ContentServiceIndividual(param);
-    // });
+    ContentBlogIndividual.addImagePreload(param);
+    Common.preloadImageFromVersion(imagePreloadCategoryList, window.imagePreloadTimeWaitMin, function() {
+        document.body.removeChild(loadingInitial.div);
+        new ContentBlogIndividual(param);
+    });
 };
 
 
@@ -57,7 +57,7 @@ class ContentBlog {
         let divSideOuter = document.createElement('div');
         divSideOuter.classList.add('blog-one-side-grid-outer');
         divGrid.appendChild(divSideOuter);
-        this.createDivOneSide(divSideOuter);
+        ContentBlog.createDivOneSide(divSideOuter);
     };
 
     createDivOneItem(divParent, itemList) {
@@ -83,22 +83,7 @@ class ContentBlog {
                 firstItemProcessed = true;
             }
 
-            let divDate = document.createElement('div');
-            divDate.classList.add('blog-one-item-date');
-            divImage.appendChild(divDate);
-
-            let datePart = item.date.split('-');
-            let year = datePart[0];
-            let month = datePart[1];
-            let day = datePart[2];
-            let dateString = window.res.blog.dateFormat[window.langCur];
-            dateString = dateString.replace('year', year);
-            dateString = dateString.replace('month', month);
-            dateString = dateString.replace('day', day);
-            let divDateInner = document.createElement('div');
-            divDateInner.classList.add('blog-one-item-date-inner');
-            divDateInner.innerHTML = dateString;
-            divDate.appendChild(divDateInner);
+            ContentBlog.createDivDate(divImage, item);
 
             let divTitle = document.createElement('div');
             divTitle.classList.add('blog-one-item-title');
@@ -126,7 +111,26 @@ class ContentBlog {
         }
     };
 
-    createDivOneSide(divParent) {
+    static createDivDate(divParent, item) {
+        let divDate = document.createElement('div');
+        divDate.classList.add('blog-one-item-date');
+        divParent.appendChild(divDate);
+
+        let datePart = item.date.split('-');
+        let year = datePart[0];
+        let month = datePart[1];
+        let day = datePart[2];
+        let dateString = window.res.blog.dateFormat[window.langCur];
+        dateString = dateString.replace('year', year);
+        dateString = dateString.replace('month', month);
+        dateString = dateString.replace('day', day);
+        let divDateInner = document.createElement('div');
+        divDateInner.classList.add('blog-one-item-date-inner');
+        divDateInner.innerHTML = dateString;
+        divDate.appendChild(divDateInner);
+    };
+
+    static createDivOneSide(divParent) {
         let divOuter = document.createElement('div');
         divOuter.classList.add('blog-one-contact-outer');
         divParent.appendChild(divOuter);
@@ -171,5 +175,78 @@ class ContentBlog {
             return -1;
         }
         return 0;
+    };
+};
+
+class ContentBlogIndividual {
+    constructor(param) {
+        let divOuter = document.createElement('div');
+        divOuter.classList.add('general-content-outer');
+        document.body.appendChild(divOuter);
+
+        let imageLink = window.version.image.blog['blog_banner'];
+        let titleBanner = window.res.blog.title;
+        let siteMapBanner = window.res.blog.siteMapItemList;
+        siteMapBanner = siteMapBanner.concat([
+            ['blog', 'item', param, 'title', ]
+        ]);
+        let banner = new Banner(divOuter, imageLink, titleBanner, siteMapBanner);
+
+        let divGrid = document.createElement('div');
+        divGrid.classList.add('general-content-grid');
+        divOuter.appendChild(divGrid);
+
+        let divOneGrid = document.createElement('div');
+        divOneGrid.classList.add('blog-one-grid');
+        divGrid.appendChild(divOneGrid);
+
+        let divItemOuter = document.createElement('div');
+        divItemOuter.classList.add('blog-individual-grid-content');
+        divOneGrid.appendChild(divItemOuter);
+        let item = window.res.blog.item[param];
+        this.createDivOneItem(divItemOuter, item);
+
+        let divSideOuter = document.createElement('div');
+        divSideOuter.classList.add('blog-one-side-grid-outer');
+        divOneGrid.appendChild(divSideOuter);
+        ContentBlog.createDivOneSide(divSideOuter);
+
+        new Footer(divOuter);
+
+        new MenuTop(50);
+
+        Common.createDivParallax(banner.div, this.objectParallaxBanner, 50, 0);
+    };
+
+    createDivOneItem(divParent, item) {
+        let divBanner = document.createElement('div');
+        divBanner.classList.add('blog-individual-banner');
+        divBanner.style.backgroundImage = `url(${item.thumbnail})`;
+        divParent.appendChild(divBanner);
+
+        ContentBlog.createDivDate(divBanner, item);
+
+        for (let i = 0; i < item.content.length; i++) {
+            let part = item.content[i];
+            let type = part.type;
+            let div = document.createElement('div');
+            div.classList.add(`blog-individual-${type}`);
+            let html = part.content[window.langCur];
+            if (part.type == 'code') {
+                html = Common.formatCode(html, part.language);
+                html = '<div class="code-outer">' + html + '</div>'
+            }
+            div.innerHTML = html;
+            divParent.appendChild(div);
+        }
+    };
+
+    static addImagePreload(param) {
+        let keyList = Object.keys(window.res.blog.item[param].imageList);
+        for (let i = 0; i < keyList.length; i++) {
+            let key = keyList[i];
+            let value = window.res.blog.item[param].imageList[key];
+            window.version.image.blog[key] = value;
+        }
     };
 };

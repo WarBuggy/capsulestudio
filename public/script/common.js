@@ -293,6 +293,156 @@ class Common {
             }
         }
     };
+
+    static formatCode(string, type) {
+        let result = string.replace(/</g, '&lt');
+        result = result.replace(/>/g, '&gt');
+        result = result.replace(/=/g, '&equal');
+        result = result.replace(/\//g, '&forward-slash');
+        result = result.replace(/\\/g, '&back-slash');
+
+        if (type == 'xml') {
+            result = Common.formatCodeXML(result);
+        } else if (type == 'javascript') {
+            result = Common.formatCodeJS(result);
+        } else if (type == 'css') {
+            result = Common.formatCodeCSS(result);
+        }
+
+        result = result.replace(/[{};()!.]/gm, function(match) {
+            match = `<span class="code-flow">${match}</span>`;
+            return match;
+        });
+
+        result = result.replace(/&newline/gm, '<br>');
+        result = result.replace(/&indent/gm, '<span class="code-indent"></span>');
+        result = result.replace(/&lt/g, '<span class="code-flow">&lt</span>');
+        result = result.replace(/&gt/g, '<span class="code-flow">&gt</span>');
+        result = result.replace(/&equal/g, '<span class="code-flow">=</span>');
+        result = result.replace(/&forward-slash/g, '<span class="code-flow">/</span>');
+        result = result.replace(/&back-slash/g, '<span class="code-flow">\</span>');
+
+        return result;
+    };
+
+    static formatCodeJS(string) {
+        let result = string.replace(/['"].+?['"]/gm, function(match) {
+            match = '<span class="code-string">' + match + '</span>';
+            return match;
+        });
+
+        result = result.replace(/[^a-zA-Z0-9](function|let|static|true|false|null|this|new)[^a-zA-Z0-9]/gm, function(match) {
+            let firstChar = match[0];
+            let lastChar = match.slice(-1);
+            match = match.slice(0, -1);
+            match = match.slice(1);
+            match = firstChar + '<span class="code-css-key">' + match + '</span>' + lastChar;
+            return match;
+        });
+
+        result = result.replace(/(function|let|static|true|false|null|this|new)[^a-zA-Z0-9]/gm, function(match) {
+            let lastChar = match.slice(-1);
+            match = match.slice(0, -1);
+            match = '<span class="code-css-key">' + match + '</span>' + lastChar;
+            return match;
+        });
+
+        result = result.replace(/\s[A-Z][a-zA-Z0-9_]*/gm, function(match) {
+            let firstChar = match[0];
+            match = match.slice(1);
+            match = firstChar + '<span class="code-code-class">' + match + '</span>';
+            return match;
+        });
+
+        result = result.replace(/[ |.][^A-Z0-9][a-zA-z0-9]+\(/gm, function(match) {
+            let firstChar = match[0];
+            match = match.slice(1);
+            match = firstChar + '<span class="code-method">' + match + '</span>';
+            return match;
+        });
+
+        result = result.replace(/((&indent)|(&newline))?(for|if|while|return|continue)[^a-zA-Z0-9]/gm, function(match) {
+            let prefix = '';
+            if (match.indexOf('&indent') >= 0) {
+                prefix = '&indent';
+            } else if (match.indexOf('&newline') >= 0) {
+                prefix = '&newline';
+            }
+            let lastChar = match.slice(-1);
+            match = match.slice(0, -1);
+            match = prefix + '<span class="code-code-control">' + match + '</span>' + lastChar;
+            return match;
+        });
+
+        result = result.replace(/[^a-zA-Z'"]\d+[^a-zA-Z'"]/gm, function(match) {
+            let firstChar = match[0];
+            let lastChar = match.slice(-1);
+            match = match.slice(0, -1);
+            match = match.slice(1);
+            match = firstChar + '<span class="code-number">' + match + '</span>' + lastChar;
+            return match;
+        });
+
+        return result;
+    };
+
+    static formatCodeXML(string) {
+        let result = string.replace(/&lt\S* /gm, function(match) {
+            match = match.replace(/&lt/, '');
+            match = match.replace(/ /, '');
+            match = '&lt<span class="code-tag">' + match + '</span> ';
+            return match;
+        });
+        result = result.replace(/&lt\S*&forward-slash&gt/gm, function(match) {
+            match = match.replace(/&lt/, '');
+            match = match.replace(/&forward-slash&gt/, '');
+            match = '&lt<span class="code-tag">' + match + '</span>';
+            return match;
+        });
+        result = result.replace(/&lt&forward-slash\S*&gt/gm, function(match) {
+            match = match.replace(/&lt&forward-slash/, '');
+            match = match.replace(/&gt/, '');
+            match = '&lt&forward-slash<span class="code-tag">' + match + '</span>&gt';
+            return match;
+        });
+
+        result = result.replace(/\S*&equal/gm, function(match) {
+            match = match.replace(/&equal/, '');
+            match = '<span class="code-css-key">' + match + '</span>&equal';
+            return match;
+        });
+
+        result = result.replace(/&equal['"].+?['"]/gm, function(match) {
+            match = match.replace(/&equal/, '');
+            match = '&equal<span class="code-string">' + match + '</span>';
+            return match;
+        });
+
+        return result;
+    };
+
+    static formatCodeCSS(string) {
+        let result = string.replace(/\S* {/gm, function(match) {
+            match = match.replace(/ {/, '');
+            match = `<span class="code-css-class">${match}</span> {`;
+            return match;
+        });
+
+        result = result.replace(/\S*: /gm, function(match) {
+            match = match.replace(/: /, '');
+            match = `<span class="code-css-key">${match}</span>: `;
+            return match;
+        });
+
+        result = result.replace(/: \S*;/gm, function(match) {
+            match = match.replace(/: /, '');
+            match = match.replace(/;/, '');
+            match = `: <span class="code-string">${match}</span>;`;
+            return match;
+        });
+
+        return result;
+    };
 };
 
 class LoadingInitial {
@@ -770,3 +920,18 @@ class TextArea {
         this.div.appendChild(this.input);
     };
 }
+
+function load(link) {
+    return new Promise(function(resolve) {
+        let request = new XMLHttpRequest;
+        if (request != null) {
+            request.open("GET", link, true);
+            request.onreadystatechange = function() {
+                if (request.readyState == 4 && request.status == 200) {
+                    resolve(request.responseText);
+                }
+            };
+            request.send();
+        }
+    });
+};
