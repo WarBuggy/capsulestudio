@@ -1157,6 +1157,10 @@ window.res = {
             en: '<b>month-day</b><br>year',
             vi: '<b>day-month</b><br>year',
         },
+        backToTop: {
+            en: 'ToC',
+            vi: 'Mục lục',
+        },
         item: {
             blog1: {
                 date: '2021-08-11',
@@ -1321,7 +1325,7 @@ window.res = {
                         type: 'title',
                         content: {
                             en: 'But in-line SVG is so messy!',
-                            vi: 'Nhưng khai báo trực tiếp nhìn rối quá!',
+                            vi: 'Khai báo trực tiếp nhìn rối quá!',
                         },
                     },
                     {
@@ -1368,6 +1372,38 @@ window.res = {
                                 '&indent&indent}&newline' +
                                 '&indent});&newline' +
                                 '};',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Hàm trên sẽ tải nội dung của hình SVG, 
+                            <a href='https://viblo.asia/p/giai-thich-ve-asyncawait-javascript-trong-10-phut-1VgZvBn7ZAw'>bất đồng bộ</a>. 
+                            Để sử dụng nội dung này, chúng ta có dùng mã tương tự như dưới đây:`,
+                        },
+                    },
+                    {
+                        type: 'code',
+                        language: 'javascript',
+                        content: {
+                            en: 'Not available.',
+                            vi: 'window.onload = async function() {&newline' +
+                                '&indentlet contentSVG = await asyncLoadSVGContent("path/image,svg");&newline' +
+                                '&indentlet divParent = document.getElementById("divParentId");&newline' +
+                                '&indentdivParent.innerHTML = divParent.innerHTML.concat(contentSVG);&newline' +
+                                '};',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `<span style='font-family: monospace;'>divParent</span> là thành phần HTML dùng để chứa hình SVG. 
+                            Nếu thành công, hình SVG sẽ trở thành 1 phần của trang HTML, trong khi vẫn giữ được sự ngăn nắp, độc lập.
+                            <br><br>
+                            Bài viết đến đây là kết thúc. Xin cảm ơn sự theo dõi và chúc các quý độc giả luôn giữ được ngọn lửa đam mê! 
+                            Thân ái!`,
                         },
                     },
                 ],

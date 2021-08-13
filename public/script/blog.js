@@ -180,6 +180,8 @@ class ContentBlog {
 
 class ContentBlogIndividual {
     constructor(param) {
+        let item = window.res.blog.item[param];
+
         let divOuter = document.createElement('div');
         divOuter.classList.add('general-content-outer');
         document.body.appendChild(divOuter);
@@ -200,10 +202,17 @@ class ContentBlogIndividual {
         divOneGrid.classList.add('blog-one-grid');
         divGrid.appendChild(divOneGrid);
 
+        let divBanner = document.createElement('div');
+        divBanner.classList.add('blog-individual-banner');
+        divBanner.style.backgroundImage = `url(${item.thumbnail})`;
+        divOneGrid.appendChild(divBanner);
+        ContentBlog.createDivDate(divBanner, item);
+
+        this.createDivTableContent(divOneGrid, item);
+
         let divItemOuter = document.createElement('div');
         divItemOuter.classList.add('blog-individual-grid-content');
         divOneGrid.appendChild(divItemOuter);
-        let item = window.res.blog.item[param];
         this.createDivOneItem(divItemOuter, item);
 
         let divSideOuter = document.createElement('div');
@@ -219,13 +228,7 @@ class ContentBlogIndividual {
     };
 
     createDivOneItem(divParent, item) {
-        let divBanner = document.createElement('div');
-        divBanner.classList.add('blog-individual-banner');
-        divBanner.style.backgroundImage = `url(${item.thumbnail})`;
-        divParent.appendChild(divBanner);
-
-        ContentBlog.createDivDate(divBanner, item);
-
+        let anchorTitle = 0;
         for (let i = 0; i < item.content.length; i++) {
             let part = item.content[i];
             let type = part.type;
@@ -235,9 +238,66 @@ class ContentBlogIndividual {
             if (part.type == 'code') {
                 html = Common.formatCode(html, part.language);
                 html = '<div class="code-outer">' + html + '</div>'
+            } else if (part.type == 'title') {
+                let divAnchor = document.createElement('div');
+                divAnchor.classList.add('blog-individual-title-anchor');
+                divAnchor.id = `divAnchor${anchorTitle}`;
+                anchorTitle = anchorTitle + 1;
+                div.appendChild(divAnchor);
             }
-            div.innerHTML = html;
+            div.innerHTML = div.innerHTML.concat(html);
+            if (part.type == 'title') {
+                let divBack = document.createElement('div');
+                divBack.classList.add('blog-individual-title-back-to-top');
+                divBack.innerText = window.res.blog.backToTop[window.langCur];
+                div.appendChild(divBack);
+                divBack.onclick = function() {
+                    document.getElementById('divAnchorToC').scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
+                };
+            }
             divParent.appendChild(div);
+        }
+    };
+
+    createDivTableContent(divParent, item) {
+        let anchorTitle = 0;
+
+        let divOuter = document.createElement('div');
+        divOuter.classList.add('blog-one-table-content-grid');
+        divParent.appendChild(divOuter);
+
+        let divAnchor = document.createElement('div');
+        divAnchor.classList.add('blog-individual-title-anchor');
+        divAnchor.id = `divAnchorToC`;
+        divOuter.appendChild(divAnchor);
+
+        for (let i = 0; i < item.content.length; i++) {
+            let part = item.content[i];
+            if (part.type != 'title') {
+                continue;
+            }
+
+            let divBullet = document.createElement('div');
+            divBullet.classList.add('blog-one-table-content-bullet');
+            divBullet.innerText = '>';
+            divOuter.appendChild(divBullet);
+
+            let divTitle = document.createElement('div');
+            divTitle.classList.add('blog-one-table-content-title');
+            divTitle.innerText = part.content[window.langCur];
+            divTitle.setAttribute('title', anchorTitle);
+            divOuter.appendChild(divTitle);
+
+            divTitle.onclick = function() {
+                let titleId = this.getAttribute('title');
+                let divTarget = document.getElementById(`divAnchor${titleId}`);
+                divTarget.scrollIntoView({ behavior: 'smooth', block: 'start', });
+            };
+
+            anchorTitle = anchorTitle + 1;
         }
     };
 

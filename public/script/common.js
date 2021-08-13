@@ -331,19 +331,19 @@ class Common {
             return match;
         });
 
-        result = result.replace(/[^a-zA-Z0-9](function|let|static|true|false|null|this|new)[^a-zA-Z0-9]/gm, function(match) {
+        result = result.replace(/[^a-zA-Z0-9](function|async|let|static|true|false|null|this|new)[^a-zA-Z0-9]/gm, function(match) {
             let firstChar = match[0];
             let lastChar = match.slice(-1);
             match = match.slice(0, -1);
             match = match.slice(1);
-            match = firstChar + '<span class="code-css-key">' + match + '</span>' + lastChar;
+            match = firstChar + '<span class="ccode-code-control-1">' + match + '</span>' + lastChar;
             return match;
         });
 
-        result = result.replace(/(function|let|static|true|false|null|this|new)[^a-zA-Z0-9]/gm, function(match) {
+        result = result.replace(/(function|async|let|static|true|false|null|this|new)[^a-zA-Z0-9]/gm, function(match) {
             let lastChar = match.slice(-1);
             match = match.slice(0, -1);
-            match = '<span class="code-css-key">' + match + '</span>' + lastChar;
+            match = '<span class="code-code-control-1">' + match + '</span>' + lastChar;
             return match;
         });
 
@@ -361,7 +361,7 @@ class Common {
             return match;
         });
 
-        result = result.replace(/((&indent)|(&newline))?(for|if|while|return|continue)[^a-zA-Z0-9]/gm, function(match) {
+        result = result.replace(/((&indent)|(&newline))?(for|if|await|while|return|continue)[^a-zA-Z0-9]/gm, function(match) {
             let prefix = '';
             if (match.indexOf('&indent') >= 0) {
                 prefix = '&indent';
@@ -920,18 +920,3 @@ class TextArea {
         this.div.appendChild(this.input);
     };
 }
-
-function load(link) {
-    return new Promise(function(resolve) {
-        let request = new XMLHttpRequest;
-        if (request != null) {
-            request.open("GET", link, true);
-            request.onreadystatechange = function() {
-                if (request.readyState == 4 && request.status == 200) {
-                    resolve(request.responseText);
-                }
-            };
-            request.send();
-        }
-    });
-};
