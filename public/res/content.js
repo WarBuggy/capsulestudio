@@ -1409,17 +1409,19 @@ window.res = {
                 ],
             },
             blog2: {
-                date: '2021-08-29',
+                date: '2021-08-13',
                 thumbnail: 'res/img/blog/thumb2.jpg?1.0',
                 title: {
-                    en: 'Title',
-                    vi: 'Tựa đề',
+                    en: 'CSS Variables, SVG and Web Dark/Light Color Scheme.',
+                    vi: 'Biến CSS, hình SVG và chế độ màn hình sáng/tối cho trang web.',
                 },
                 desc: {
                     en: 'Desc',
                     vi: 'Mô tả',
                 },
+                imageList: {},
                 content: {},
+                hidden: true,
             },
             blog3: {
                 date: '2021-08-30',
@@ -1432,7 +1434,9 @@ window.res = {
                     en: 'Desc',
                     vi: 'Mô tả',
                 },
+                imageList: {},
                 content: {},
+                hidden: true,
             },
             blog4: {
                 date: '2021-09-01',
@@ -1445,6 +1449,7 @@ window.res = {
                     en: 'Desc',
                     vi: 'Mô tả',
                 },
+                imageList: {},
                 content: {},
                 hidden: true,
             },
