@@ -236,6 +236,7 @@ class ContentBlogIndividual {
             div.classList.add(`blog-individual-${type}`);
             let html = part.content[window.langCur];
             if (part.type == 'code') {
+                html = part.content;
                 html = Common.formatCode(html, part.language);
                 html = '<div class="code-outer">' + html + '</div>'
             } else if (part.type == 'title') {
@@ -244,6 +245,9 @@ class ContentBlogIndividual {
                 divAnchor.id = `divAnchor${anchorTitle}`;
                 anchorTitle = anchorTitle + 1;
                 div.appendChild(divAnchor);
+            } else if (type == 'image') {
+                this.createContentImage(div, item, part);
+                html = '';
             }
             div.innerHTML = div.innerHTML.concat(html);
             if (part.type == 'title') {
@@ -259,6 +263,40 @@ class ContentBlogIndividual {
                 };
             }
             divParent.appendChild(div);
+        }
+        this.addClickEventToImage();
+    };
+
+    createContentImage(divParent, item, part) {
+        let path = item.imageList[part.image];
+        let caption = part.content[window.langCur];
+
+        let img = document.createElement('img');
+        img.classList.add('blog-individual-image-inner');
+        img.src = path;
+        divParent.appendChild(img);
+        img.setAttribute('alt', caption);
+        if (part.landscape == true) {
+            img.setAttribute('orientation', 'landscape');
+        }
+
+        let divCaption = document.createElement('div');
+        divCaption.classList.add('blog-individual-image-caption');
+        divCaption.innerHTML = caption;
+        divParent.appendChild(divCaption);
+    };
+
+    addClickEventToImage() {
+        let imgList = document.getElementsByClassName('blog-individual-image-inner');
+        for (let i = 0; i < imgList.length; i++) {
+            let img = imgList[i];
+            let path = img.src;
+            let caption = img.getAttribute('alt');
+            let orientation = img.getAttribute('orientation');
+
+            img.onclick = function() {
+                Common.showImage(path, caption, orientation);
+            }
         }
     };
 

@@ -269,6 +269,35 @@ class Common {
         };
     };
 
+    static showImage(path, caption, orientation) {
+        let div = document.createElement('div');
+        div.classList.add('general-overlay');
+        div.classList.add('image-outer');
+        if (orientation != null) {
+            div.classList.add(orientation);
+        }
+
+        let img = document.createElement('img');
+        img.classList.add('general-overlay-image-inner');
+        img.src = path;
+        div.appendChild(img);
+
+        let divCaption = document.createElement('div');
+        divCaption.classList.add('general-overlay-image-caption');
+        div.appendChild(divCaption);
+
+        let divCaptionInner = document.createElement('div');
+        divCaption.appendChild(divCaptionInner);
+        let span = document.createElement('span');
+        span.innerHTML = caption;
+        divCaptionInner.appendChild(span);
+
+        document.body.appendChild(div);
+        div.onclick = function() {
+            document.body.removeChild(div);
+        };
+    };
+
     static parseJSON(input) {
         return new Promise(function(resolve, reject) {
             let jsonRes = JSON.parse(input);

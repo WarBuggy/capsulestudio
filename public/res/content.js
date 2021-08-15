@@ -1214,12 +1214,9 @@ window.res = {
                     {
                         type: 'code',
                         language: 'css',
-                        content: {
-                            en: 'Not available.',
-                            vi: ".fill-color {&newline" +
-                                "&indentfill: red;&newline" +
-                                "}",
-                        },
+                        content: ".fill-color {&newline" +
+                            "&indentfill: red;&newline" +
+                            "}",
                     },
                     {
                         type: 'text',
@@ -1231,11 +1228,8 @@ window.res = {
                     {
                         type: 'code',
                         language: 'xml',
-                        content: {
-                            en: 'Not available.',
-                            vi: '<svg width="200px" height="200px" viewBox="0 0 200 200">&newline' +
-                                '&indent<circle id="circleInSvg" class="fill-color" cx="100" cy="100" r="100" />&newline</svg>',
-                        },
+                        content: '<svg width="200px" height="200px" viewBox="0 0 200 200">&newline' +
+                            '&indent<circle id="circleInSvg" class="fill-color" cx="100" cy="100" r="100" />&newline</svg>',
                     },
                     {
                         type: 'text',
@@ -1258,10 +1252,7 @@ window.res = {
                     {
                         type: 'code',
                         language: 'javascript',
-                        content: {
-                            en: 'Not available.',
-                            vi: 'document.getElementById("circleInSvg");',
-                        },
+                        content: 'document.getElementById("circleInSvg");',
                     },
                     {
                         type: 'text',
@@ -1291,10 +1282,7 @@ window.res = {
                     {
                         type: 'code',
                         language: 'xml',
-                        content: {
-                            en: 'Not available.',
-                            vi: '<img src="path/image.svg" >',
-                        },
+                        content: '<img src="path/image.svg" >',
                     },
                     {
                         type: 'text',
@@ -1306,10 +1294,7 @@ window.res = {
                     {
                         type: 'code',
                         language: 'xml',
-                        content: {
-                            en: 'Not available.',
-                            vi: '<object data="path/image.svg" type="image/svg+xml">',
-                        },
+                        content: '<object data="path/image.svg" type="image/svg+xml">',
                     },
                     {
                         type: 'text',
@@ -1356,23 +1341,20 @@ window.res = {
                     {
                         type: 'code',
                         language: 'javascript',
-                        content: {
-                            en: 'Not available.',
-                            vi: 'function asyncLoadSVGContent(link) {&newline' +
-                                '&indentreturn new Promise(function(resolve) {&newline' +
-                                '&indent&indentlet request = new XMLHttpRequest();&newline' +
-                                '&indent&indentif (request != null) {&newline' +
-                                '&indent&indent&indentrequest.open("GET", link, true);&newline' +
-                                '&indent&indent&indentrequest.onreadystatechange = function() {&newline' +
-                                '&indent&indent&indent&indentif (request.readyState == 4 && request.status == 200) {&newline' +
-                                '&indent&indent&indent&indent&indentresolve(request.responseText);&newline' +
-                                '&indent&indent&indent&indent}&newline' +
-                                '&indent&indent&indent};&newline' +
-                                '&indent&indent&indentrequest.send();&newline' +
-                                '&indent&indent}&newline' +
-                                '&indent});&newline' +
-                                '};',
-                        },
+                        content: 'function asyncLoadSVGContent(link) {&newline' +
+                            '&indentreturn new Promise(function(resolve) {&newline' +
+                            '&indent&indentlet request = new XMLHttpRequest();&newline' +
+                            '&indent&indentif (request != null) {&newline' +
+                            '&indent&indent&indentrequest.open("GET", link, true);&newline' +
+                            '&indent&indent&indentrequest.onreadystatechange = function() {&newline' +
+                            '&indent&indent&indent&indentif (request.readyState == 4 && request.status == 200) {&newline' +
+                            '&indent&indent&indent&indent&indentresolve(request.responseText);&newline' +
+                            '&indent&indent&indent&indent}&newline' +
+                            '&indent&indent&indent};&newline' +
+                            '&indent&indent&indentrequest.send();&newline' +
+                            '&indent&indent}&newline' +
+                            '&indent});&newline' +
+                            '};',
                     },
                     {
                         type: 'text',
@@ -1386,14 +1368,11 @@ window.res = {
                     {
                         type: 'code',
                         language: 'javascript',
-                        content: {
-                            en: 'Not available.',
-                            vi: 'window.onload = async function() {&newline' +
-                                '&indentlet contentSVG = await asyncLoadSVGContent("path/image,svg");&newline' +
-                                '&indentlet divParent = document.getElementById("divParentId");&newline' +
-                                '&indentdivParent.innerHTML = divParent.innerHTML.concat(contentSVG);&newline' +
-                                '};',
-                        },
+                        content: 'window.onload = async function() {&newline' +
+                            '&indentlet contentSVG = await asyncLoadSVGContent("path/image,svg");&newline' +
+                            '&indentlet divParent = document.getElementById("divParentId");&newline' +
+                            '&indentdivParent.innerHTML = divParent.innerHTML.concat(contentSVG);&newline' +
+                            '};',
                     },
                     {
                         type: 'text',
@@ -1416,12 +1395,317 @@ window.res = {
                     vi: 'Biến CSS, hình SVG và chế độ màn hình sáng/tối cho trang web.',
                 },
                 desc: {
-                    en: 'Desc',
-                    vi: 'Mô tả',
+                    en: 'Not available.',
+                    vi: 'Kết hợp các khả năng mới của HTML và CSS để đem đến tiện tích chế dộ sáng/tối cho người sử dụng.',
                 },
-                imageList: {},
-                content: {},
-                hidden: true,
+                imageList: {
+                    'blog2_1': 'res/img/blog/blog2_1.jpg',
+                    'blog2_2': 'res/img/blog/blog2_2.svg',
+                },
+                content: [{
+                        type: 'title',
+                        content: {
+                            en: 'Light and dark mode',
+                            vi: 'Chế độ màn hình sáng tối',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Chế độ màn hình buổi tối (dark mode) trở nên rất thịnh hành trong vài năm vừa qua. Đã có các chương trình,  
+                            ứng dụng dùng mặc định chế độ này (VS Code dùng Dark Theme+). Các hệ điều hành 
+                            thông dụng điều đã tích hợp chế độ hiển thị ít tương phản này vào danh sách tiện ích của mình. Các 
+                            trình duyệt cũng vậy. Trình duyệt Samsung trên điện thoại còn có khả năng đoán và tự đổi màu của các 
+                            trang web về chế độ buổi tối.`,
+                        },
+                    },
+                    {
+                        type: 'image',
+                        image: 'blog2_1',
+                        content: {
+                            en: 'Not available',
+                            vi: 'So sánh giữa chế độ ngày và đêm (do máy xử lý) trên Samsung S9+ (2021).',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available',
+                            vi: `Cho dù khả năng tự xử lý của trình duyệt hay hệ điều hành là khá tốt, trang web vẫn nên có thiết kế 
+                            riêng cho chế độ buổi tối. Điều này đảm bảo tính thẩm mỹ của trang không bị ảnh hưởng khi người sử dụng 
+                            muốn chuyển chế độ.`,
+                        },
+                    },
+                    {
+                        type: 'title',
+                        content: {
+                            en: 'Challenge of the dark side',
+                            vi: 'Thử thách của bóng tối',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Các nhà thiết kế có sử dụng một tông màu cho cả hai chế độ sáng tối. Nếu lưu ý logo của VNExpress 
+                            trong hình trên, các bạn sẽ thấy nó vẫn có độ tương phản hợp lý cho cả hai màu nền. Tuy nhiên để thiết kế 
+                            toàn bộ một trang web như thế thì sẽ khó lòng đạt được mức độ thẩm mỹ mong muốn. Hai bộ màu sắc khác nhau 
+                            sẽ tốt hơn một, như thường lệ. Nếu trang web chỉ đơn giản cần đổi một vài màu nền và màu chữ thì vấn đề 
+                            sẽ đơn giản. Tuy nhiên, khả năng thay đổi hình ảnh cho phù hợp là hoàn toàn có thể xảy ra. Lấy ví dụ như 
+                            phần loading của chính trang web này. Khi mới bắt đầu, trang sẽ có một màn hình chờ trong khi hình ảnh 
+                            được tải trước về mày như sau:`,
+                        },
+                    },
+                    {
+                        type: 'image',
+                        image: 'blog2_2',
+                        landscape: true,
+                        content: {
+                            en: 'Not available',
+                            vi: 'Màn hình chờ cho 4 chế độ khác nhau.<br>(Hình ảnh được tải từ <a href="loading.io">loading.io</a>)',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Để có được một hiệu úng đẹp mắt và hợp lý, chúng ta có thể cần đến 4 hình khác nhau. Nếu một trang web 
+                            chú trọng đến đến chi tiết, khả năng rất cao số lượng hình sẽ tăng lên với tốc độ chóng mặt. Khi đó, việc 
+                            quản lý hình ảnh sẽ đòi hỏi rất nhiều công sức. Một chỉnh sửa nhỏ về màu sắt có thể dẫn đến thao tác trên 
+                            vài chục tấm hình khác nhau.`,
+                        },
+                    },
+                    {
+                        type: 'title',
+                        content: {
+                            en: 'CSS and SVG come to the rescue',
+                            vi: 'Bộ đôi CSS và SVG sẽ cứu nguy',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Người hùng thật sự chính là <a href='https://www.w3.org/community/groups/'>các thành viên của W3C</a>, 
+                            làm việc không ngừng nghỉ để thế giới Internet ngày càng hấp dẫn hơn. Với biến CSS và SVG, chúng ta đáp ứng 
+                            được các đòi hỏi trên dễ dàng hơn mà vẫn giữ được sự đơn giản trong tài nguyên hình ảnh của trang web.`,
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Bài viết dành cho các độc giả đã có kiến thức cơ bản về 
+                            <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties'>biến CSS</a> và 
+                            <a href='https://www.w3schools.com/graphics/svg_intro.asp'>SVG</a>, cũng như đã biết cách 
+                            <a href=''>kết hợp CSS và SVG</a> vào trên trang web.`,
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Cho mục đích của bài viết, hãy giả sử trang web có hai bộ màu. Mỗi bộ màu gồm có hai màu nền (cùng tông) 
+                            và một màu tương phản. Cho bộ màu buổi sáng, 3 màu này sẽ là <span style='color: #4886FF;'>#4886FF</span>, 
+                            <span style='color: #24CDFF;'>#24CDFF</span> và 
+                            <span style='color: #FFFFFF; background-color: #121212;'>#FFFFFF</span>. 
+                            Bộ buổi tối là <span style='color: #F58300;'>#F58300</span>, <span style='color: #FFD500;'>#FFD500</span> 
+                            và <span style='color: #121212; background-color: #FFF;'>#121212</span>.`,
+                        },
+                    },
+                    {
+                        type: 'title',
+                        content: {
+                            en: 'Declare CSS variables',
+                            vi: 'Khai báo các biến CSS',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Bộ màu sáng sẽ là mặc định cho trang web. Bộ màu sẽ được khai báo như sau:`,
+                        },
+                    },
+                    {
+                        type: 'code',
+                        language: 'css',
+                        content: ':root {&newline' +
+                            '&indent--color-bg-1: #4886FF;&newline' +
+                            '&indent--color-bg-2: #24CDFF;&newline' +
+                            '&indent--color-foreground: #FFFFFF;&newline' +
+                            '}',
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Bộ màu tối có thể được khai báo ngay sau đó bằng cách sau:`,
+                        },
+                    },
+                    {
+                        type: 'code',
+                        language: 'css',
+                        content: '@media (prefers-color-scheme: dark) {&newline' +
+                            '&indent:root {&newline' +
+                            '&indent&indent--color-bg-1: #F58300;&newline' +
+                            '&indent&indent--color-bg-2: #FFD500;&newline' +
+                            '&indent&indent--color-foreground: #121212;&newline' +
+                            '&indent}&newline' +
+                            '}',
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Nếu khai báo thành công thì tại bất cứ nơi nào trên trang web thích hợp cho việc dùng CSS, chuỗi 
+                            <span style='font-family: monospace;'>var(----color-bg-1)</span> sẽ được hiểu là màu 
+                            <span style='color: #4886FF;'>#4886FF</span>.`,
+                        },
+                    },
+                    {
+                        type: 'title',
+                        content: {
+                            en: 'Not available.',
+                            vi: 'Sử dụng biến CSS trong hình SVG'
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Khi xem trang trên các thiết bị mobile, quý độc giả sẽ thấy animation sau khi trang đang tải hình trước:`,
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: '<svg width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">' +
+                                '<circle cx="50" cy="23" r="13">' +
+                                '<animate attributeName="cy" dur="1s" repeatCount="indefinite" calcMode="spline"' +
+                                'keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9" keyTimes="0;0.5;1" values="23;77;23" />' +
+                                '</circle>&newline' +
+                                '</svg>',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Một hình tròn chuyển động theo trục thẳng đứng. Mã nguồn cho hình SVG trên là như sau:`,
+                        },
+                    },
+                    {
+                        type: 'code',
+                        language: 'xml',
+                        content: '<svg width="50px" height="50px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">&newline' +
+                            '&indent<circle cx="50" cy="23" r="13">&newline' +
+                            '&indent&indent<animate attributeName="cy" dur="1s" repeatCount="indefinite" calcMode="spline"&newline' +
+                            '&indent&indent&indentkeySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9" keyTimes="0;0.5;1" values="23;77;23">&newline' +
+                            '&indent&indent</animate>&newline' +
+                            '&indent</circle>&newline' +
+                            '</svg>',
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Hình bao gồm một thẻ <span style='font-family: monospace;'>circle</span> và một thẻ 
+                            <span style='font-family: monospace;'>animation</span>. Chúng ta có thể dễ dàng đoán rằng, nếu muốn thay đổi màu cho hình, 
+                            thẻ <span style='font-family: monospace;'>circle</span> cần phải được chỉnh sửa. Thông thường, màu của các hình trong SVG 
+                            có thể được thay đổi bằng thuộc tính <span style='font-family: monospace;'>fill</span>. Ví dụ, nếu cần phải đổi thành màu 
+                            xanh, chúng ta có thể thêm vào như sau:`,
+                        },
+                    },
+                    {
+                        type: 'code',
+                        language: 'xml',
+                        content: '<circle cx="50" cy="23" r="13" fill="blue">',
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Chúng ta sẽ có hình như mong muốn:`,
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: '<svg width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">' +
+                                '<circle cx="50" cy="23" r="13" fill="blue">' +
+                                '<animate attributeName="cy" dur="1s" repeatCount="indefinite" calcMode="spline"' +
+                                'keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9" keyTimes="0;0.5;1" values="23;77;23" />' +
+                                '</circle>&newline' +
+                                '</svg>',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Theo giả cảnh của bài viết, chúng ta cần đổi thành màu 
+                            <span style='color: #FFFFFF; background-color: #121212;'>#FFFFFF</span> khi bình thường và màu 
+                            <span style='color: #121212; background-color: #FFFFFF;'>#121212</span> ở chế độ buổi tối. Nhưng thay vì 
+                            cần phải có 2 hình hầu như giống nhau, chỉ khác ở chi tiết <span style='font-family: monospace;'>fill</span>,
+                            chúng ta chỉ cần 1 hình với thuộc tính <span style='font-family: monospace;'>fill</span> như sau:`
+                        },
+                    },
+                    {
+                        type: 'code',
+                        language: 'xml',
+                        content: '<circle cx="50" cy="23" r="13" fill="var(--color-foreground)">',
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Nếu xem hình riêng biệt bằng các công cụ hình như Paint, quý độc giả sẽ chỉ thấy màu đen như bình thường. 
+                            Đó là vì biến CSS <span style='font-family: monospace;'>color-foreground</span> chỉ có nghĩa trong phạm vi trang. 
+                            Nếu xem tại trang web, quý độc giả có thể thấy màu thay đổi tùy theo chế độ sáng / tối. Màu nền của svg đã được 
+                            tô xám để tiện theo dõi.`
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: '<svg width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"' +
+                                'style="background-color: grey;">' +
+                                '<circle cx="50" cy="23" r="13" fill="var(--color-foreground)">' +
+                                '<animate attributeName="cy" dur="1s" repeatCount="indefinite" calcMode="spline"' +
+                                'keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9" keyTimes="0;0.5;1" values="23;77;23" />' +
+                                '</circle>&newline' +
+                                '</svg>',
+                        },
+                    },
+                    {
+                        type: 'title',
+                        content: {
+                            en: 'Conclusion',
+                            vi: 'Lời kết',
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Mã cho bài viết có thể tìm thấy tại <a href="https://codepen.io/hovanbuu/pen/wvdZdRe">code pen</a>. HTML5, CSS và JS
+                            đang dần trở nên những thế lực đáng gờm trong lĩnh vực lập trình giao diện. Mong sao cho bộ ba này tiếp tục phát triển bền 
+                            vững, trở thành tiêu chuẩn về mặt dễ dàng, tiện lợi cho các ngôn ngữ noi theo trong việc thiết kế và lập trình front-end.`,
+                        },
+                    },
+                    {
+                        type: 'text',
+                        content: {
+                            en: 'Not available.',
+                            vi: `Bài viết tới đây là hết. Xin cảm ơn sự theo dõi của quý độc giả!`,
+                        },
+                    },
+                ],
             },
             blog3: {
                 date: '2021-08-30',

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800px" height="200px"
+    viewBox="0 0 800 200" preserveAspectRatio="xMidYMid">
+    <defs>
+        <linearGradient id='lgLight' gradientUnits='userSpaceOnUse' x1='-5.92%' y1='7.86%' x2='105.92%' y2='92.14%'>
+            <stop stop-color="#4886FF" />
+            <stop stop-color="#24CDFF" offset='.91' />
+        </linearGradient>
+        <linearGradient id='lgDark' gradientUnits='userSpaceOnUse' x1='-5.92%' y1='7.86%' x2='105.92%' y2='92.14%'>
+            <stop stop-color="#f58300" />
+            <stop stop-color="#FFD500" offset='.91' />
+        </linearGradient>
+    </defs>
+    <g>
+        <rect x='0' y='0' width='200px' height='200px' fill='url(#lgLight)' />
+        <svg x='75' y='75' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            style="margin: auto; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; display: block; shape-rendering: auto;"
+            width="50px" height="50px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+            <circle cx="84" cy="50" r="10" fill="white">
+                <animate attributeName="r" repeatCount="indefinite" dur="0.6097560975609756s" calcMode="spline"
+                    keyTimes="0;1" values="10;0" keySplines="0 0.5 0.5 1" begin="0s"></animate>
+                <animate attributeName="fill" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="discrete"
+                    keyTimes="0;0.25;0.5;0.75;1" values="white;white;white;white;white" begin="0s">
+                </animate>
+            </circle>
+            <circle cx="16" cy="50" r="10" fill="white">
+                <animate attributeName="r" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="0s"></animate>
+                <animate attributeName="cx" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="0s"></animate>
+            </circle>
+            <circle cx="50" cy="50" r="10" fill="white">
+                <animate attributeName="r" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.6097560975609756s"></animate>
+                <animate attributeName="cx" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.6097560975609756s"></animate>
+            </circle>
+            <circle cx="84" cy="50" r="10" fill="white">
+                <animate attributeName="r" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1.2195121951219512s"></animate>
+                <animate attributeName="cx" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1.2195121951219512s"></animate>
+            </circle>
+            <circle cx="16" cy="50" r="10" fill="white">
+                <animate attributeName="r" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1.8292682926829267s"></animate>
+                <animate attributeName="cx" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1.8292682926829267s"></animate>
+            </circle>
+        </svg>
+        <text x='100' y='190' width='200px' height='20px' font='16px Quicksand;' fill='white' text-anchor='middle'>
+            Desktop sáng
+        </text>
+    </g>
+    <g>
+        <rect x=' 200' y='0' width='200px' height='200px' fill='url(#lgDark)' />
+        <svg x='275' y='75' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            style="margin: auto; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; display: block; shape-rendering: auto;"
+            width="50px" height="50px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+            <circle cx="84" cy="50" r="10" fill="#121212">
+                <animate attributeName="r" repeatCount="indefinite" dur="0.6097560975609756s" calcMode="spline"
+                    keyTimes="0;1" values="10;0" keySplines="0 0.5 0.5 1" begin="0s"></animate>
+                <animate attributeName="fill" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="discrete"
+                    keyTimes="0;0.25;0.5;0.75;1" values="#121212;#121212;#121212;#121212;#121212" begin="0s">
+                </animate>
+            </circle>
+            <circle cx="16" cy="50" r="10" fill="#121212">
+                <animate attributeName="r" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="0s"></animate>
+                <animate attributeName="cx" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="0s"></animate>
+            </circle>
+            <circle cx="50" cy="50" r="10" fill="#121212">
+                <animate attributeName="r" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.6097560975609756s"></animate>
+                <animate attributeName="cx" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-0.6097560975609756s"></animate>
+            </circle>
+            <circle cx="84" cy="50" r="10" fill="#121212">
+                <animate attributeName="r" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1.2195121951219512s"></animate>
+                <animate attributeName="cx" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1.2195121951219512s"></animate>
+            </circle>
+            <circle cx="16" cy="50" r="10" fill="#121212">
+                <animate attributeName="r" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="0;0;10;10;10"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1.8292682926829267s"></animate>
+                <animate attributeName="cx" repeatCount="indefinite" dur="2.4390243902439024s" calcMode="spline"
+                    keyTimes="0;0.25;0.5;0.75;1" values="16;16;16;50;84"
+                    keySplines="0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1;0 0.5 0.5 1" begin="-1.8292682926829267s"></animate>
+            </circle>
+        </svg>
+        <text x='300' y='190' width='200px' height='20px' font='16px Quicksand;' fill='#121212' text-anchor='middle'>
+            Desktop tối
+        </text>
+    </g>
+    <g>
+        <rect x='400' y='0' width='200px' height='200px' fill='url(#lgLight)' />
+        <svg x='475' y='75' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            style="margin: auto; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; display: block; shape-rendering: auto;"
+            width="50px" height="50px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+            <circle cx="50" cy="23" r="13" fill="white">
+                <animate attributeName="cy" dur="1s" repeatCount="indefinite" calcMode="spline"
+                    keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9" keyTimes="0;0.5;1" values="23;77;23"></animate>
+            </circle>
+        </svg>
+        <text x='500' y='190' width='200px' height='20px' font='16px Quicksand;' fill='white' text-anchor='middle'>
+            Mobile sáng
+        </text>
+    </g>
+    <g>
+        <rect x='600' y='0' width='200px' height='200px' fill='url(#lgDark)' />
+        <svg x='675' y='75' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            style="margin: auto; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; display: block; shape-rendering: auto;"
+            width="50px" height="50px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+            <circle cx="50" cy="23" r="13" fill="#121212">
+                <animate attributeName="cy" dur="1s" repeatCount="indefinite" calcMode="spline"
+                    keySplines="0.45 0 0.9 0.55;0 0.45 0.55 0.9" keyTimes="0;0.5;1" values="23;77;23"></animate>
+            </circle>
+        </svg>
+        <text x='700' y='190' width='200px' height='20px' font='16px Quicksand;' fill='#121212' text-anchor='middle'>
+            Mobile tối
+        </text>
+    </g>
+</svg>

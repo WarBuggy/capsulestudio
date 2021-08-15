@@ -298,6 +298,32 @@ div.blog-individual-text {
     white-space: nowrap;
 }
 
+div.blog-individual-image {
+    display: grid;
+    grid-template-rows: auto auto;
+    margin-top: var(--space-standard);
+    margin-bottom: var(--space-standard);
+    grid-row-gap: var(--space-standard);
+}
+
+img.blog-individual-image-inner {
+    cursor: pointer;
+    width: 100%;
+    justify-self: center;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-color: var(--blog-table-content-border-color);
+    padding: 4px;
+    border-radius: 4px;
+}
+
+div.blog-individual-image-caption {
+    font-size: 14px;
+    color: var(--color-text-1);
+    text-align: center;
+    font-style: italic;
+}
+
 div.code-outer {
     overflow: auto;
     padding-bottom: 15px;

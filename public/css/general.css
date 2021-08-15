@@ -56,6 +56,10 @@
     --content-grid-padding: 0px;
     --general-banner-top-margin-top: 80px;
     --general-banner-overlay-padding-top: 0px;
+    --general-overlay-image-outer-template-columns: 90%;
+    --general-overlay-image-outer-template-rows: auto auto;
+    --general-overlay-image-inner-width: 100%;
+    --general-overlay-image-inner-height: auto;
     /* Mobile Light mode */
     --color-bg-1: var(--color-bright);
     --color-bg-2: var(--color-dark);
@@ -72,6 +76,7 @@
     --loading-initial-disclaimer-dark-display: none;
     --color-text-box-border: var(--color-border-light);
     --color-link: blue;
+    --general-box-shadow: var(--general-box-shadow-dark);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -92,6 +97,7 @@
         --loading-initial-disclaimer-dark-display: block;
         --color-text-box-border: var(--color-border-dark);
         --color-link: yellow;
+        --general-box-shadow: var(--general-box-shadow-light);
     }
 }
 
@@ -102,6 +108,10 @@
         --content-grid-padding: var(--space-standard);
         --general-banner-top-margin-top: 80px;
         --general-banner-overlay-padding-top: 0px;
+        --general-overlay-image-outer-template-columns: 90%;
+        --general-overlay-image-outer-template-rows: auto auto;
+        --general-overlay-image-inner-width: 100%;
+        --general-overlay-image-inner-height: auto;
     }
 }
 
@@ -109,6 +119,10 @@
      :root {
         --loading-initial-image-landscape-display: block;
         --loading-initial-image-portrait-display: none;
+        --general-overlay-image-outer-template-columns: 100%;
+        --general-overlay-image-outer-template-rows: 70% auto;
+        --general-overlay-image-inner-width: auto;
+        --general-overlay-image-inner-height: 100%;
     }
 }
 
@@ -119,6 +133,10 @@
         --content-grid-padding: calc(2 * var(--space-standard));
         --general-banner-top-margin-top: 0px;
         --general-banner-overlay-padding-top: 50px;
+        --general-overlay-image-outer-template-columns: 100%;
+        --general-overlay-image-outer-template-rows: 70% auto;
+        --general-overlay-image-inner-width: auto;
+        --general-overlay-image-inner-height: 100%;
     }
     @media (prefers-color-scheme: light) {
          :root {
@@ -176,6 +194,10 @@ body {
 
 p {
     margin: 0px;
+}
+
+a {
+    color: var(--color-link);
 }
 
 div.loading-initial {
@@ -417,4 +439,52 @@ div.general-overlay-message {
     background-image: linear-gradient(127deg, var(--logo-darkest) 0%, var(--logo-lightest) 91%);
     border-color: var(--color-text-box-border);
     text-align: center;
+}
+
+.general-overlay.image-outer {
+    display: grid;
+    grid-template-columns: var(--general-overlay-image-outer-template-columns);
+    grid-template-rows: var(--general-overlay-image-outer-template-rows);
+    grid-row-gap: var(--space-standard);
+    align-content: center;
+    justify-content: center;
+    background-color: rgba(10, 10, 10, 0.5)
+}
+
+.general-overlay.image-outer.landscape {
+    grid-template-columns: 90%;
+    grid-template-rows: auto auto;
+}
+
+img.general-overlay-image-inner {
+    width: var(--general-overlay-image-inner-width);
+    height: var(--general-overlay-image-inner-height);
+    border: 1px solid;
+    border-color: var(--color-text-box-border);
+    padding: 4px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    justify-self: center;
+    box-shadow: var(--general-box-shadow);
+}
+
+div.general-overlay-image-caption {
+    font-size: 16px;
+    font-style: italic;
+    color: var(--color-text-1);
+    text-align: center;
+}
+
+.general-overlay-image-caption>div {
+    display: inline-block;
+    border: 1px solid black;
+    border-color: var(--color-text-box-border);
+    border-radius: 4px;
+}
+
+.general-overlay-image-caption>div>span {
+    background-color: var(--color-bg-1);
+    display: block;
+    padding: 8px;
+    margin: 4px;
 }
